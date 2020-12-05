@@ -1,0 +1,102 @@
+/* @font-face {
+    font-family: 'Source Code Pro';
+    src: url('fonts/Source Code Pro/SourceCodePro-Medium.eot');
+    src: local('Source Code Pro Medium'), local('SourceCodePro-Medium'),
+        url('fonts/Source Code Pro/SourceCodePro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Source Code Pro/SourceCodePro-Medium.woff2') format('woff2'),
+        url('fonts/Source Code Pro/SourceCodePro-Medium.woff') format('woff'),
+        url('fonts/Source Code Pro/SourceCodePro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('/fonts/Source Code Pro/SourceCodePro-Light.eot');
+    src: local('Source Code Pro Light'), local('SourceCodePro-Light'),
+        url('/fonts/Source Code Pro/SourceCodePro-Light.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Source Code Pro/SourceCodePro-Light.woff2') format('woff2'),
+        url('/fonts/Source Code Pro/SourceCodePro-Light.woff') format('woff'),
+        url('/fonts/Source Code Pro/SourceCodePro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	width: auto;
+	height: auto;
+	/* top: 0;  */
+	/* left: 0;  */
+	text-decoration: none;
+	text-align: left;
+	font-style: normal;
+	font-weight: normal;
+	z-index: 1;
+	color: #ccc;
+	outline: none;
+	transform-origin: center center;
+	font-family: Arial, Helvetica, sans-serif;
+
+	/* box-sizing: border-box;  */
+	/* box-sizing: content-box;  */
+
+	/* image-rendering: optimizeQuality;  */
+	backface-visibility: hidden;
+	/* transition-duration: 0s;   */
+}
+
+a {
+	color: #009900;
+}
+
+a:hover, a:focus {
+	color: #99ff99;
+}
+
+body {
+	background-color: #0f0f23;
+}
+
+body * {
+	font-family: 'Source Code Pro', monospace;
+	font-size: 14pt;
+}
+
+em {
+	text-shadow: 0 0 5px #ffffff;
+}
+
+.title h1 {
+	text-align: center;
+	margin: 40px 0 10px 0;
+	color: #00cc00;
+	text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+	font-size: 32pt;
+}
+.title p {
+	text-align: center;
+	margin: 0px 0 50px 0;
+	font-size: 17pt;
+}
+
+.title p a {
+	font-size: 15.5pt;
+}
+
+main {
+	width: 800px;
+	margin: 0 auto;
+}
+
+main a {
+	text-shadow: 0 0 2px #00cc00;
+}
+
+main ul li{
+	list-style: none;
+	margin-right: 10px;
+}
