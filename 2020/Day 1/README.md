@@ -52,7 +52,7 @@ for i in range(len(inp)):
 
 ## Part 2
 
-In Part 2, we were asked to do the same thing, but with **three numbers**: find **tree** entries that add up to 2020 in a given list of numbers, and then multiply them to get the result. Again, brute-forcing algorithm is easy to implement, but using binary search, we can reduce the complexity from `O(n^3)` to `O(n^2 log(n))`:
+In Part 2, we were asked to do the same thing, but with **three numbers**: find **tree** entries that add up to 2020 in a given list of numbers, and then multiply them to get the result. Again, brute-force algorithm is easy to implement, but using binary search, we can reduce the complexity from `O(n^3)` to `O(n^2 log(n))`:
 
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:

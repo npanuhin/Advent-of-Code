@@ -9,6 +9,4 @@ for line in inp:
     else:
         data[-1] = data[-1].union(line)
 
-print(
-    sum(len(group) for group in data)
-)
+print(sum(len(group) for group in data))
