@@ -1,4 +1,4 @@
-<h1 align="center">Advent of Code 2020: Day 6</h1>
+<h1 align="center">🎄 Advent of Code 2020: Day 6 🎄</h1>
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
 > Read the [statement](https://adventofcode.com/2020/day/6 "Visit adventofcode.com/2020/day/6") before watching the solution.

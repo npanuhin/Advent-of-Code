@@ -88,8 +88,9 @@ em {
 }
 
 main {
-	width: 800px;
+	width: 750px;
 	margin: 0 auto;
+	padding: 0 0 30px 0;
 }
 
 main a {
@@ -99,4 +100,5 @@ main a {
 main ul li{
 	list-style: none;
 	margin-right: 10px;
+	/* text-align: center; */
 }
