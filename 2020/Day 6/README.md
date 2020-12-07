@@ -8,7 +8,7 @@
 
 ## Part 1
 
-In Part 1, we were asked to count the number of letters (questions) contained in at least one of the given lines (people). This is easy to implement using a [set](https://en.wikipedia.org/wiki/Set_(abstract_data_type)): let's call the `union` method for each line.
+In Part 1, we were asked to count the number of letters (questions) contained in at least one of given lines (people). This is easy to implement using a [set](https://en.wikipedia.org/wiki/Set_(abstract_data_type)): let's call the `union` method for each line.
 
 The sum of these counts for each group of people will be the answer.
 
