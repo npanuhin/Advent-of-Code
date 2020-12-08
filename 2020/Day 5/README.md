@@ -12,13 +12,13 @@ In Part 1, we were asked to count the ID for every seat on a plane with ***binar
 
 Consider the seat `FBFBBFFRLR`:
 
-* The first 7 letters `FBFBBFF` specify one of the 128 rows - from `0` to `127`:
+- The first 7 letters `FBFBBFF` specify one of the 128 rows - from `0` to `127`:
 
     **F** stands for the front half and **B** stands for the back.
 
     Thus, in this example the algorithm would be: `0-127 > (F) > 0-63 > (B) > 32-63 > (F) > 32-47...`
 
-* The last 3 letters `RLR` specify one of the 8 columns - from `0` to `7`:
+- The last 3 letters `RLR` specify one of the 8 columns - from `0` to `7`:
 
     **R** stands for the right half and **L** stands for the left.
 

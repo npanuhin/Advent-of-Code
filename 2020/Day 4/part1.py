@@ -1,4 +1,4 @@
-fields = ("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid")  # All fields without "cid"
+fields = ("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid")  # All fields except "cid"
 
 with open("input.txt", 'r', encoding="utf-8") as file:
     inp = list(map(str.strip, file.readlines()))

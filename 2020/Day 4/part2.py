@@ -1,6 +1,6 @@
 from re import fullmatch
 
-fields = {  # All fields without "cid"
+fields = {  # All fields except "cid"
     "byr": lambda x: 1920 <= int(x) <= 2002,
     "iyr": lambda x: 2010 <= int(x) <= 2020,
     "eyr": lambda x: 2020 <= int(x) <= 2030,
@@ -31,18 +31,16 @@ for line in inp:
 answer = 0
 
 for passport in data:
+    if all(field in passport for field in fields):
 
-    if not all(field in passport for field in fields):
-        continue
-
-    for field, checker in fields.items():
-        try:
-            if not checker(passport[field]):
+        for field, checker in fields.items():
+            try:
+                if not checker(passport[field]):
+                    break
+            except ValueError:
                 break
-        except ValueError:
-            break
 
-    else:
-        answer += 1
+        else:
+            answer += 1
 
 print(answer)
