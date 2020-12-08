@@ -1,7 +1,7 @@
 <h1 align="center">🎄 Advent of Code 2020 🎄</h1>
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
-|                                       |          Part 1         |          Part 2        | 
+|                                       |          Part 1         |          Part 2        |
 |---------------------------------------|:-----------------------:|:----------------------:|
 |[Day 1: Report Repair](./Day%201)      |[⭐](./Day%201/part1.py) |[⭐](./Day%201/part2.py) |
 |[Day 2: Password Philosophy](./Day%202)|[⭐](./Day%202/part1.py) |[⭐](./Day%202/part2.py) |
@@ -10,7 +10,7 @@
 |[Day 5: Binary Boarding](./Day%205)    |[⭐](./Day%205/part1.py) |[⭐](./Day%205/part2.py) |
 |[Day 6: Custom Customs](./Day%206)     |[⭐](./Day%206/part1.py) |[⭐](./Day%206/part2.py) |
 | Day 7: Handy Haversacks               |[⭐](./Day%207/part1.py) |[⭐](./Day%207/part2.py) |
-|Day 8  |||
+| Day 8: Handheld Halting               |[⭐](./Day%208/part1.py) |[⭐](./Day%208/part2.py) |
 |Day 9  |||
 |Day 10 |||
 |Day 11 |||
