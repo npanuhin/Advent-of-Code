@@ -11,20 +11,20 @@
 | [Day 6: Custom Customs](./Day%206)      | [⭐](./Day%206/part1.py) | [⭐](./Day%206/part2.py) |
 |  Day 7: Handy Haversacks                | [⭐](./Day%207/part1.py) | [⭐](./Day%207/part2.py) |
 |  Day 8: Handheld Halting                | [⭐](./Day%208/part1.py) | [⭐](./Day%208/part2.py) |
-| Day 9  |||
-| Day 10 |||
-| Day 11 |||
-| Day 12 |||
-| Day 13 |||
-| Day 14 |||
-| Day 15 |||
-| Day 16 |||
-| Day 17 |||
-| Day 18 |||
-| Day 19 |||
-| Day 20 |||
-| Day 21 |||
-| Day 22 |||
-| Day 23 |||
-| Day 24 |||
-| Day 25 |||
+|  Day 9: Encoding Error                  | [⭐](./Day%208/part1.py) | [⭐](./Day%208/part2.py) |
+|  Day 10 |||
+|  Day 11 |||
+|  Day 12 |||
+|  Day 13 |||
+|  Day 14 |||
+|  Day 15 |||
+|  Day 16 |||
+|  Day 17 |||
+|  Day 18 |||
+|  Day 19 |||
+|  Day 20 |||
+|  Day 21 |||
+|  Day 22 |||
+|  Day 23 |||
+|  Day 24 |||
+|  Day 25 |||
