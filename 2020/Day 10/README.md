@@ -39,6 +39,7 @@ print(jolt_diff[3] * jolt_diff[1])
 ```
 2368
 ```
+###### Execution time: < 1ms
 
 ## Part 2
 
@@ -72,3 +73,4 @@ print(ways[adapters[-1]])
 ```
 1727094849536
 ```
+###### Execution time: < 1ms

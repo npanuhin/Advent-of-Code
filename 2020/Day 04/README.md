@@ -49,6 +49,7 @@ print(answer)
 ```
 250
 ```
+###### Execution time: 2ms
 
 ## Part 2
 
@@ -118,3 +119,4 @@ print(answer)
 ```
 158
 ```
+###### Execution time: 2.5ms

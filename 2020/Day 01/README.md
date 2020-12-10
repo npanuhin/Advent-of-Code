@@ -49,6 +49,7 @@ for i in range(len(inp)):
 928896
 928896
 ```
+###### Execution time: < 1ms
 
 ## Part 2
 
@@ -80,3 +81,4 @@ for i in range(len(inp)):
 295668576
 295668576
 ```
+###### Execution time: 34ms

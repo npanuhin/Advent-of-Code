@@ -43,6 +43,7 @@ print(count(field, 3, 1))
 ```
 292
 ```
+###### Execution time: < 1ms
 
 ## Part 2
 
@@ -85,3 +86,4 @@ print(answer)
 ```
 9354744432
 ```
+###### Execution time: 1ms

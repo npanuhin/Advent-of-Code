@@ -43,6 +43,7 @@ print(answer)
 ```
 560
 ```
+###### Execution time: 1ms
 
 ## Part 2
 
@@ -68,3 +69,4 @@ print(answer)
 ```
 303
 ```
+###### Execution time: 1ms
