@@ -3,9 +3,9 @@ with open("input.txt", 'r', encoding="utf-8") as file:
 
 inp.sort()
 
-for i in range(len(inp)):
+for i in range(len(inp) - 1):
 
-    left, right = 0, len(inp)
+    left, right = i + 1, len(inp)
     while right - left > 1:
         middle = (left + right) // 2
 

@@ -3,10 +3,17 @@ with open("input.txt", 'r', encoding="utf-8") as file:
 
 inp.sort()
 
-for i in range(len(inp)):
-    for j in range(i + 1, len(inp)):
+for i in range(len(inp) - 2):
 
-        left, right = 0, len(inp)
+    if inp[i] * 3 >= 2020:
+        break
+
+    for j in range(i + 1, len(inp) - 1):
+
+        if inp[i] + inp[j] * 2 >= 2020:
+            break
+
+        left, right = j + 1, len(inp)
         while right - left > 1:
             middle = (left + right) // 2
 
