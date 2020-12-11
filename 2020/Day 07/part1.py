@@ -5,8 +5,8 @@ def count(data, bag, parent_bags=set()):
     parent_bags.add(bag)
 
     if bag in data:
-        for next_bag in data[bag]:
-            count(data, next_bag, parent_bags)
+        for parent_bag in data[bag]:
+            count(data, parent_bag, parent_bags)
 
     return len(parent_bags)
 
@@ -19,7 +19,7 @@ data = {}
 for line in inp:
     cur_bag, inner_bags = fullmatch(r"([\w ]+) bags contain ([\w \,]+)\.", line).groups()
 
-    if inner_bags != 'no other bags':
+    if inner_bags != "no other bags":
 
         for bag in inner_bags.split(','):
             n, bag = fullmatch(r" ?(\d+) ([\w ]+) bags?", bag).groups()
