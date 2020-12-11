@@ -2,34 +2,26 @@ from timeit import timeit
 import sys
 import os
 
-exec_path = "../2020/Day 01/part1.py"
-
 repeats = 100
 
 
 def count_time(exec_path, repeats):
-
     exec_time = None
 
     cur_directory = os.getcwd()
 
-    with open("tmp_output.txt", 'w', encoding="utf-8") as output_file:
+    directory, filename = os.path.split(exec_path)
+    os.chdir(directory)
 
-        directory, filename = os.path.split(exec_path)
-        os.chdir(directory)
+    with open(filename, 'r', encoding="utf-8") as file:
+        code = file.read()
 
-        with open(filename, 'r', encoding="utf-8") as file:
-            code = file.read()
-
-        cur_stdout = sys.stdout
-        sys.stdout = output_file
-
-        exec_time = timeit(code, number=repeats) / repeats
-
-        sys.stdout = cur_stdout
+    cur_stdout = sys.stdout
+    sys.stdout = None
+    exec_time = timeit(code if code else "pass", number=repeats) / repeats
+    sys.stdout = cur_stdout
 
     os.chdir(cur_directory)
-    os.remove("tmp_output.txt")
 
     return exec_time
 

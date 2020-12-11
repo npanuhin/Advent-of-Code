@@ -13,7 +13,7 @@
 |  Day 8: Handheld Halting                 | [⭐](./Day%2008/part1.py)  | [⭐](./Day%2008/part2.py)  |
 |  Day 9: Encoding Error                   | [⭐](./Day%2009/part1.py)  | [⭐](./Day%2009/part2.py)  |
 | [Day 10: Adapter Array](./Day%2010)      | [⭐](./Day%2010/part1.py)  | [⭐](./Day%2010/part2.py)  |
-|  Day 11 |||
+|  Day 11: Seating System                  | [⭐](./Day%2011/part1.py)  | [⭐](./Day%2011/part2.py)  |
 |  Day 12 |||
 |  Day 13 |||
 |  Day 14 |||
