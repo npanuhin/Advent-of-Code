@@ -16,8 +16,6 @@ def run_instructions(instructions):
         accumulator += argument if operation == "acc" else 0
         cur_instruction += argument if operation == 'jmp' else 1
 
-    return accumulator
-
 
 with open("input.txt", 'r', encoding="utf-8") as file:
     inp = list(map(str.split, file.readlines()))

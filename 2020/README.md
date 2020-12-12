@@ -10,7 +10,7 @@
 | [Day 5: Binary Boarding](./Day%2005)     | [⭐](./Day%2005/part1.py)  | [⭐](./Day%2005/part2.py)  |
 | [Day 6: Custom Customs](./Day%2006)      | [⭐](./Day%2006/part1.py)  | [⭐](./Day%2006/part2.py)  |
 | [Day 7: Handy Haversacks](./Day%2007)    | [⭐](./Day%2007/part1.py)  | [⭐](./Day%2007/part2.py)  |
-|  Day 8: Handheld Halting                 | [⭐](./Day%2008/part1.py)  | [⭐](./Day%2008/part2.py)  |
+| [Day 8: Handheld Halting](./Day%2008)    | [⭐](./Day%2008/part1.py)  | [⭐](./Day%2008/part2.py)  |
 |  Day 9: Encoding Error                   | [⭐](./Day%2009/part1.py)  | [⭐](./Day%2009/part2.py)  |
 | [Day 10: Adapter Array](./Day%2010)      | [⭐](./Day%2010/part1.py)  | [⭐](./Day%2010/part2.py)  |
 |  Day 11: Seating System                  | [⭐](./Day%2011/part1.py)  | [⭐](./Day%2011/part2.py)  |
