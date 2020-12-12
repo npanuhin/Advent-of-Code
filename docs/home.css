@@ -49,12 +49,8 @@
 	/* transition-duration: 0s;   */
 }
 
-a {
-	color: #009900;
-}
-
-a:hover, a:focus {
-	color: #99ff99;
+li {
+	list-style: none;
 }
 
 body {
@@ -66,6 +62,10 @@ body * {
 	font-size: 14pt;
 }
 
+ul li a {
+	color: #090;
+}
+
 em {
 	text-shadow: 0 0 5px #ffffff;
 }
@@ -73,32 +73,76 @@ em {
 .title h1 {
 	text-align: center;
 	margin: 40px 0 10px 0;
-	color: #00cc00;
-	text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+	color: #0c0;
+	text-shadow: 0 0 2px #0c0, 0 0 5px #0c0;
 	font-size: 32pt;
 }
 .title p {
 	text-align: center;
 	margin: 0px 0 50px 0;
-	font-size: 17pt;
+	font-size: 15pt;
+	font-weight: bold;
 }
 
 .title p a {
-	font-size: 15.5pt;
+	color: #090;
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+.title p a:hover, .title p a:active {
+	color: #9f9;
 }
 
 main {
-	width: 750px;
+	width: 500px;
 	margin: 0 auto;
 	padding: 0 0 30px 0;
 }
 
-main a {
-	text-shadow: 0 0 2px #00cc00;
+main table {
+	display: inline-block;
+	border-spacing: 0;
+	border: 2px solid rgba(119, 119, 165, .4);
 }
 
-main ul li{
-	list-style: none;
-	margin-right: 10px;
-	/* text-align: center; */
+main table.left {
+	float: left;
+}
+
+main table.right {
+	float: right;
+}
+
+main table tr {
+	width: 100%;
+}
+main table td {
+	min-width: 50px;
+	border: 1px solid rgba(119, 119, 165, .4);
+}
+
+main table tr:hover a, main table tr:active a {
+	color: #9f9;
+}
+
+main table .wrapper {
+	padding: 6px 13px;
+	color: #090;
+	font-size: 1.005em;
+	font-weight: bold;
+	letter-spacing: 0.02em;
+}
+
+main table tr:nth-child(2n) {
+	background-color: rgba(119, 119, 165, .2);
+}
+
+main table tr:hover {
+	cursor: pointer;
+	background-color: rgba(119, 119, 165, .4);
+}
+
+main table td:hover {
+	background-color: rgba(119, 119, 165, .5);
 }
