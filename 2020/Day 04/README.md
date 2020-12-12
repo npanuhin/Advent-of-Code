@@ -49,7 +49,7 @@ print(answer)
 ```
 250
 ```
-###### Execution time: 2ms
+###### Execution time: 2 ms
 
 ## Part 2
 

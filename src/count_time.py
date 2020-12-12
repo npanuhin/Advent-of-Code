@@ -26,25 +26,31 @@ def count_time(exec_path, repeats):
     return exec_time
 
 
-def main(repeats):
-    for day in range(1, 25):
-        day = str(day).zfill(2)
+def count_day(day):
+    day_path = "../2020/Day {}".format(str(day).zfill(2))
+
+    if os.path.isdir(day_path):
 
         print("Day {}:".format(day))
 
-        if os.path.isdir("../2020/Day {}".format(day)):
+        part1_path = day_path + "/part1.py"
+        part2_path = day_path + "/part2.py"
 
-            part1_path = "../2020/Day {}/part1.py".format(day)
-            part2_path = "../2020/Day {}/part2.py".format(day)
+        print("   part1: {} ms".format(
+            round(count_time(part1_path, repeats) * 1000, 2)
+        ))
 
-            print("   part1: {}".format(
-                round(count_time(part1_path, repeats) * 1000, 1)
-            ))
+        print("   part2: {} ms\n".format(
+            round(count_time(part2_path, repeats) * 1000, 2)
+        ))
 
-            print("   part2: {}\n".format(
-                round(count_time(part2_path, repeats) * 1000, 2)
-            ))
+
+def main(repeats):
+    for day in range(1, 25):
+        count_day(day)
 
 
 if __name__ == "__main__":
-    main(repeats)
+    # main(repeats)
+
+    count_day(12)
