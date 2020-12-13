@@ -1,0 +1,29 @@
+name: Exec-time
+
+on: push
+
+jobs:
+  exec-time:
+    name: Script execution time counter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7.5
+          architecture: x64
+
+      - name: Run exectime.py
+        working-directory: ./.github
+        run: python exectime.py
+
+      - name: Commit and push changes
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_prefix: ""
+          commit_message: "[Actions] Updated script execution time"
