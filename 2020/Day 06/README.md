@@ -54,4 +54,4 @@ print(sum(len(group) for group in data))
 ```
 3243
 ```
-###### Execution time: 2.3ms
+###### Execution time: 2 ms

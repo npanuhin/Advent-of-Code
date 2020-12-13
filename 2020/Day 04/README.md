@@ -119,4 +119,4 @@ print(answer)
 ```
 158
 ```
-###### Execution time: 2.5ms
+###### Execution time: 3 ms
