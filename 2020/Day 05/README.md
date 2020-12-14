@@ -16,13 +16,13 @@ Consider the seat `FBFBBFFRLR`:
 
     **F** stands for the front half and **B** stands for the back.
 
-    Thus, in this example the algorithm would be: `0-127 > (F) > 0-63 > (B) > 32-63 > (F) > 32-47...`
+    Thus, in this example the algorithm would be: `0-127 > (F) > 0-63 > (B) > 32-63 > (F) > 32-47...`
 
 - The last 3 letters `RLR` specify one of the 8 columns - from `0` to `7`:
 
     **R** stands for the right half and **L** stands for the left.
 
-    Thus, in this example the algorithm would be: `0-7 > (R) > 4-7 > (L) > 4-5 > (R) > 5`
+    Thus, in this example the algorithm would be: `0-7 > (R) > 4-7 > (L) > 4-5 > (R) > 5`
 
 > Read the [statement](https://adventofcode.com/2020/day/5 "Visit adventofcode.com/2020/day/5") for a complete example
 
@@ -73,7 +73,7 @@ print(max_ID)
 
 In Part 2, we were asked to count the same IDs (so the main code was left untouched).
 
-However, this time the answer is the only ID that is not present in the list. It can be found because the entire list contains IDs from `i-th` seat to `j-th`, except one seat with `ID = k` (`i < k < j`) is skipped.
+However, this time the answer is the only ID that is not present in the list. It can be found because the entire list contains IDs from `i-th` seat to `j-th`, except one seat with `ID = k` (`i < k < j`) is skipped.
 
 To find this ID, I sorted all IDs and ran through them in a loop, looking for the first ID that is not equal to the first + its number. For example, in the following list...
 
@@ -86,7 +86,7 @@ To find this ID, I sorted all IDs and ran through them in a loop, looking for th
 762
 ```
 
-...that is `760`, because `760 != 756 + 3`. The answer will be this ID minus 1, which is `759`.
+...that is `760`, because `760 != 756 + 3`. The answer will be this ID minus 1, which is `759`.
 
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:
