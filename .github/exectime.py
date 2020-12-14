@@ -3,7 +3,9 @@ import sys
 import os
 import re
 
-repeats = 20
+
+MAX_EXEC_TIME = 5000
+MAX_REPEATS = 100
 
 
 def mkpath(*paths):
@@ -11,8 +13,6 @@ def mkpath(*paths):
 
 
 def count_time(exec_path, repeats):
-    exec_time = None
-
     cur_directory = os.getcwd()
 
     directory, filename = os.path.split(exec_path)
@@ -31,17 +31,19 @@ def count_time(exec_path, repeats):
     return exec_time
 
 
-def format_time(ms_time):
-    if ms_time < 1:
+def format_time(seconds):
+    milliseconds = seconds * 1000
+
+    if milliseconds < 1:
         return "< 1ms"
 
-    if ms_time < 300:
-        return str(int(round(ms_time, 0))) + " ms"
+    if milliseconds < 300:
+        return str(int(round(milliseconds, 0))) + " ms"
 
-    if ms_time < 1000:
-        return "< " + str(int(round(ms_time / 1000, 0))) + "s"
+    if milliseconds < 1000:
+        return "< 1s"
 
-    return str(int(round(ms_time / 1000, 0))) + " s"
+    return str(int(round(milliseconds / 1000, 0))) + " s"
 
 
 def count_day(root_path, day):
@@ -49,33 +51,44 @@ def count_day(root_path, day):
 
     if os.path.isdir(day_path):
 
-        print("Day {}:".format(day))
+        print("Execution time for Day {}:".format(day))
 
+        print(" -> part1: ", end="")
         part1_path = mkpath(day_path, "part1.py")
+
+        repeats = int(MAX_EXEC_TIME / (count_time(part1_path, repeats=1) * 1000))
+
+        part1_exec_time = format_time(count_time(part1_path, repeats=max(1, min(MAX_REPEATS, repeats))))
+        print(part1_exec_time)
+
+        print(" -> part2: ", end="")
         part2_path = mkpath(day_path, "part2.py")
 
-        part1_exec_time = format_time(count_time(part1_path, repeats) * 1000)
-        part2_exec_time = format_time(count_time(part2_path, repeats) * 1000)
+        repeats = int(MAX_EXEC_TIME / (count_time(part2_path, repeats=1) * 1000))
 
-        print("   part1: {}".format(part1_exec_time))
-        print("   part2: {}\n".format(part2_exec_time))
+        part2_exec_time = format_time(count_time(part2_path, repeats=max(1, min(MAX_REPEATS, repeats))))
+        print(part2_exec_time)
 
         if os.path.isfile(mkpath(day_path, "README.md")):
 
             with open(mkpath(day_path, "README.md"), 'r', encoding="utf-8") as file:
                 text = file.read()
 
-            text = re.sub(r"(## Part 1(.|\n)+###### Execution time:)\s*<?\s*[\d\.]+.+$", r"\1 " + part1_exec_time, text, re.U)
-            text = re.sub(r"(## Part 2(.|\n)+###### Execution time:)\s*<?\s*[\d\.]+.+$", r"\1 " + part2_exec_time, text, re.U)
+            text = re.sub(r"(#+ Part 1(?:.|\n)+?#+ Execution time):?.*?$", r"\1: " + part1_exec_time, text, 1, flags=re.MULTILINE)
+            text = re.sub(r"(#+ Part 2(?:.|\n)+?#+ Execution time):?.*?$", r"\1: " + part2_exec_time, text, 1, flags=re.MULTILINE)
 
             with open(mkpath(day_path, "README.md"), 'w', encoding="utf-8") as file:
                 file.write(text)
 
+        print()
 
-def main(root_path, repeats):
+
+def main(root_path):
     for day in range(1, 25):
         count_day(root_path, day)
 
 
 if __name__ == "__main__":
-    main("../", repeats)
+    main("../")
+
+    # count_day("../", 11)
