@@ -130,4 +130,4 @@ for i in range(len(inp)):
 ```
 552
 ```
-###### Execution time: 1 ms
+###### Execution time: 2 ms
