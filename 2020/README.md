@@ -16,7 +16,7 @@
 |  Day 11: Seating System                  | [⭐](./Day%2011/part1.py) | [⭐](./Day%2011/part2.py) |
 |  Day 12: Rain Risk                       | [⭐](./Day%2012/part1.py) | [⭐](./Day%2012/part2.py) |
 |  Day 13: Shuttle Search                  | [⭐](./Day%2013/part1.py) | [⭐](./Day%2013/part2.py) |
-|  Day 14: Docking Data                    | [⭐](./Day%2014/part1.py) | [⭐](./Day%2014/part2.py) |
+| [Day 14: Docking Data](./Day%2014)       | [⭐](./Day%2014/part1.py) | [⭐](./Day%2014/part2.py) |
 |  Day 15 |||
 |  Day 16 |||
 |  Day 17 |||

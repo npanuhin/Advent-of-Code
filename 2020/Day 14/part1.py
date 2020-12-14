@@ -11,11 +11,11 @@ for line in inp:
         mask_and = int(mask.replace('X', '1'), 2)
 
     else:
-        address, num = map(str.strip, line.split('='))
+        address, value = map(str.strip, line.split('='))
 
         address = int(address.lstrip("mem[").rstrip("]"))
-        num = int(num)
+        value = int(value)
 
-        mem[address] = (num | mask_xor) & mask_and
+        mem[address] = (value | mask_xor) & mask_and
 
 print(sum(mem.values()))

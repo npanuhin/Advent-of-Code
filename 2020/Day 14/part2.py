@@ -25,6 +25,8 @@ for line in inp:
         overwrite_1 = int(mask.replace('X', '0'), 2)
         overwrite_X = int(mask.replace('1', '0').replace('X', '1'), 2)
 
+        mask = list(mask)
+
     else:
         address, num = map(str.strip, line.split('='))
 
@@ -34,7 +36,7 @@ for line in inp:
         address |= overwrite_1
         address &= ~overwrite_X
 
-        for new_mask in gen_mask(list(mask)):
+        for new_mask in gen_mask(mask):
 
             mem[address | (int(new_mask, 2) & overwrite_X)] = num
 
