@@ -1,4 +1,4 @@
-name: Exec-time
+name: Workflow
 
 on: push
 
@@ -21,9 +21,13 @@ jobs:
         working-directory: ./.github
         run: python exectime.py
 
+      - name: Run markdown_formatting.py
+        working-directory: ./.github
+        run: python markdown_formatting.py
+
       - name: Commit and push changes
         uses: devops-infra/action-commit-push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_prefix: ""
-          commit_message: "[Actions] Updated script execution time"
+          commit_message: "[AUTO-COMMIT] Updated READMEs"
