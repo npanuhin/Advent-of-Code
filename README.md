@@ -3,4 +3,6 @@
 
 This is a repository of my [Advent of Code](https://adventofcode.com "Visit adventofcode.com") solutions. It also contains a short description of each puzzle solved.
 
+> Each solution is as optimized as I could.
+
 - [2020](./2020)

@@ -4,7 +4,8 @@ import os
 import re
 
 
-MAX_EXEC_TIME = 5000
+MAX_EXEC_TIME = 10000
+MIN_REPEATS = 5
 MAX_REPEATS = 100
 
 
@@ -58,7 +59,7 @@ def count_day(root_path, day):
 
         repeats = int(MAX_EXEC_TIME / (count_time(part1_path, repeats=1) * 1000))
 
-        part1_exec_time = format_time(count_time(part1_path, repeats=max(1, min(MAX_REPEATS, repeats))))
+        part1_exec_time = format_time(count_time(part1_path, repeats=max(MIN_REPEATS, min(MAX_REPEATS, repeats))))
         print(part1_exec_time)
 
         print(" -> part2: ", end="")
@@ -66,7 +67,7 @@ def count_day(root_path, day):
 
         repeats = int(MAX_EXEC_TIME / (count_time(part2_path, repeats=1) * 1000))
 
-        part2_exec_time = format_time(count_time(part2_path, repeats=max(1, min(MAX_REPEATS, repeats))))
+        part2_exec_time = format_time(count_time(part2_path, repeats=max(MIN_REPEATS, min(MAX_REPEATS, repeats))))
         print(part2_exec_time)
 
         if os.path.isfile(mkpath(day_path, "README.md")):
