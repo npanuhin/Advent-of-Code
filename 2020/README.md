@@ -18,7 +18,7 @@
 |  Day 13: Shuttle Search                       | [⭐](./Day%2013/part1.py) | [⭐](./Day%2013/part2.py) |
 | [Day 14: Docking Data](./Day%2014)            | [⭐](./Day%2014/part1.py) | [⭐](./Day%2014/part2.py) |
 |  Day 15: Rambunctious Recitation              | [⭐](./Day%2015/part1.py) | [⭐](./Day%2015/part2.py) |
-|  Day 16 |||
+|  Day 16: Ticket Translation                   | [⭐](./Day%2016/part1.py) | [⭐](./Day%2016/part2.py) |
 |  Day 17 |||
 |  Day 18 |||
 |  Day 19 |||
