@@ -4,7 +4,7 @@ import os
 import re
 
 
-MAX_EXEC_TIME = 10000
+MAX_EXEC_TIME = 30000
 MIN_REPEATS = 5
 MAX_REPEATS = 100
 
