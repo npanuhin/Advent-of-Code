@@ -62,13 +62,17 @@ body * {
 	font-size: 14pt;
 }
 
-ul li a {
+a, .wrapper {
 	color: #090;
 }
 
-em {
-	text-shadow: 0 0 5px #ffffff;
+a:hover {
+	color: #9f9;
 }
+
+/* em {
+	text-shadow: 0 0 5px #ffffff;
+} */
 
 .title h1 {
 	text-align: center;
@@ -80,24 +84,31 @@ em {
 .title p {
 	text-align: center;
 	margin: 0px 0 50px 0;
-	font-size: 15pt;
+	font-size: 14.5pt;
 	font-weight: bold;
 }
 
 .title p a {
-	color: #090;
-	font-size: 15pt;
+	font-size: 14pt;
 	font-weight: bold;
-}
-
-.title p a:hover, .title p a:active {
-	color: #9f9;
 }
 
 main {
 	width: 500px;
 	margin: 0 auto;
 	padding: 0 0 30px 0;
+}
+
+main.wide {
+	width: 800px;
+}
+
+.year_list {
+	text-align: center;
+}
+
+.year_list li {
+	display: inline-block;
 }
 
 main table {
@@ -122,13 +133,8 @@ main table td {
 	border: 1px solid rgba(119, 119, 165, .4);
 }
 
-main table tr:hover a, main table tr:active a {
-	color: #9f9;
-}
-
 main table .wrapper {
 	padding: 6px 13px;
-	color: #090;
 	font-size: 1.005em;
 	font-weight: bold;
 	letter-spacing: 0.02em;
