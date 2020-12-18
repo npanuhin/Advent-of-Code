@@ -50,7 +50,7 @@ for cycle in range(CYCLES):
 
 print(sum(
     space1[z][y][x]
-    for x in range(width)
-    for y in range(height)
-    for z in range(depth)
+    for x in range(1, width - 1)
+    for y in range(1, height - 1)
+    for z in range(1, depth - 1)
 ))

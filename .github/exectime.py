@@ -24,7 +24,10 @@ def count_time(exec_path, repeats):
 
     cur_stdout = sys.stdout
     sys.stdout = None
-    exec_time = timeit(code if code else "pass", number=repeats) / repeats
+    try:
+        exec_time = timeit(code if code else "pass", number=repeats) / repeats
+    except Exception:
+        exec_time = -1
     sys.stdout = cur_stdout
 
     os.chdir(cur_directory)
@@ -33,6 +36,9 @@ def count_time(exec_path, repeats):
 
 
 def format_time(seconds):
+    if seconds == -1:
+        return str("Exception")
+
     milliseconds = seconds * 1000
 
     if milliseconds < 1:
