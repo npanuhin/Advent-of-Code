@@ -84,7 +84,7 @@ print(sum(mem.values()))
 ```
 12610010960049
 ```
-###### Execution time: < 1ms
+###### Execution time: 1 ms
 
 ## Part 2
 

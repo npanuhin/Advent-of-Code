@@ -115,4 +115,4 @@ print(accumulator)
 ```
 1260
 ```
-###### Execution time: 6 ms
+###### Execution time: 8 ms
