@@ -12,7 +12,7 @@ In Part 1, we were asked to find an invalid instance in a set of numbers that ob
 
 > First, `25` numbers are initialized. After that, each number must be the sum of any two of the `25` immediately previous numbers (these two numbers must be different).
 
-I find the task quite easy because it has such a small input range of `25`. The simplest solution will have complexity `O(25^2 * n) = O(n)`
+I find the task quite easy because it has such a small input range of `25`. The simplest solution will have complexity `O(25^2 * n) = O(n)`
 
 ```python
 def find_first_invalid(numbers):
@@ -33,7 +33,7 @@ print(find_first_invalid(inp))
 ```
 133015568
 ```
-###### Execution time:
+###### Execution time: 7 ms
 
 ## Part 2
 
@@ -43,7 +43,7 @@ We can leave the `find_first_invalid` function unchanged. However, after finding
 
 We will iterate over `range_start` and adjust `range_end` each time. Since each pointer (`range_start` and `range_end`) runs at most `n`, the complexity this method provides will be `O(n)`.
 
-Having `range_start` and` range_end` for each iteration, as well as the sum that can be calculated by adding or removing one element at each step (again, `O(n)`), we can check if the sum is equal to the invalid number and if so, that's the answer.
+Having `range_start` and` range_end` for each iteration, as well as the sum that can be calculated by adding or removing one element at each step (again, `O(n)`), we can check if the sum is equal to the invalid number and if so, that's the answer.
 
 In the answer we should yield the sum of the smallest and largest number in this range:
 
@@ -81,4 +81,4 @@ for range_start in range(len(inp)):
 ```
 16107959
 ```
-###### Execution time:
+###### Execution time: 8 ms
