@@ -1,6 +1,10 @@
 <h1 align="center">🎄 Advent of Code 🎄</h1>
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
+<img alt="" src="docs/AoC.gif" align="center">
+
+---
+
 This is a repository of my [Advent of Code](https://adventofcode.com "Visit adventofcode.com") solutions. It also contains a short description of each puzzle solved.
 
 I try to optimize each solution as much as possible, so even though they are written in Python, many of them execute in less than a second.

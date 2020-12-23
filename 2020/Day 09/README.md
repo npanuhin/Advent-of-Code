@@ -43,7 +43,7 @@ We can leave the `find_first_invalid` function unchanged. However, after finding
 
 We will iterate over `range_start` and adjust `range_end` each time. Since each pointer (`range_start` and `range_end`) runs at most `n`, the complexity this method provides will be `O(n)`.
 
-Having `range_start` and` range_end` for each iteration, as well as the sum that can be calculated by adding or removing one element at each step (again, `O(n)`), we can check if the sum is equal to the invalid number and if so, that's the answer.
+Having `range_start` and `range_end` for each iteration, as well as the sum that can be calculated by adding or removing one element at each step (again, `O(n)`), we can check if the sum is equal to the invalid number and if so, that's the answer.
 
 In the answer we should yield the sum of the smallest and largest number in this range:
 
