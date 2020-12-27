@@ -51,6 +51,6 @@ def myeval_multiply(string, i, j):
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = [line.strip().replace(' ', '') for line in file.readlines()]
-
-print(sum(myeval_multiply(line, 0, len(line)) for line in inp))
+    print(sum(
+        myeval_multiply(line, 0, len(line)) for line in (line.strip().replace(' ', '') for line in file)
+    ))

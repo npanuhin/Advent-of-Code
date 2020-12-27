@@ -1,5 +1,6 @@
 from math import ceil
 
+
 with open("input.txt", 'r', encoding="utf-8") as file:
     departure_time = int(file.readline())
     buses = set(map(

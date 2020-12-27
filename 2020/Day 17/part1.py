@@ -14,7 +14,7 @@ def count_neighbors(space, x, y, z):
 CYCLES = 6
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = [[box == '#' for box in line] for line in file.readlines()]
+    inp = [[box == '#' for box in line] for line in file]
 
 height, width, depth = len(inp) + (CYCLES + 1) * 2, len(inp[0]) + (CYCLES + 1) * 2, 1 + (CYCLES + 1) * 2
 

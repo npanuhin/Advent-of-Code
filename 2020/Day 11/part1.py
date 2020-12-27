@@ -13,7 +13,7 @@ def has_occupied(layout, y, x, amount):
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    layout = [list(line.strip()) for line in file.readlines()]
+    layout = [list(line.strip()) for line in file]
 
 size_y, size_x = len(layout) + 2, len(layout[0]) + 2
 

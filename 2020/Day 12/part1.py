@@ -1,5 +1,3 @@
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
 
 DIRECTIONS = ((0, 1), (-1, 0), (0, -1), (1, 0))
 dr = 0
@@ -16,8 +14,9 @@ actions = {
 
 y, x = 0, 0
 
-for line in inp:
-    action, n = line[0], int(line[1:])
-    x, y, dr = actions[action](x, y, dr, n)
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        action, n = line[0], int(line[1:])
+        x, y, dr = actions[action](x, y, dr, n)
 
 print(abs(x) + abs(y))

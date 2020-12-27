@@ -1,5 +1,6 @@
 from copy import deepcopy
 
+
 DIRECTIONS = [(dy, dx) for dx in range(-1, 2) for dy in range(-1, 2) if dy != 0 or dx != 0]
 
 
@@ -16,7 +17,7 @@ def has_occupied(layout, sight, y, x, amount):
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    layout = [list(line.strip()) for line in file.readlines()]
+    layout = [list(line.strip()) for line in file]
 
 size_y, size_x = len(layout), len(layout[0])
 

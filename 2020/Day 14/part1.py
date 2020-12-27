@@ -1,21 +1,21 @@
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 mem = {}
 
-for line in inp:
-    if line.startswith("mask"):
-        mask = line.lstrip("mask").lstrip().lstrip("=").lstrip()
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        line = line.strip()
 
-        mask_xor = int(mask.replace('X', '0'), 2)
-        mask_and = int(mask.replace('X', '1'), 2)
+        if line.startswith("mask"):
+            mask = line.lstrip("mask").lstrip().lstrip("=").lstrip()
 
-    else:
-        address, value = map(str.strip, line.split('='))
+            mask_xor = int(mask.replace('X', '0'), 2)
+            mask_and = int(mask.replace('X', '1'), 2)
 
-        address = int(address.lstrip("mem[").rstrip("]"))
-        value = int(value)
+        else:
+            address, value = map(str.strip, line.split('='))
 
-        mem[address] = (value | mask_xor) & mask_and
+            address = int(address.lstrip("mem[").rstrip("]"))
+            value = int(value)
+
+            mem[address] = (value | mask_xor) & mask_and
 
 print(sum(mem.values()))

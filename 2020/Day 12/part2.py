@@ -12,9 +12,6 @@ def rotate(i, j, n):
         return (j, -i) if n > 0 else (-j, i)
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 actions = {
     'N': lambda x, y, i, j, n: (x, y, i + n, j),
     'S': lambda x, y, i, j, n: (x, y, i - n, j),
@@ -28,8 +25,9 @@ actions = {
 y, x = 0, 0
 i, j = 1, 10
 
-for line in inp:
-    action, n = line[0], int(line[1:])
-    x, y, i, j = actions[action](x, y, i, j, n)
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        action, n = line[0], int(line[1:])
+        x, y, i, j = actions[action](x, y, i, j, n)
 
 print(abs(x) + abs(y))

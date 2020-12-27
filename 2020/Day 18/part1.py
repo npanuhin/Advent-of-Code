@@ -41,6 +41,6 @@ def myeval(string, i, j):
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = [line.strip().replace(' ', '') for line in file.readlines()]
-
-print(sum(myeval(line, 0, len(line)) for line in inp))
+    print(sum(
+        myeval(line, 0, len(line)) for line in (line.strip().replace(' ', '') for line in file)
+    ))
