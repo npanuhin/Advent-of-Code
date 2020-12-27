@@ -22,7 +22,7 @@
 |  Day 17: Conway Cubes                         | [⭐](./Day%2017/part1.py) | [⭐](./Day%2017/part2.py) |
 |  Day 18: Operation Order                      | [⭐](./Day%2018/part1.py) | [⭐](./Day%2018/part2.py) |
 |  Day 19: Monster Messages                     | [⭐](./Day%2019/part1.py) | [⭐](./Day%2019/part2.py) |
-|  Day 20 |||
+|  Day 20: Jurassic Jigsaw                      | [⭐](./Day%2020/part1.py) | [⭐](./Day%2020/part2.py) |
 |  Day 21 |||
 |  Day 22 |||
 |  Day 23 |||
