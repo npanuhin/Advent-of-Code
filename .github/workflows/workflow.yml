@@ -21,9 +21,9 @@ jobs:
         working-directory: ./.github
         run: python exectime.py
 
-      - name: Run markdown_formatting.py
+      - name: Run readme_generator.py
         working-directory: ./.github
-        run: python markdown_formatting.py
+        run: python readme_generator.py
 
       - name: Commit and push changes
         uses: devops-infra/action-commit-push@master

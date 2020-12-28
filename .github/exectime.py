@@ -81,8 +81,8 @@ def count_day(root_path, day):
             with open(mkpath(day_path, "README.md"), 'r', encoding="utf-8") as file:
                 text = file.read()
 
-            text = re.sub(r"(#+ Part 1(?:.|\n)+?#+ Execution time):?.*?$", r"\1: " + part1_exec_time, text, 1, flags=re.MULTILINE)
-            text = re.sub(r"(#+ Part 2(?:.|\n)+?#+ Execution time):?.*?$", r"\1: " + part2_exec_time, text, 1, flags=re.MULTILINE)
+            text = re.sub(r"(#+ Part 1(?:.|\n)+?#+ Execution time):?.*?$", r"\1: " + part1_exec_time, text, count=1, flags=re.MULTILINE)
+            text = re.sub(r"(#+ Part 2(?:.|\n)+?#+ Execution time):?.*?$", r"\1: " + part2_exec_time, text, count=1, flags=re.MULTILINE)
 
             with open(mkpath(day_path, "README.md"), 'w', encoding="utf-8") as file:
                 file.write(text)
