@@ -12,6 +12,7 @@ In Part 1, we were asked to count the number of letters (questions) contained in
 
 The sum of these counts for each group of people will be the answer.
 
+<!-- Execute code: "part1.py" -->
 ```python
 data = [set()]
 
@@ -33,6 +34,7 @@ print(sum(len(group) for group in data))
 
 In Part 2, we were asked to count the same thing, except that now **every** line must contain the given letter. Thus, we can change the `union` method to `intersection`:
 
+<!-- Execute code: "part2.py" -->
 ```python
 from string import ascii_letters
 

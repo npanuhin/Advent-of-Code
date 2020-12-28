@@ -27,6 +27,7 @@ We can see that each sentence contains a *name* followed by `bags contain` and
 
 After parsing the sentences, we can run a recursive function to *count the number of bags that can contain the **current bag*** (the initial bag is `shiny gold` of course).
 
+<!-- Execute code: "part1.py" -->
 ```python
 from re import fullmatch
 
@@ -70,6 +71,7 @@ In Part 2, we were asked to count the exact opposite: the number of bags that ca
 
 To do this, we can swap the keys and values in the `data` dict and start counting again, taking into account the number of bags in each sentence. The regexes above still apply.
 
+<!-- Execute code: "part2.py" -->
 ```python
 from re import fullmatch
 

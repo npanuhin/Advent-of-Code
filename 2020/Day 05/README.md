@@ -28,6 +28,7 @@ Consider the seat `FBFBBFFRLR`:
 
 The result is the maximum ID of those counted. Nothing interesting here, I just implemented two binary searches:
 
+<!-- Execute code: "part1.py" -->
 ```python
 max_ID = -1
 
@@ -87,6 +88,7 @@ To find this ID, I sorted all IDs and ran through them in a loop, looking for th
 
 ...that is `760`, because `760 != 756 + 3`. The answer will be this ID minus 1, which is `759`.
 
+<!-- Execute code: "part2.py" -->
 ```python
 IDs = []
 

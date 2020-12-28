@@ -32,6 +32,7 @@ acc +6
 
 Following the statement above, my program executes instructions until it finds an instruction that is executed a second time:
 
+<!-- Execute code: "part1.py" -->
 ```python
 def run_instructions(instructions):
     accumulator = 0
@@ -68,6 +69,7 @@ In Part 2, we were asked to replace one `nop` with `jmp` or one `jmp` with `nop`
 
 I haven’t come up with anything smarter than going through all possible changes and finding the one which leads to the correct program execution:
 
+<!-- Execute code: "part2.py" -->
 ```python
 def run_instructions(instructions):
     accumulator = 0

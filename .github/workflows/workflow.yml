@@ -17,10 +17,6 @@ jobs:
           python-version: 3.7.5
           architecture: x64
 
-      - name: Run exectime.py
-        working-directory: ./.github
-        run: python exectime.py
-
       - name: Run readme_generator.py
         working-directory: ./.github
         run: python readme_generator.py
@@ -31,3 +27,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_prefix: ""
           commit_message: "[AUTO-COMMIT] Updated READMEs"
+
+      - name: Send Telegram notification
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Github Actions "${{ github.event }}" in "${{ github.repository }}" completed.

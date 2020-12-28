@@ -16,6 +16,7 @@ However, due to *something about arboreal genetics and biome stability*, the map
 
 This implementation uses an additional function to get the answer. Although this is not necessary here, it will be very helpful when dealing with Part 2.
 
+<!-- Execute code: "part1.py" -->
 ```python
 def count(field, dx, dy):
     n = len(field)
@@ -49,6 +50,7 @@ In Part 2, we were asked to count the same thing, but for different slopes, and 
 
 Since we used the function in Part 1, we can call it for each slope:
 
+<!-- Execute code: "part2.py" -->
 ```python
 def count(field, dx, dy):
     n = len(field)

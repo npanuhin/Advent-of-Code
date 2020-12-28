@@ -23,6 +23,7 @@ ecl:brn pid:760753108 byr:1931
 
 To parse it, we can first split each line by spaces, and then each word by `:`. Thus, we get a `key : value` structure. Finally, we can create a dictionary for each passport to easily validate the fields. I also used Python's [`all()`](https://docs.python.org/3/library/functions.html#all)  function, which is very nice, be sure to check it out (as well as the [`any()`](https://docs.python.org/3/library/functions.html#any)).
 
+<!-- Execute code: "part1.py" -->
 ```python
 fields = ("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid")  # All fields except "cid"
 
@@ -66,6 +67,7 @@ In Part 2, we were asked to count the same fields, except that now each of these
 
 As you can see, I used `int(x)` in most of the cases. If the string can't be somehow converted to a number, it will raise a `ValueError`, which will be handled in a `try-except` block.
 
+<!-- Execute code: "part2.py" -->
 ```python
 from re import fullmatch
 

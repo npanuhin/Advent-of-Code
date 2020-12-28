@@ -58,6 +58,7 @@ To force overwrite any bit with `1`, we can use the bitwise `OR` operation (whic
 
 Thus, everything together will look like `value = (value | 11111...) & 00000...`
 
+<!-- Execute code: "part1.py" -->
 ```python
 mem = {}
 
@@ -145,6 +146,7 @@ result address:         10010010011001101011010011111<b>1</b>110<b>1</b>11 = 392
 
 Finally, the implementation:
 
+<!-- Execute code: "part2.py" -->
 ```python
 def gen_mask(mask, index=0):
     if index == len(mask):

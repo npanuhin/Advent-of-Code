@@ -25,6 +25,7 @@ for i in range(len(inp) - 1):
 
 However, using binary search, we can reduce the complexity to `O(n log(n))`:
 
+<!-- Execute code: "part1.py" -->
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:
     inp = list(map(int, file.readlines()))
@@ -56,6 +57,7 @@ In Part 2, we were asked to do the same thing, but with **three numbers**: find 
 
 In the implementation below, I've added additional `breaks` to reduce the execution time from `34ms` to less than `1ms`. However, the fundamental complexity still remains imperfect.
 
+<!-- Execute code: "part2.py" -->
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:
     inp = list(map(int, file.readlines()))

@@ -22,6 +22,7 @@ The answer should be the number of 1-jolt differences multiplied by the number o
 
 My implementation below uses the `jolt_diff` array, which indicates the number of `0`, `1`, `2`, or `3` jolt differences:
 
+<!-- Execute code: "part1.py" -->
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:
     adapters = list(map(int, file.readlines()))
@@ -52,6 +53,7 @@ Consider the current adapter with the `X` jolt output. The puzzle statement says
 
 The last thing one must remember is storing an array for dynamic programming. I came to the conclusion that it's best to make a dictionary rather then a list, since in general the joltage value can be very large. In the implementation below, I used Python's [`defaultdict`](https://docs.python.org/3/library/collections.html#collections.defaultdict "Visit docs.python.org#collections.defaultdict") instead of a regular `dict`, because it allows to take a `value` for any `key` (returning the default value, in this case: `0`).
 
+<!-- Execute code: "part2.py" -->
 ```python
 from collections import defaultdict
 

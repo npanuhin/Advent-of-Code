@@ -23,6 +23,7 @@ The input data is in the following format:
 
 To parse the input, we can split each line by whitespace. Then we can get boundaries by splitting them by `-` and the target letter by removing `:` at the end. This is a possible implementation:
 
+<!-- Execute code: "part1.py" -->
 ```python
 answer = 0
 
@@ -47,6 +48,7 @@ print(answer)
 
 In Part 2, we were asked to parse the same input, but now *exactly one of these positions must contain the given letter*. So we can change only the `if` part. The code below uses the `^` operator, which stands for the [boolean XOR](https://en.wikipedia.org/wiki/Exclusive_or "Visit Wikipedia:Exclusive_or ").
 
+<!-- Execute code: "part2.py" -->
 ```python
 answer = 0
 

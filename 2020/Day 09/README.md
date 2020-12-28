@@ -14,6 +14,7 @@ In Part 1, we were asked to find an invalid instance in a set of numbers that ob
 
 I find the task quite easy because it has such a small input range of `25`. The simplest solution will have complexity `O(25^2 * n) = O(n)`
 
+<!-- Execute code: "part1.py" -->
 ```python
 def find_first_invalid(numbers):
     for k in range(25, len(numbers)):
@@ -47,6 +48,7 @@ Having `range_start` and `range_end` for each iteration, as well as the sum that
 
 In the answer we should yield the sum of the smallest and largest number in this range:
 
+<!-- Execute code: "part2.py" -->
 ```python
 def find_first_invalid(numbers):
     for k in range(25, len(numbers)):
