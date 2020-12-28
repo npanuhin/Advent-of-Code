@@ -63,7 +63,7 @@ print(count(data, "shiny gold") - 1)
 ```
 208
 ```
-###### Execution time: 4 ms
+###### Execution time: 5 ms
 
 ## Part 2
 
@@ -107,4 +107,4 @@ print(count(data, "shiny gold") - 1)
 ```
 1664
 ```
-###### Execution time: 4 ms
+###### Execution time: 5 ms

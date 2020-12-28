@@ -35,7 +35,7 @@ def count(field, dx, dy):
 
 with open("input.txt", 'r', encoding="utf-8") as file:
     # Converting input to a two-dimensional bool array
-    field = [[place == '#' for place in line] for line in file]
+    field = [[place == '#' for place in line.strip()] for line in file]
 
 print(count(field, 3, 1))
 ```
