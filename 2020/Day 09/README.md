@@ -33,7 +33,7 @@ print(find_first_invalid(inp))
 ```
 133015568
 ```
-###### Execution time: 6 ms
+###### Execution time: 5 ms
 
 ## Part 2
 
@@ -81,4 +81,4 @@ for range_start in range(len(inp)):
 ```
 16107959
 ```
-###### Execution time: 6 ms
+###### Execution time: 5 ms

@@ -13,16 +13,14 @@ In Part 1, we were asked to count the number of letters (questions) contained in
 The sum of these counts for each group of people will be the answer.
 
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 data = [set()]
 
-for line in inp:
-    if not line:
-        data.append(set())
-    else:
-        data[-1] = data[-1].union(line)
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        if not line.strip():
+            data.append(set())
+        else:
+            data[-1] = data[-1].union(line.strip())
 
 print(sum(len(group) for group in data))
 ```
@@ -38,16 +36,15 @@ In Part 2, we were asked to count the same thing, except that now **every** line
 ```python
 from string import ascii_letters
 
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
 
 data = [set(ascii_letters)]
 
-for line in inp:
-    if not line:
-        data.append(set(ascii_letters))
-    else:
-        data[-1] = data[-1].intersection(line)
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        if not line.strip():
+            data.append(set(ascii_letters))
+        else:
+            data[-1] = data[-1].intersection(line.strip())
 
 print(sum(len(group) for group in data))
 ```

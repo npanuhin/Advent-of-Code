@@ -55,6 +55,7 @@ The last thing one must remember is storing an array for dynamic programming. I 
 ```python
 from collections import defaultdict
 
+
 with open("input.txt", 'r', encoding="utf-8") as file:
     adapters = list(map(int, file.readlines()))
 

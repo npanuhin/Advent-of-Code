@@ -24,19 +24,17 @@ The input data is in the following format:
 To parse the input, we can split each line by whitespace. Then we can get boundaries by splitting them by `-` and the target letter by removing `:` at the end. This is a possible implementation:
 
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 answer = 0
 
-for line in inp:
-    boundaries, charecter, string = line.split(' ')
+with open("input.txt", 'r', encoding="utf-8") as file:
+	for line in file:
+	    boundaries, charecter, string = line.strip().split()
 
-    lowest, highest = map(int, boundaries.split('-'))
-    charecter = charecter.rstrip(':')
+	    lowest, highest = map(int, boundaries.split('-'))
+	    charecter = charecter.rstrip(':')
 
-    if lowest <= string.count(charecter) <= highest:
-        answer += 1
+	    if lowest <= string.count(charecter) <= highest:
+	        answer += 1
 
 print(answer)
 ```
@@ -50,19 +48,17 @@ print(answer)
 In Part 2, we were asked to parse the same input, but now *exactly one of these positions must contain the given letter*. So we can change only the `if` part. The code below uses the `^` operator, which stands for the [boolean XOR](https://en.wikipedia.org/wiki/Exclusive_or "Visit Wikipedia:Exclusive_or ").
 
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 answer = 0
 
-for line in inp:
-    boundaries, charecter, string = line.split(' ')
+with open("input.txt", 'r', encoding="utf-8") as file:
+	for line in file:
+	    boundaries, charecter, string = line.strip().split()
 
-    lowest, highest = map(int, boundaries.split('-'))
-    charecter = charecter.rstrip(':')
+	    lowest, highest = map(int, boundaries.split('-'))
+	    charecter = charecter.rstrip(':')
 
-    if (string[lowest - 1] == charecter) ^ (string[highest - 1] == charecter):
-        answer += 1
+	    if (string[lowest - 1] == charecter) ^ (string[highest - 1] == charecter):
+	        answer += 1
 
 print(answer)
 ```

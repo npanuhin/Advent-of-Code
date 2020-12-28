@@ -53,9 +53,7 @@ def run_instructions(instructions):
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.split, file.readlines()))
-
-instructions = [[operation, int(argument)] for operation, argument in inp]
+    instructions = [[operation, int(argument)] for operation, argument in (line.split() for line in file)]
 
 print(run_instructions(instructions))
 ```
@@ -93,9 +91,7 @@ def run_instructions(instructions):
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.split, file.readlines()))
-
-instructions = [[operation, int(argument)] for operation, argument in inp]
+    instructions = [[operation, int(argument)] for operation, argument in (line.split() for line in file)]
 
 for instruction in instructions:
 

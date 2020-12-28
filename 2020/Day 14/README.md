@@ -59,25 +59,25 @@ To force overwrite any bit with `1`, we can use the bitwise `OR` operation (whic
 Thus, everything together will look like `value = (value | 11111...) & 00000...`
 
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 mem = {}
 
-for line in inp:
-    if line.startswith("mask"):
-        mask = line.lstrip("mask").lstrip().lstrip("=").lstrip()
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        line = line.strip()
 
-        mask_xor = int(mask.replace('X', '0'), 2)
-        mask_and = int(mask.replace('X', '1'), 2)
+        if line.startswith("mask"):
+            mask = line.lstrip("mask").lstrip().lstrip("=").lstrip()
 
-    else:
-        address, value = map(str.strip, line.split('='))
+            mask_xor = int(mask.replace('X', '0'), 2)
+            mask_and = int(mask.replace('X', '1'), 2)
 
-        address = int(address.lstrip("mem[").rstrip("]"))
-        value = int(value)
+        else:
+            address, value = map(str.strip, line.split('='))
 
-        mem[address] = (value | mask_xor) & mask_and
+            address = int(address.lstrip("mem[").rstrip("]"))
+            value = int(value)
+
+            mem[address] = (value | mask_xor) & mask_and
 
 print(sum(mem.values()))
 ```
@@ -161,32 +161,32 @@ def gen_mask(mask, index=0):
         mask[index] = 'X'
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 mem = {}
 
-for line in inp:
-    if line.startswith("mask"):
-        mask = line.lstrip("mask").lstrip().lstrip("=").lstrip()
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        line = line.strip()
 
-        overwrite_1 = int(mask.replace('X', '0'), 2)
-        overwrite_X = int(mask.replace('1', '0').replace('X', '1'), 2)
+        if line.startswith("mask"):
+            mask = line.lstrip("mask").lstrip().lstrip("=").lstrip()
 
-        mask = list(mask)
+            overwrite_1 = int(mask.replace('X', '0'), 2)
+            overwrite_X = int(mask.replace('1', '0').replace('X', '1'), 2)
 
-    else:
-        address, num = map(str.strip, line.split('='))
+            mask = list(mask)
 
-        address = int(address.lstrip("mem[").rstrip("]"))
-        num = int(num)
+        else:
+            address, num = map(str.strip, line.split('='))
 
-        address |= overwrite_1
-        address &= ~overwrite_X
+            address = int(address.lstrip("mem[").rstrip("]"))
+            num = int(num)
 
-        for new_mask in gen_mask(mask):
+            address |= overwrite_1
+            address &= ~overwrite_X
 
-            mem[address | (int(new_mask, 2) & overwrite_X)] = num
+            for new_mask in gen_mask(mask):
+
+                mem[address | (int(new_mask, 2) & overwrite_X)] = num
 
 print(sum(mem.values()))
 ```

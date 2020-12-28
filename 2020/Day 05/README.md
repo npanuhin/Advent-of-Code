@@ -29,38 +29,37 @@ Consider the seat `FBFBBFFRLR`:
 The result is the maximum ID of those counted. Nothing interesting here, I just implemented two binary searches:
 
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 max_ID = -1
 
-for string in inp:
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for string in file:
+        string = string.strip()
 
-    left, right = 0, 128
-    for i in range(7):
-        middle = (left + right) // 2
+        left, right = 0, 128
+        for i in range(7):
+            middle = (left + right) // 2
 
-        if string[i] == 'B':
-            left = middle
-        else:
-            right = middle
+            if string[i] == 'B':
+                left = middle
+            else:
+                right = middle
 
-    row = left
+        row = left
 
-    left, right = 0, 8
-    for i in range(7, 10):
-        middle = (left + right) // 2
+        left, right = 0, 8
+        for i in range(7, 10):
+            middle = (left + right) // 2
 
-        if string[i] == 'R':
-            left = middle
-        else:
-            right = middle
+            if string[i] == 'R':
+                left = middle
+            else:
+                right = middle
 
-    column = left
+        column = left
 
-    ID = row * 8 + column
+        ID = row * 8 + column
 
-    max_ID = max(max_ID, ID)
+        max_ID = max(max_ID, ID)
 
 print(max_ID)
 ```
@@ -89,40 +88,39 @@ To find this ID, I sorted all IDs and ran through them in a loop, looking for th
 ...that is `760`, because `760 != 756 + 3`. The answer will be this ID minus 1, which is `759`.
 
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 IDs = []
 
-for string in inp:
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for string in file:
+        string = string.strip()
 
-    left, right = 0, 128
-    for i in range(7):
-        middle = (left + right) // 2
+        left, right = 0, 128
+        for i in range(7):
+            middle = (left + right) // 2
 
-        if string[i] == 'B':
-            left = middle
-        else:
-            right = middle
+            if string[i] == 'B':
+                left = middle
+            else:
+                right = middle
 
-    row = left
+        row = left
 
-    left, right = 0, 8
-    for i in range(7, 10):
-        middle = (left + right) // 2
+        left, right = 0, 8
+        for i in range(7, 10):
+            middle = (left + right) // 2
 
-        if string[i] == 'R':
-            left = middle
-        else:
-            right = middle
+            if string[i] == 'R':
+                left = middle
+            else:
+                right = middle
 
-    column = left
+        column = left
 
-    IDs.append(row * 8 + column)
+        IDs.append(row * 8 + column)
 
 IDs.sort()
 
-for i in range(len(inp)):
+for i in range(len(IDs)):
     if IDs[i] != IDs[0] + i:
         print(IDs[i] - 1)
         break

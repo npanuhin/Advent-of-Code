@@ -26,17 +26,15 @@ To parse it, we can first split each line by spaces, and then each word by `:`. 
 ```python
 fields = ("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid")  # All fields except "cid"
 
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 data = [{}]
 
-for line in inp:
-    if not line:
-        data.append({})
-    else:
-        for passport in line.split():
-            data[-1][passport.split(':')[0]] = passport.split(':')[1]
+with open("input.txt", 'r', encoding="utf-8") as file:
+	for line in file:
+	    if not line.strip():
+	        data.append({})
+	    else:
+	        for passport in line.strip().split():
+	            data[-1][passport.split(':')[0]] = passport.split(':')[1]
 
 answer = 0
 
@@ -71,6 +69,7 @@ As you can see, I used `int(x)` in most of the cases. If the string can't be som
 ```python
 from re import fullmatch
 
+
 fields = {  # All fields except "cid"
     "byr": lambda x: 1920 <= int(x) <= 2002,
     "iyr": lambda x: 2010 <= int(x) <= 2020,
@@ -87,17 +86,15 @@ fields = {  # All fields except "cid"
     "pid": lambda x: fullmatch(r"\d{9}", x)
 }
 
-with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(str.strip, file.readlines()))
-
 data = [{}]
 
-for line in inp:
-    if not line:
-        data.append({})
-    else:
-        for passport in line.split():
-            data[-1][passport.split(':')[0]] = passport.split(':')[1]
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        if not line.strip():
+            data.append({})
+        else:
+            for passport in line.strip().split():
+                data[-1][passport.split(':')[0]] = passport.split(':')[1]
 
 answer = 0
 
