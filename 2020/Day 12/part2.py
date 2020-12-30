@@ -1,15 +1,7 @@
 def rotate(i, j, n):
-    if abs(n) % 4 == 0:
-        return i, j
-
-    if abs(n) % 4 == 1:
-        return (-j, i) if n > 0 else (j, -i)
-
-    if abs(n) % 4 == 2:
-        return -i, -j
-
-    if abs(n) % 4 == 3:
-        return (j, -i) if n > 0 else (-j, i)
+    for step in range(n % 4):
+        i, j = -j, i
+    return i, j
 
 
 actions = {
@@ -22,8 +14,8 @@ actions = {
     'R': lambda x, y, i, j, n: (x, y, *rotate(i, j, n // 90))
 }
 
-y, x = 0, 0
-i, j = 1, 10
+y, x = 0, 0   # Ship
+i, j = 1, 10  # Waypoint
 
 with open("input.txt", 'r', encoding="utf-8") as file:
     for line in file:

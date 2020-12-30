@@ -34,4 +34,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            Github Actions "${{ github.event }}" in "${{ github.repository }}" completed.
+            Github Actions "${{ github.workflow }}" in "${{ github.repository }}" completed.

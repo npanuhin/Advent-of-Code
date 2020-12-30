@@ -7,7 +7,7 @@ from timeit import timeit
 REGEX = {
     "NBS": re.compile(r"`[^`\n\t\b\r]+`"),
     "exec_code": re.compile(
-        r"^<!-- Execute code: \"([\w\.]+)\" -->$\s*(?:```(\w*)\s*(?:[^`])*?```)?\s*(?:```\s+[^`]+\s+```)?\s*(?:#+\s+Execution time:\s*?(?:[^`]+?)?)?$",
+        r"^<!-- Execute code: \"([\w\.]+)\" -->$\s*(?:```(\w*)\s*?[^`]*?```)?\s*(?:```\s*?[^`]*?\s*?```)?\s*(?:#+\s+Execution time:\s*?([^`]+?)?)?$",
         flags=re.MULTILINE
     ),
     "exec_code_replace": "<!-- Execute code: \"{}\" -->\n```{}\n{}\n```\n```\n{}\n```\n###### Execution time: {}"
