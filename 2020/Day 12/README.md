@@ -24,7 +24,7 @@ In Part 1, we were asked to navigate the ship using the following actions:
 >
 > Action **F** means to move forward by the given value in the direction the ship is currently facing.
 
-Suppose the ship is initially at coordinate `(0, 0)`. At the end, its position will be `(END_X, END_Y)`. We should yield the [Manhattan distance](https://en.wikipedia.org/wiki/Manhattan_distance "Visit wikipedia.org/Manhattan_distance") *(sum of the absolute values of its east/west position and its north/south position)* between the starting position and the destination.
+Suppose the ship is initially at coordinate `(0, 0)`. At the end, its position will be `(END_X, END_Y)`. We should yield the [Manhattan distance](https://en.wikipedia.org/wiki/Manhattan_distance "Visit wikipedia.org/Manhattan_distance") *(sum of the absolute values of its east/west position and its north/south position)* between the starting position and the destination.
 
 To solve this puzzle, I created a dictionary that maps each action to a [**lambda function**](https://docs.python.org/3/reference/expressions.html#lambda "Visit docs.python.org#lambda").
 
@@ -46,11 +46,32 @@ The whole code looks like this:
 
 <!-- Execute code: "part1.py" -->
 ```python
-```
-```
-```
-###### Execution time:
+DIRECTIONS = ((0, 1), (-1, 0), (0, -1), (1, 0))
+dr = 0
 
+actions = {
+    'N': lambda x, y, dr, n: (x, y + n, dr),
+    'S': lambda x, y, dr, n: (x, y - n, dr),
+    'E': lambda x, y, dr, n: (x + n, y, dr),
+    'W': lambda x, y, dr, n: (x - n, y, dr),
+    'F': lambda x, y, dr, n: (x + DIRECTIONS[dr][1] * n, y + DIRECTIONS[dr][0] * n, dr),
+    'L': lambda x, y, dr, n: (x, y, (dr - n // 90) % 4),
+    'R': lambda x, y, dr, n: (x, y, (dr + n // 90) % 4)
+}
+
+y, x = 0, 0
+
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        action, n = line[0], int(line[1:])
+        x, y, dr = actions[action](x, y, dr, n)
+
+print(abs(x) + abs(y))
+```
+```
+1177
+```
+###### Execution time: < 1ms
 ## Part 2
 
 In Part 2, we were asked to count the same [Manhattan distance](https://en.wikipedia.org/wiki/Manhattan_distance "Visit wikipedia.org/Manhattan_distance") between the starting position and the destination. However now almost every action moves not our ship, but rather a **waypoint**:
@@ -83,13 +104,39 @@ def rotate(i, j, n):
 'R': i, j = *rotate(i, j, n // 90)
 ```
 
-You may notice that I'm using `n % 4` to find the required number of clockwise rotations. It is possible due to the behavior of Python's modulo operator for negative numbers: `-1 (turn counter-clockwise) % 4 = 3`, which means that one turn `90` degrees counter-clockwise is equal to three turns `90` degrees clockwise.
+You may notice that I'm using `n % 4` to find the required number of clockwise rotations. It is possible due to the behavior of Python's modulo operator for negative numbers: `-1 (turn counter-clockwise) % 4 = 3`, which means that one turn `90` degrees counter-clockwise is equal to three turns `90` degrees clockwise.
 
 The whole code looks like this:
 
 <!-- Execute code: "part2.py" -->
 ```python
+def rotate(i, j, n):
+    for step in range(n % 4):
+        i, j = -j, i
+    return i, j
+
+
+actions = {
+    'N': lambda x, y, i, j, n: (x, y, i + n, j),
+    'S': lambda x, y, i, j, n: (x, y, i - n, j),
+    'E': lambda x, y, i, j, n: (x, y, i, j + n),
+    'W': lambda x, y, i, j, n: (x, y, i, j - n),
+    'F': lambda x, y, i, j, n: (x + i * n, y + j * n, i, j),
+    'L': lambda x, y, i, j, n: (x, y, *rotate(i, j, -n // 90)),
+    'R': lambda x, y, i, j, n: (x, y, *rotate(i, j, n // 90))
+}
+
+y, x = 0, 0   # Ship
+i, j = 1, 10  # Waypoint
+
+with open("input.txt", 'r', encoding="utf-8") as file:
+    for line in file:
+        action, n = line[0], int(line[1:])
+        x, y, i, j = actions[action](x, y, i, j, n)
+
+print(abs(x) + abs(y))
 ```
 ```
+46530
 ```
-###### Execution time:
+###### Execution time: < 1ms
