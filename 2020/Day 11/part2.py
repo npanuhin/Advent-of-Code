@@ -8,10 +8,9 @@ def has_occupied(layout, sight, y, x, amount):
     result = 0
 
     for sight_y, sight_x in sight[y][x]:
-        if sight_y is not None:
-            result += layout[sight_y][sight_x] == '#'
-            if result >= amount:
-                return True
+        result += layout[sight_y][sight_x] == '#'
+        if result >= amount:
+            return True
 
     return False
 
@@ -34,7 +33,8 @@ for y in range(size_y):
                 cur_y += dy
                 cur_x += dx
 
-            sight[y][x].append((cur_y, cur_x) if 0 <= cur_y < size_y and 0 <= cur_x < size_x else (None, None))
+            if 0 <= cur_y < size_y and 0 <= cur_x < size_x:
+                sight[y][x].append((cur_y, cur_x))
 
 while True:
     for y in range(size_y):
@@ -48,10 +48,10 @@ while True:
             else:
                 layout2[y][x] = layout1[y][x]
 
+    layout1, layout2 = layout2, layout1
     if layout1 == layout2:
         break
 
-    layout1, layout2 = layout2, layout1
-
-occupied_seats = sum(layout1[y][x] == '#' for x in range(size_x) for y in range(size_y))
-print(occupied_seats)
+print(sum(
+    layout1[y][x] == '#' for x in range(size_x) for y in range(size_y)
+))

@@ -55,7 +55,7 @@ for i in range(len(inp) - 1):
 
 In Part 2, we were asked to do the same thing, but with **three numbers**: find **tree** entries that add up to 2020 in a given list of numbers, and then multiply them to get the result. Again, brute-force algorithm is easy to implement, but using binary search, we can reduce the complexity from `O(n^3)` to `O(n^2 log(n))`.
 
-In the implementation below, I've added additional `breaks` to reduce the execution time from `34ms` to less than `1ms`. However, the fundamental complexity still remains imperfect.
+In the implementation below, I've added additional `breaks` to reduce the execution time from `34ms` to less than `1ms`, although the complexity is still `O(n^2 log(n))`.
 
 <!-- Execute code: "part2.py" -->
 ```python

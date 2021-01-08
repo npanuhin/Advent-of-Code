@@ -13,7 +13,7 @@
 | [Day 8: Handheld Halting](./Day%2008)         | [⭐](./Day%2008/part1.py) | [⭐](./Day%2008/part2.py) |
 | [Day 9: Encoding Error](./Day%2009)           | [⭐](./Day%2009/part1.py) | [⭐](./Day%2009/part2.py) |
 | [Day 10: Adapter Array](./Day%2010)           | [⭐](./Day%2010/part1.py) | [⭐](./Day%2010/part2.py) |
-|  Day 11: Seating System                       | [⭐](./Day%2011/part1.py) | [⭐](./Day%2011/part2.py) |
+| [Day 11: Seating System](./Day%2011)          | [⭐](./Day%2011/part1.py) | [⭐](./Day%2011/part2.py) |
 | [Day 12: Rain Risk](./Day%2012)               | [⭐](./Day%2012/part1.py) | [⭐](./Day%2012/part2.py) |
 |  Day 13: Shuttle Search                       | [⭐](./Day%2013/part1.py) | [⭐](./Day%2013/part2.py) |
 | [Day 14: Docking Data](./Day%2014)            | [⭐](./Day%2014/part1.py) | [⭐](./Day%2014/part2.py) |

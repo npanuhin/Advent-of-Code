@@ -32,10 +32,10 @@ def format_time(seconds):
     if milliseconds < 1:
         return "< 1ms"
 
-    if milliseconds < 300:
+    if milliseconds < 250:
         return str(int(round(milliseconds, 0))) + " ms"
 
-    if milliseconds < 1000:
+    if milliseconds < 900:
         return "< 1s"
 
     return str(int(round(milliseconds / 1000, 0))) + " s"
@@ -92,7 +92,8 @@ def main(root_path):
             readme = re.sub(
                 REGEX["exec_code"],
                 lambda match: REGEX["exec_code_replace"].format(
-                    match.group(1), match.group(2),
+                    match.group(1),
+                    "python" if match.group(2) is None else match.group(2),
                     *generate_exec_code(mkpath(path, match.group(1).strip()))
                 ),
                 readme

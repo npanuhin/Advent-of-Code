@@ -32,10 +32,10 @@ while True:
             else:
                 layout2[y][x] = layout1[y][x]
 
+    layout1, layout2 = layout2, layout1
     if layout1 == layout2:
         break
 
-    layout1, layout2 = layout2, layout1
-
-occupied_seats = sum(layout1[y][x] == '#' for x in range(size_x) for y in range(size_y))
-print(occupied_seats)
+print(sum(
+    layout1[y][x] == '#' for x in range(size_x) for y in range(size_y)
+))
