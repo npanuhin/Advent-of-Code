@@ -31,7 +31,7 @@ I try to optimize each solution as much as possible, so even though they are wri
 | Day 18  | [⭐](./2020/Day%2018/part1.py)[⭐](./2020/Day%2018/part2.py) |
 | Day 19  | [⭐](./2020/Day%2019/part1.py)[⭐](./2020/Day%2019/part2.py) |
 | Day 20  | [⭐](./2020/Day%2020/part1.py)[⭐](./2020/Day%2020/part2.py) |
-| Day 21  |||
+| Day 21  | [⭐](./2020/Day%2021/part1.py)[⭐](./2020/Day%2021/part2.py) |
 | Day 22  |||
 | Day 23  |||
 | Day 24  |||
