@@ -27,18 +27,55 @@ We can also take advantage of Python's dictionary implementation to get the defa
 last = nums.get(cur, step)
 ```
 
-So now `last` contains the index of the last occurrence of the current number. Then we store the index of the current number in the dictionary (`nums[cur] = step`) and calculate the next number (`cur = step - last`).
+So now `last` contains the index of the last occurrence of the current number. Then we store the index of the current number in the dictionary (`nums[cur] = step`) and calculate the next number (`cur = step - last`).
 
-Thus, if a number has not been spoken, `cur` will be equal to `step (default value) - step = 0`. 
+Thus, if a number has not been spoken, `cur` will be equal to `step (default value) - step = 0`. 
 
 The answer will be the 2020th number spoken:
 
 <!-- Execute code: "part1.py" -->
+```python
+with open("input.txt", 'r', encoding="utf-8") as file:
+    inp = list(map(int, file.readline().split(',')))
 
+nums = {num: i + 1 for i, num in enumerate(inp[:-1])}
+
+cur = inp[-1]
+
+for step in range(len(inp), 2020):
+    last = nums.get(cur, step)
+    nums[cur] = step
+    cur = step - last
+
+print(cur)
+```
+```
+253
+```
+###### Execution time: < 1ms
 ## Part 2
 
-In Part 2, we were asked to simulate the same game with the same rule, except now until the `30 * 10^6`th step.
+In Part 2, we were asked to simulate the same game with the same rule, except now until the `30 * 10^6`th step.
 
 As I mentioned earlier, I haven't come up with anything smarter, so this is a 12s+ implementation:
 
 <!-- Execute code: "part2.py" -->
+```python
+with open("input.txt", 'r', encoding="utf-8") as file:
+    inp = list(map(int, file.readline().split(',')))
+
+nums = {num: i + 1 for i, num in enumerate(inp[:-1])}
+
+cur = inp[-1]
+
+for step in range(len(inp), 30_000_000):
+    last = nums.get(cur, step)
+    nums[cur] = step
+    cur = step - last
+
+print(cur)
+```
+```
+13710
+```
+###### Execution time: 10 s
