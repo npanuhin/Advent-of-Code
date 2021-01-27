@@ -5,7 +5,7 @@ nums = {num: i + 1 for i, num in enumerate(inp[:-1])}
 
 cur = inp[-1]
 
-for step in range(len(inp), 30000000):
+for step in range(len(inp), 30_000_000):
     last = nums.get(cur, step)
     nums[cur] = step
     cur = step - last

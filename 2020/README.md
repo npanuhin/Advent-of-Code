@@ -17,7 +17,7 @@
 | [Day 12: Rain Risk](./Day%2012)               | [⭐](./Day%2012/part1.py) | [⭐](./Day%2012/part2.py) |
 |  Day 13: Shuttle Search                       | [⭐](./Day%2013/part1.py) | [⭐](./Day%2013/part2.py) |
 | [Day 14: Docking Data](./Day%2014)            | [⭐](./Day%2014/part1.py) | [⭐](./Day%2014/part2.py) |
-|  Day 15: Rambunctious Recitation              | [⭐](./Day%2015/part1.py) | [⭐](./Day%2015/part2.py) |
+| [Day 15: Rambunctious Recitation](./Day%2015) | [⭐](./Day%2015/part1.py) | [⭐](./Day%2015/part2.py) |
 |  Day 16: Ticket Translation                   | [⭐](./Day%2016/part1.py) | [⭐](./Day%2016/part2.py) |
 |  Day 17: Conway Cubes                         | [⭐](./Day%2017/part1.py) | [⭐](./Day%2017/part2.py) |
 |  Day 18: Operation Order                      | [⭐](./Day%2018/part1.py) | [⭐](./Day%2018/part2.py) |
