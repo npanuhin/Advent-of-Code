@@ -30,7 +30,6 @@ while inp[line]:
 
     if re.fullmatch(STR_REGEX, value) is None:
         rules[int(key)] = [list(map(int, item.split())) for item in value.split('|')]
-
     else:
         rules[int(key)] = re.fullmatch(STR_REGEX, value).group(1)
 

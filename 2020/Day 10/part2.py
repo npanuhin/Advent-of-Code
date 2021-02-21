@@ -2,10 +2,8 @@ from collections import defaultdict
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    adapters = list(map(int, file.readlines()))
+    adapters = sorted(list(map(int, file)) + [0])
 
-adapters.append(0)
-adapters.sort()
 adapters.append(adapters[-1] + 3)
 
 ways = defaultdict(lambda: 0, {0: 1})

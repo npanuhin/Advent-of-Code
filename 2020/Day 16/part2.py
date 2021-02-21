@@ -56,7 +56,9 @@ for field_index in range(len(my_ticket)):
         ):
             possible_field_pos[field_index].append(field)
 
-possible_field_pos = sorted([(i, possible_fields) for i, possible_fields in enumerate(possible_field_pos)], key=lambda x: len(x[1]))
+possible_field_pos = sorted((
+    (i, possible_fields) for i, possible_fields in enumerate(possible_field_pos)
+), key=lambda x: len(x[1]))
 
 answer = 1
 for i, field in identify_fields(possible_field_pos):

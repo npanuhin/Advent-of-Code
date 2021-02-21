@@ -1,9 +1,6 @@
 with open("input.txt", 'r', encoding="utf-8") as file:
     departure_time = int(file.readline())
-    buses = list(map(
-        lambda x: None if x == 'x' else int(x),
-        file.readline().split(',')
-    ))
+    buses = [None if i == 'x' else int(i) for i in file.readline().split(',')]
 
 jump = buses[0]
 timestamp = 0

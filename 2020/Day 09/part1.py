@@ -9,6 +9,6 @@ def find_first_invalid(numbers):
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(int, file.readlines()))
+    inp = list(map(int, file))
 
 print(find_first_invalid(inp))

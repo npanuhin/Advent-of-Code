@@ -29,4 +29,4 @@ while mapped_allergens:
         mapped_allergens[key].discard(ingredient)
 
 
-print(','.join(sorted(list(mapped_ingredients), key=lambda ingredient: mapped_ingredients[ingredient])))
+print(','.join(sorted(mapped_ingredients, key=lambda ingredient: mapped_ingredients[ingredient])))

@@ -1,7 +1,5 @@
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(int, file.readlines()))
-
-inp.sort()
+    inp = sorted(map(int, file))
 
 for i in range(len(inp) - 2):
 

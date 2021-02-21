@@ -57,7 +57,7 @@ print(cur)
 
 In Part 2, we were asked to simulate the same game with the same rule, except now until the `30 * 10^6`th step.
 
-As I mentioned earlier, I haven't come up with anything smarter, so this is a 12s+ implementation:
+As I mentioned earlier, I haven't come up with anything smarter, so this is a 10s+ implementation:
 
 <!-- Execute code: "part2.py" -->
 ```python

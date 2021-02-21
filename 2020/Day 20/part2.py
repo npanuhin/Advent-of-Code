@@ -4,13 +4,6 @@ from itertools import chain as iterator_chain
 DIRECTIONS = deque([(0, -1), (1, 0), (0, 1), (-1, 0)])
 
 
-def rotate(image):
-    return [
-        "".join(image[x][y] for x in range(len(image[0])))
-        for y in range(len(image))
-    ]
-
-
 def get_transformations(tile):
     transformations = []
     for _ in range(4):
@@ -18,7 +11,10 @@ def get_transformations(tile):
         transformations.append(tile[::-1])
         transformations.append([line[::-1] for line in tile])
         transformations.append([line[::-1] for line in tile][::-1])
-        tile = rotate(tile)
+        tile = [
+            "".join(tile[x][y] for x in range(len(tile[0])))
+            for y in range(len(tile))
+        ]
 
     return transformations
 
