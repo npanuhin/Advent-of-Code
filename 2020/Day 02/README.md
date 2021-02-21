@@ -28,21 +28,21 @@ To parse the input, we can split each line by whitespace. Then we can get bounda
 answer = 0
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-	for line in file:
-	    boundaries, charecter, string = line.strip().split()
+    for line in file:
+        boundaries, charecter, string = line.split()
 
-	    lowest, highest = map(int, boundaries.split('-'))
-	    charecter = charecter.rstrip(':')
+        lowest, highest = map(int, boundaries.split('-'))
+        charecter = charecter.rstrip(':')
 
-	    if lowest <= string.count(charecter) <= highest:
-	        answer += 1
+        if lowest <= string.count(charecter) <= highest:
+            answer += 1
 
 print(answer)
 ```
 ```
 560
 ```
-###### Execution time: 1 ms
+###### Execution time: 2 ms
 
 ## Part 2
 
@@ -53,14 +53,14 @@ In Part 2, we were asked to parse the same input, but now *exactly one of these 
 answer = 0
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-	for line in file:
-	    boundaries, charecter, string = line.strip().split()
+    for line in file:
+        boundaries, charecter, string = line.split()
 
-	    lowest, highest = map(int, boundaries.split('-'))
-	    charecter = charecter.rstrip(':')
+        lowest, highest = map(int, boundaries.split('-'))
+        charecter = charecter.rstrip(':')
 
-	    if (string[lowest - 1] == charecter) ^ (string[highest - 1] == charecter):
-	        answer += 1
+        if (string[lowest - 1] == charecter) ^ (string[highest - 1] == charecter):
+            answer += 1
 
 print(answer)
 ```

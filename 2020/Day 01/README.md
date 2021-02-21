@@ -28,9 +28,7 @@ However, using binary search, we can reduce the complexity to `O(n log(n))`:
 <!-- Execute code: "part1.py" -->
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(int, file.readlines()))
-
-inp.sort()
+    inp = sorted(map(int, file))
 
 for i in range(len(inp) - 1):
 
@@ -60,9 +58,7 @@ In the implementation below, I've added additional `breaks` to reduce the execut
 <!-- Execute code: "part2.py" -->
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = list(map(int, file.readlines()))
-
-inp.sort()
+    inp = sorted(map(int, file))
 
 for i in range(len(inp) - 2):
 

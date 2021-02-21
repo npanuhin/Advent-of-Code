@@ -25,10 +25,7 @@ My implementation below uses the `jolt_diff` array, which indicates the number o
 <!-- Execute code: "part1.py" -->
 ```python
 with open("input.txt", 'r', encoding="utf-8") as file:
-    adapters = list(map(int, file.readlines()))
-
-adapters.append(0)
-adapters.sort()
+    adapters = sorted(list(map(int, file)) + [0])
 
 jolt_diff = [0, 0, 0, 1]
 
@@ -59,10 +56,8 @@ from collections import defaultdict
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    adapters = list(map(int, file.readlines()))
+    adapters = sorted(list(map(int, file)) + [0])
 
-adapters.append(0)
-adapters.sort()
 adapters.append(adapters[-1] + 3)
 
 ways = defaultdict(lambda: 0, {0: 1})

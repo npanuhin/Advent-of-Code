@@ -84,4 +84,4 @@ print(answer)
 ```
 9354744432
 ```
-###### Execution time: 1 ms
+###### Execution time: < 1ms

@@ -21,14 +21,14 @@ with open("input.txt", 'r', encoding="utf-8") as file:
         if not line.strip():
             data.append(set())
         else:
-            data[-1] = data[-1].union(line.strip())
+            data[-1] |= set(line.strip())
 
 print(sum(len(group) for group in data))
 ```
 ```
 6506
 ```
-###### Execution time: 2 ms
+###### Execution time: 3 ms
 
 ## Part 2
 
@@ -46,11 +46,11 @@ with open("input.txt", 'r', encoding="utf-8") as file:
         if not line.strip():
             data.append(set(ascii_letters))
         else:
-            data[-1] = data[-1].intersection(line.strip())
+            data[-1] &= set(line.strip())
 
 print(sum(len(group) for group in data))
 ```
 ```
 3243
 ```
-###### Execution time: 3 ms
+###### Execution time: 4 ms
