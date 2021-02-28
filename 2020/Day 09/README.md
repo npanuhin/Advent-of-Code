@@ -34,7 +34,7 @@ print(find_first_invalid(inp))
 ```
 133015568
 ```
-###### Execution time: 7 ms
+###### Execution time: 6 ms
 
 ## Part 2
 
