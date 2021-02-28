@@ -53,7 +53,7 @@ def count_time(code, repeats, stdout=None):
     return exec_time
 
 
-def generate_exec_code(path):
+def exec_code(path):
     print("Handling \"{}\" file...".format(path))
 
     folder, filename = os.path.split(path)
@@ -94,7 +94,7 @@ def main(root_path):
                 lambda match: REGEX["exec_code_replace"].format(
                     match.group(1),
                     "python" if match.group(2) is None else match.group(2),
-                    *generate_exec_code(mkpath(path, match.group(1).strip()))
+                    *exec_code(mkpath(path, match.group(1).strip()))
                 ),
                 readme
             )

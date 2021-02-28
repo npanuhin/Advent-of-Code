@@ -25,6 +25,6 @@
 |  Day 20: Jurassic Jigsaw                      | [⭐](./Day%2020/part1.py) | [⭐](./Day%2020/part2.py) |
 |  Day 21: Allergen Assessment                  | [⭐](./Day%2021/part1.py) | [⭐](./Day%2021/part2.py) |
 |  Day 22: Crab Combat                          | [⭐](./Day%2022/part1.py) | [⭐](./Day%2022/part2.py) |
-|  Day 23 |||
+|  Day 23: Crab Cups                            | [⭐](./Day%2023/part1.py) | [⭐](./Day%2023/part2.py) |
 |  Day 24 |||
 |  Day 25 |||

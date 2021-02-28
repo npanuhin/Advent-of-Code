@@ -33,6 +33,6 @@ I try to optimize each solution as much as possible, so even though they are wri
 | Day 20  | [⭐](./2020/Day%2020/part1.py)[⭐](./2020/Day%2020/part2.py) |
 | Day 21  | [⭐](./2020/Day%2021/part1.py)[⭐](./2020/Day%2021/part2.py) |
 | Day 22  | [⭐](./2020/Day%2022/part1.py)[⭐](./2020/Day%2022/part2.py) |
-| Day 23  |||
+| Day 23  | [⭐](./2020/Day%2023/part1.py)[⭐](./2020/Day%2023/part2.py) |
 | Day 24  |||
 | Day 25  |||
