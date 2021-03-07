@@ -45,7 +45,7 @@
 	/* box-sizing: content-box;  */
 
 	/* image-rendering: optimizeQuality;  */
-	backface-visibility: hidden;
+	/* backface-visibility: hidden; */
 	/* transition-duration: 0s;   */
 }
 
@@ -70,9 +70,10 @@ a:hover {
 	color: #9f9;
 }
 
-/* em {
+em {
+	color: #fff;
 	text-shadow: 0 0 5px #ffffff;
-} */
+}
 
 .title h1 {
 	text-align: center;

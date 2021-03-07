@@ -26,5 +26,5 @@
 |  Day 21: Allergen Assessment                  | [⭐](./Day%2021/part1.py) | [⭐](./Day%2021/part2.py) |
 |  Day 22: Crab Combat                          | [⭐](./Day%2022/part1.py) | [⭐](./Day%2022/part2.py) |
 |  Day 23: Crab Cups                            | [⭐](./Day%2023/part1.py) | [⭐](./Day%2023/part2.py) |
-|  Day 24 |||
+|  Day 24: Lobby Layout                         | [⭐](./Day%2024/part1.py) | [⭐](./Day%2024/part2.py) |
 |  Day 25 |||
