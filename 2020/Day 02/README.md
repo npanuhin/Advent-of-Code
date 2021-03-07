@@ -42,7 +42,7 @@ print(answer)
 ```
 560
 ```
-###### Execution time: 1 ms
+###### Execution time: 2 ms
 
 ## Part 2
 
@@ -67,4 +67,4 @@ print(answer)
 ```
 303
 ```
-###### Execution time: 1 ms
+###### Execution time: 2 ms

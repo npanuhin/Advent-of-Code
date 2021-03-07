@@ -28,7 +28,7 @@ print(sum(len(group) for group in data))
 ```
 6506
 ```
-###### Execution time: 2 ms
+###### Execution time: 3 ms
 
 ## Part 2
 

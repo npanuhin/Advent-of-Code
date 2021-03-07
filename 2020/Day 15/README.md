@@ -78,4 +78,4 @@ print(cur)
 ```
 13710
 ```
-###### Execution time: 9 s
+###### Execution time: 11 s
