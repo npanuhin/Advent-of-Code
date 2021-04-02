@@ -1,6 +1,12 @@
 <h1 align="center">🎄 Advent of Code 2020 🎄</h1>
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
+<div align="center">
+	<img src="../docs/2020/AoC.min.svg">
+</div>
+
+--------------------------------------------------------------------------------------------------------
+
 |                                               |          Part 1           |           Part 2         |
 |-----------------------------------------------|:-------------------------:|:------------------------:|
 | [Day 1: Report Repair](./Day%2001)            | [⭐](./Day%2001/part1.py) | [⭐](./Day%2001/part2.py) |

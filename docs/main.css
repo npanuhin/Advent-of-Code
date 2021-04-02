@@ -95,13 +95,18 @@ em {
 }
 
 main {
-	width: 500px;
+	font-size: 0;
+	width: 800px;
+	max-width: 100%;
 	margin: 0 auto;
 	padding: 0 0 30px 0;
+
+	clear: both;
+	overflow: hidden;
 }
 
 main.wide {
-	width: 800px;
+	width: 1200px;
 }
 
 .year_list {
@@ -118,17 +123,78 @@ main table {
 	border: 2px solid rgba(119, 119, 165, .4);
 }
 
-main table.left {
+
+/* ----------------------------------------------------- */
+
+main .left {
+	width: 50%;
 	float: left;
+	box-sizing: border-box;
+	padding-left: 3%;
+	padding-right: 6%;
+
+	position: relative;
 }
 
-main table.right {
-	float: right;
+
+main .center, main .right {
+	width: 25%;
+	float: left;
+	text-align: center;
+
+	position: relative;
+	top: 25px;
 }
+
+
+@media (max-width: 1200px) {
+	main.wide {
+		width: 100%;
+	}
+
+	main .left {
+		width: 100%;
+		padding: 0 12%;
+		float: left;
+		box-sizing: border-box;
+
+		position: relative;
+	}
+
+	main .center, main .right {
+		width: 50%;
+		float: left;
+		text-align: center;
+
+		position: relative;
+		top: 25px;
+		box-sizing: border-box;
+	}
+
+	main .center {
+		padding-left: 30px;
+	}
+	main .right {
+		padding-right: 30px;
+	}
+}
+
+@media (max-width: 600px) {
+	main .center {
+		padding-left: 0;
+	}
+	main .right {
+		padding-right: 0;
+	}
+}
+
+
+/* ----------------------------------------------------- */
 
 main table tr {
 	width: 100%;
 }
+
 main table td {
 	min-width: 50px;
 	border: 1px solid rgba(119, 119, 165, .4);
