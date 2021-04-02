@@ -35,4 +35,4 @@ I try to optimize each solution as much as possible, so even though they are wri
 | Day 22  | [⭐](./2020/Day%2022/part1.py)[⭐](./2020/Day%2022/part2.py) |
 | Day 23  | [⭐](./2020/Day%2023/part1.py)[⭐](./2020/Day%2023/part2.py) |
 | Day 24  | [⭐](./2020/Day%2024/part1.py)[⭐](./2020/Day%2024/part2.py) |
-| Day 25  |||
+| Day 25  | [⭐⭐](./2020/Day%2024/part1.py)                             |
