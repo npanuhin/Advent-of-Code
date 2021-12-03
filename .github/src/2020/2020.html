@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://adventofcode.com/static/style.css?26">
+</head>
+
+<body>
+    <main>
+        <style>
+        .calendar .calendar-color-l {
+            color: #ccccff;
+        }
+
+        .calendar .calendar-color-p {
+            color: #9900ff;
+        }
+
+        .calendar .calendar-color-w {
+            color: #ffffff;
+        }
+
+        .calendar .calendar-color-r {
+            color: #ff0000;
+        }
+
+        .calendar .calendar-color-g {
+            color: #00cc00;
+        }
+
+        .calendar .calendar-color-a {
+            color: #cccccc;
+        }
+
+        .calendar .calendar-color-b {
+            color: #333399;
+        }
+
+        .calendar .calendar-color-o {
+            color: #ffcc99;
+        }
+
+        .calendar-color-p {
+            display: inline-block;
+        }
+
+        .calendar-color-r {
+            position: relative;
+        }
+
+        .calendar-color-r::before {
+            content: "*";
+            position: absolute;
+            color: #ffff66;
+            transform: translate(-.5px, -.6em) scale(.5);
+            text-shadow: 0 0 25px #ffff66, 0 0 20px #ffff66, 0 0 15px #ffff66, 0 0 10px #ffff66, 0 0 5px #ffff66;
+        }
+
+        </style>
+        <pre class="calendar calendar-perfect" style="position: relative;"><a aria-label="Day 1, two stars" href="/2020/day/1" class="calendar-day1 calendar-verycomplete">              <span class="calendar-color-l">..........</span><span class="calendar-color-r">|</span><span class="calendar-color-l">..........</span></a>
+<a aria-label="Day 2, two stars" href="/2020/day/2" class="calendar-day2 calendar-verycomplete">   <span class="calendar-color-l">.....''''''</span> <span class="calendar-color-w">.'</span>  <span class="calendar-color-w">-</span>  <span class="calendar-color-w">-</span>  <span class="calendar-color-a">\</span><span class="calendar-color-w">-</span> <span class="calendar-color-w">.''</span><span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span> <span class="calendar-color-l">''''''.....</span></a>
+<a aria-label="Day 3, two stars" href="/2020/day/3" class="calendar-day3 calendar-verycomplete"><span class="calendar-color-l">'''</span> <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span> <span class="calendar-color-w">'.'.</span> <span class="calendar-color-w">-</span>   <span class="calendar-color-w">-</span> <span class="calendar-color-a">\</span> <span class="calendar-color-w">-'':</span>  <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-l">'''</span></a>
+<a aria-label="Day 4, two stars" href="/2020/day/4" class="calendar-day4 calendar-verycomplete"> <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span> <span class="calendar-color-w">''..'''</span><span class="calendar-color-a">_[]</span><span class="calendar-color-w">.'</span>  <span class="calendar-color-b">~</span>    <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 5, two stars" href="/2020/day/5" class="calendar-day5 calendar-verycomplete"><span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span>  <span class="calendar-color-g">.'.</span> <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span> <span class="calendar-color-a">____/</span> <span class="calendar-color-w">''</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>    <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 6, two stars" href="/2020/day/6" class="calendar-day6 calendar-verycomplete">  <span class="calendar-color-b">~</span>    <span class="calendar-color-b">~</span> <span class="calendar-color-g">''</span>  <span class="calendar-color-g">..</span><span class="calendar-color-a">_____/</span> <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>    <span class="calendar-color-p">_</span> <span class="calendar-color-b">~</span> <span class="calendar-color-p">_</span>   <span class="calendar-color-p">O&gt;</span></a>
+<a aria-label="Day 7, two stars" href="/2020/day/7" class="calendar-day7 calendar-verycomplete"> <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span> <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span> <span class="calendar-color-g">:</span><span class="calendar-color-a">[]</span><span class="calendar-color-g">'.</span>   <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span>      <span class="calendar-color-b">~</span>  <span class="calendar-color-p">\</span> <span class="calendar-color-p">/</span> <span class="calendar-color-p">\</span> <span class="calendar-color-p">/</span> <span class="calendar-color-p">\</span> <span class="calendar-color-p">/</span>  <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 8, two stars" href="/2020/day/8" class="calendar-day8 calendar-verycomplete">       <span class="calendar-color-b">~</span>     <span class="calendar-color-g">'.</span><span class="calendar-color-a">\</span> <span class="calendar-color-b">~</span>        <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>      <span class="calendar-color-b">~</span>    <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 17, two stars" href="/2020/day/17" class="calendar-day17 calendar-verycomplete"> <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span>      <span class="calendar-color-b">~</span>   <span class="calendar-color-a">\</span>  <span class="calendar-color-b">~</span>   <span class="calendar-color-a">____</span>     <span class="calendar-color-b">~</span>      <span class="calendar-color-b">~</span>      <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 9, two stars" href="/2020/day/9" class="calendar-day9 calendar-verycomplete">       <span class="calendar-color-b">~</span>       <span class="calendar-color-b">~</span> <span class="calendar-color-a">\____/</span> <span class="calendar-color-g">.''</span><span class="calendar-color-a">\</span><span class="calendar-color-g">'..</span>    <span class="calendar-color-b">~</span>       <span class="calendar-color-b">~</span>    <span class="calendar-color-g">.</span></a>
+<a aria-label="Day 16, two stars" href="/2020/day/16" class="calendar-day16 calendar-verycomplete">    <span class="calendar-color-b">~</span>       <span class="calendar-color-b">~</span>  <span class="calendar-color-a">__/\</span> <span class="calendar-color-b">~</span>   <span class="calendar-color-g">.'</span><span class="calendar-color-w">^</span> <span class="calendar-color-a">[]</span><span class="calendar-color-g">.'</span>      <span class="calendar-color-b">~</span>  <span class="calendar-color-b">~</span>  <span class="calendar-color-g">..''</span></a>
+<a aria-label="Day 18, two stars" href="/2020/day/18" class="calendar-day18 calendar-verycomplete"><span class="calendar-color-g">...</span>     <span class="calendar-color-b">~</span><span class="calendar-color-a">_____/</span><span class="calendar-color-b">~</span>   <span class="calendar-color-a">\</span>    <span class="calendar-color-g">:</span><span class="calendar-color-w">^</span> <span class="calendar-color-g">,</span> <span class="calendar-color-g">:</span><span class="calendar-color-a">\</span>  <span class="calendar-color-b">~</span>       <span class="calendar-color-g">:''</span>  <span class="calendar-color-g">,</span> <span class="calendar-color-w">^</span></a>
+<a aria-label="Day 15, two stars" href="/2020/day/15" class="calendar-day15 calendar-verycomplete"><span class="calendar-color-g">###:</span> <span class="calendar-color-g">...</span><span class="calendar-color-a">/</span>   <span class="calendar-color-b">~</span>      <span class="calendar-color-b">~</span><span class="calendar-color-a">\</span>    <span class="calendar-color-g">'..'</span>  <span class="calendar-color-a">\_______</span><span class="calendar-color-b">~</span> <span class="calendar-color-g">'.</span> <span class="calendar-color-g">,</span></a>
+<a aria-label="Day 19, two stars" href="/2020/day/19" class="calendar-day19 calendar-verycomplete"><span class="calendar-color-g">.''</span> <span class="calendar-color-g">.'</span><span class="calendar-color-a">[]</span><span class="calendar-color-g">'.</span>           <span class="calendar-color-a">\</span> <span class="calendar-color-b">~</span>       <span class="calendar-color-b">~</span>   <span class="calendar-color-b">~</span>   <span class="calendar-color-a">\</span>  <span class="calendar-color-g">:</span>  <span class="calendar-color-g">,</span> <span class="calendar-color-w">^</span></a>
+<a aria-label="Day 10, two stars" href="/2020/day/10" class="calendar-day10 calendar-verycomplete"><span class="calendar-color-g">'...'##</span><span class="calendar-color-a">\</span><span class="calendar-color-g">##'.</span>  <span class="calendar-color-b">~</span>    <span class="calendar-color-b">~</span>  <span class="calendar-color-a">\</span>   <span class="calendar-color-b">~</span>            <span class="calendar-color-g">.</span><span class="calendar-color-a">\</span><span class="calendar-color-g">'</span> <span class="calendar-color-g">,</span>  <span class="calendar-color-w">^</span> <span class="calendar-color-w">^</span></a>
+<a aria-label="Day 14, two stars" href="/2020/day/14" class="calendar-day14 calendar-verycomplete"><span class="calendar-color-g">#####</span> <span class="calendar-color-g">,#</span><span class="calendar-color-a">\</span><span class="calendar-color-g">#.'</span>           <span class="calendar-color-a">\</span>   <span class="calendar-color-g">.</span>       <span class="calendar-color-b">~</span>   <span class="calendar-color-g">'.</span><span class="calendar-color-a">[]</span>  <span class="calendar-color-g">,</span> <span class="calendar-color-w">^</span></a>
+<a aria-label="Day 20, two stars" href="/2020/day/20" class="calendar-day20 calendar-verycomplete"><span class="calendar-color-g">#,</span>      <span class="calendar-color-g">,</span><span class="calendar-color-a">\</span><span class="calendar-color-g">'.</span>         <span class="calendar-color-b">~</span>  <span class="calendar-color-a">\</span><span class="calendar-color-g">'',:</span>  <span class="calendar-color-b">~</span>       <span class="calendar-color-a">_/</span><span class="calendar-color-g">'..</span>  <span class="calendar-color-g">,</span> <span class="calendar-color-w">^</span></a>
+<a aria-label="Day 11, two stars" href="/2020/day/11" class="calendar-day11 calendar-verycomplete">   <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span>   <span class="calendar-color-g">,</span><span class="calendar-color-a">\</span><span class="calendar-color-g">,'.</span>   <span class="calendar-color-b">~</span>     <span class="calendar-color-g">:</span><span class="calendar-color-a">[]</span><span class="calendar-color-g">..'</span>         <span class="calendar-color-a">/</span> <span class="calendar-color-b">~</span>   <span class="calendar-color-g">''...</span></a>
+<a aria-label="Day 13, two stars" href="/2020/day/13" class="calendar-day13 calendar-verycomplete"><span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span>    <span class="calendar-color-a">\</span><span class="calendar-color-g">,</span> <span class="calendar-color-g">:</span>         <span class="calendar-color-g">''</span><span class="calendar-color-a">\__</span>  <span class="calendar-color-b">~</span>     <span class="calendar-color-a">/</span></a>
+<a aria-label="Day 21, two stars" href="/2020/day/21" class="calendar-day21 calendar-verycomplete"> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-g">,</span><span class="calendar-color-a">[]</span><span class="calendar-color-g">:</span>     <span class="calendar-color-b">~</span>     <span class="calendar-color-b">~</span>  <span class="calendar-color-a">\__</span>    <span class="calendar-color-a">/</span><span class="calendar-color-b">~</span>      <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 12, two stars" href="/2020/day/12" class="calendar-day12 calendar-verycomplete"><span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span>  <span class="calendar-color-g">,</span> <span class="calendar-color-g">.</span><span class="calendar-color-a">\______</span>           <span class="calendar-color-a">\__/</span></a>
+<a aria-label="Day 22, two stars" href="/2020/day/22" class="calendar-day22 calendar-verycomplete"> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span> <span class="calendar-color-o">~</span>    <span class="calendar-color-g">..'</span>   <span class="calendar-color-b">~</span>    <span class="calendar-color-a">\______</span>    <span class="calendar-color-b">~</span>         <span class="calendar-color-b">~</span>    <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 23, two stars" href="/2020/day/23" class="calendar-day23 calendar-verycomplete">  <span class="calendar-color-g">.....'''</span>           <span class="calendar-color-b">~</span>     <span class="calendar-color-b">~</span><span class="calendar-color-a">\____</span></a>
+<a aria-label="Day 24, two stars" href="/2020/day/24" class="calendar-day24 calendar-verycomplete"><span class="calendar-color-g">''</span>         <span class="calendar-color-b">~</span>                 <span class="calendar-color-g">.'..</span><span class="calendar-color-a">\___</span><span class="calendar-color-g">''..</span>       <span class="calendar-color-b">~</span></a>
+<a aria-label="Day 25, two stars" href="/2020/day/25" class="calendar-day25 calendar-verycomplete">     <span class="calendar-color-b">~</span>          <span class="calendar-color-b">~</span>        <span class="calendar-color-b">~</span>    <span class="calendar-color-g">'.'</span>  <span class="calendar-color-g">:</span> <span class="calendar-color-a">[]</span> <span class="calendar-color-g">.'</span>  <span class="calendar-color-b">~</span></a>
+</pre>
+    </main>
+</body>
+
+</html>
