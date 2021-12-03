@@ -22,15 +22,14 @@ jobs:
         run: python readme_generator.py
 
       - name: Commit and push changes
-        uses: devops-infra/action-commit-push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit_prefix: "[AUTO-COMMIT]"
-          commit_message: "Updated READMEs"
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git commit -am '[AUTO-COMMIT] Updated READMEs'
+          git push
 
       - name: Send Telegram notification
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Github Actions "${{ github.workflow }}" in "${{ github.repository }}" completed.
+          message: Github Action "${{ github.workflow }}" in "${{ github.repository }}" completed
