@@ -83,4 +83,4 @@ for range_start in range(len(inp)):
 ```
 16107959
 ```
-###### Execution time: 7 ms
+###### Execution time: 8 ms
