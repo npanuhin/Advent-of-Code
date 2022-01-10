@@ -8,6 +8,8 @@ def mkpath(*paths):
     return os.path.normpath(os.path.join(*paths))
 
 
+print("Replacing tabs with spaces...")
+
 for path, folders, files in os.walk(mkpath(HOME)):
     for filename in files:
         if filename.endswith(EXTENSIONS):
