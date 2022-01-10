@@ -67,7 +67,7 @@ print(max_ID)
 ```
 855
 ```
-###### Execution time: 2 ms
+###### Execution time: 1 ms
 
 ## Part 2
 
@@ -130,4 +130,4 @@ for i in range(len(IDs)):
 ```
 552
 ```
-###### Execution time: 2 ms
+###### Execution time: 1 ms
