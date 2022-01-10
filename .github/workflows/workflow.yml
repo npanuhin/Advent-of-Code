@@ -1,6 +1,10 @@
 name: README generator
 
-on: push
+on:
+  # push:
+  workflow_dispatch:
+
+permissions: write-all
 
 jobs:
   exec-time:
@@ -8,8 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Clone repository
         uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SSH_KEY }}
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -18,18 +24,20 @@ jobs:
           architecture: x64
 
       - name: Generate READMEs
-        working-directory: ./.github
+        working-directory: .github
         run: python readme_generator.py
 
       - name: Commit and push changes
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git commit -am '[AUTO-COMMIT] Updated READMEs'
-          git push
-
-      - name: Send Telegram notification
-        uses: appleboy/telegram-action@master
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Github Action "${{ github.workflow }}" in "${{ github.repository }}" completed
+          commit_message: "[AUTO-COMMIT] Updated READMEs"
+          commit_user_name: GitHub Actions
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com>
+
+      # - name: Send Telegram notification
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     message: Github Action "${{ github.workflow }}" in "${{ github.repository }}" completed
