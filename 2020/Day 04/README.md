@@ -45,7 +45,7 @@ print(sum(
 ```
 250
 ```
-###### Execution time: 2 ms
+###### Execution time: 2ms
 
 ## Part 2
 
@@ -115,4 +115,4 @@ print(answer)
 ```
 158
 ```
-###### Execution time: 2 ms
+###### Execution time: 2ms

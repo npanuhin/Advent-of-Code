@@ -1,7 +1,7 @@
 import os
 
-HOME = "../../"
-EXTENSIONS = (".py", ".md", ".html", ".css", ".svg")
+ROOT = "../"
+EXTENSIONS = (".py", ".md")
 
 
 def mkpath(*paths):
@@ -10,9 +10,9 @@ def mkpath(*paths):
 
 print("Replacing tabs with spaces...")
 
-for path, folders, files in os.walk(mkpath(HOME)):
+for path, folders, files in os.walk(mkpath(ROOT)):
     for filename in files:
-        if filename.endswith(EXTENSIONS):
+        if os.path.splitext(filename)[1] in EXTENSIONS:
             print(mkpath(path, filename))
 
             with open(mkpath(path, filename), 'r', encoding="utf-8") as file:

@@ -9,12 +9,10 @@ jobs:
   readme-generator:
     name: README generator
     runs-on: ubuntu-latest
-
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.SSH_KEY }}
           fetch-depth: 2
 
       - name: Install Python
@@ -36,8 +34,8 @@ jobs:
         with:
           commit_message: ${{ steps.last-commit-message.outputs.msg }}
           commit_options: '--amend --no-edit'
-          push_options: '--force'
+          push_options: --force
           skip_fetch: true
           commit_user_name: GitHub Actions
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          commit_author: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com>
+          # commit_author: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com>
