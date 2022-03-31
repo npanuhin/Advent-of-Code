@@ -1,52 +1,25 @@
-/* @font-face {
-    font-family: 'Source Code Pro';
-    src: url('fonts/Source Code Pro/SourceCodePro-Medium.eot');
-    src: local('Source Code Pro Medium'), local('SourceCodePro-Medium'),
-        url('fonts/Source Code Pro/SourceCodePro-Medium.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Source Code Pro/SourceCodePro-Medium.woff2') format('woff2'),
-        url('fonts/Source Code Pro/SourceCodePro-Medium.woff') format('woff'),
-        url('fonts/Source Code Pro/SourceCodePro-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-} */
-
-@font-face {
-    font-family: 'Source Code Pro';
-    src: url('/fonts/Source Code Pro/SourceCodePro-Light.eot');
-    src: local('Source Code Pro Light'), local('SourceCodePro-Light'),
-        url('/fonts/Source Code Pro/SourceCodePro-Light.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Source Code Pro/SourceCodePro-Light.woff2') format('woff2'),
-        url('/fonts/Source Code Pro/SourceCodePro-Light.woff') format('woff'),
-        url('/fonts/Source Code Pro/SourceCodePro-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
 * {
     margin: 0;
     padding: 0;
     width: auto;
     height: auto;
-    /* top: 0;  */
-    /* left: 0;  */
+    /* top: 0; */
+    /* left: 0; */
     text-decoration: none;
     text-align: left;
-    font-style: normal;
-    font-weight: normal;
     z-index: 1;
-    color: #ccc;
-    outline: none;
+    color: #000;
     transform-origin: center center;
-    font-family: Arial, Helvetica, sans-serif;
 
-    /* box-sizing: border-box;  */
-    /* box-sizing: content-box;  */
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14pt;
+    color: #ccc;
+    font-weight: 300;
 
-    /* image-rendering: optimizeQuality;  */
-    /* backface-visibility: hidden; */
-    /* transition-duration: 0s;   */
+    -ms-interpolation-mode: bicubic;
+    image-rendering: optimizeQuality;
+
+    backface-visibility: hidden;
 }
 
 li {
@@ -55,11 +28,6 @@ li {
 
 body {
     background-color: #0f0f23;
-}
-
-body * {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 14pt;
 }
 
 a, .wrapper {
@@ -82,16 +50,17 @@ em {
     text-shadow: 0 0 2px #0c0, 0 0 5px #0c0;
     font-size: 32pt;
 }
+
 .title p {
     text-align: center;
     margin: 0px 0 50px 0;
     font-size: 14.5pt;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .title p a {
     font-size: 14pt;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 main {
@@ -124,7 +93,7 @@ main table {
 }
 
 
-/* ----------------------------------------------------- */
+/* ----------------------------------------------------------------- */
 
 main .left {
     width: 50%;
@@ -136,16 +105,13 @@ main .left {
     position: relative;
 }
 
-
 main .center, main .right {
-    width: 25%;
-    float: left;
-    text-align: center;
-
     position: relative;
+    float: left;
     top: 25px;
+    width: 25%;
+    text-align: center;
 }
-
 
 @media (max-width: 1200px) {
     main.wide {
@@ -174,6 +140,7 @@ main .center, main .right {
     main .center {
         padding-left: 30px;
     }
+
     main .right {
         padding-right: 30px;
     }
@@ -183,13 +150,14 @@ main .center, main .right {
     main .center {
         padding-left: 0;
     }
+
     main .right {
         padding-right: 0;
     }
 }
 
 
-/* ----------------------------------------------------- */
+/* ----------------------------------------------------------------- */
 
 main table tr {
     width: 100%;
@@ -203,7 +171,7 @@ main table td {
 main table .wrapper {
     padding: 6px 13px;
     font-size: 1.005em;
-    font-weight: bold;
+    font-weight: 400;
     letter-spacing: 0.02em;
 }
 
