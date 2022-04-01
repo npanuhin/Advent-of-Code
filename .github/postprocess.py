@@ -10,12 +10,16 @@ ROOT_PATH = "../"
 REGEX = {
     "markdown_code": r"`[^`\n\t\b\r]+`",
     "exec_code": re.compile(
-        r"^<!-- Execute code: \"([\w\-\.]+)\" -->$(?:\s*```(\w+?)\s.*?```)?(?:\s*```.*?```)?\s*(?:^#+\s+Execution time:\s*(.+?)?)?$",
+        (
+            r"^<!-- Execute code: \"([\w\-\.]+)\" -->$(?:\s*```(\w+?)\s.*?```)?"
+            r"(?:\s*```.*?```)?\s*(?:^#+\s+Execution time:\s*(.+?)?)?$"
+        ),
         flags=re.MULTILINE | re.UNICODE | re.DOTALL
     ),
     "exec_code_replace": "<!-- Execute code: \"{}\" -->\n```{}\n{}\n```\n```\n{}\n```\n###### Execution time: {}"
 }
 
+print(REGEX["exec_code"])
 
 MAX_EXEC_TIME = 30000 / 1000
 REPEATS_CLAMP = (5, 100)
@@ -119,6 +123,15 @@ def handle_match(path, match):
 
 def main(root_path):
     for path, folders, files in os.walk(root_path):
+        for filename in files:
+            if os.path.splitext(filename)[1] == ".py":
+                with open(mkpath(path, filename), 'r', encoding="utf-8") as file:
+                    for line in file:
+                        if len(line.strip()) > 120:
+                            print("Warning: long line detected in {}".format(mkpath(path, filename)))
+
+        # continue
+
         if "README.md" not in files:
             continue
 
