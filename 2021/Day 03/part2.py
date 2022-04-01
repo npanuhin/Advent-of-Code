@@ -5,11 +5,7 @@ def search(array, condition):
         for line in array:
             bit_rate[int(line[cur_bit])] += 1
 
-        array = [
-            line
-            for line in array
-            if int(line[cur_bit]) == condition(bit_rate)
-        ]
+        array = list(filter(lambda line: int(line[cur_bit]) == condition(bit_rate), array))
 
         if len(array) <= 1:
             break

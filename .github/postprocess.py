@@ -19,8 +19,6 @@ REGEX = {
     "exec_code_replace": "<!-- Execute code: \"{}\" -->\n```{}\n{}\n```\n```\n{}\n```\n###### Execution time: {}"
 }
 
-print(REGEX["exec_code"])
-
 MAX_EXEC_TIME = 30000 / 1000
 REPEATS_CLAMP = (5, 100)
 
