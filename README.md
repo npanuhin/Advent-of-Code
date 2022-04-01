@@ -5,7 +5,7 @@
 
 ---
 
-This is a repository of my [Advent of Code](https://adventofcode.com "Visit adventofcode.com") solutions. It also contains a brief description of some puzzle solved.
+This is a repository of my [Advent of Code](https://adventofcode.com "Visit adventofcode.com") solutions. It also contains a short description of some puzzle solved.
 
 I try to optimize each solution as much as possible, so even though they are written in Python, many of them execute in less than a second.
 

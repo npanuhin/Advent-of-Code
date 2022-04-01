@@ -1,4 +1,4 @@
-name: README generator
+name: Postprocess
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
 
 
 jobs:
-  readme-generator:
-    name: README generator
+  postprocess:
+    name: Postprocess
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
@@ -23,7 +23,7 @@ jobs:
 
       - name: Generate READMEs
         working-directory: .github
-        run: python generate_readme.py
+        run: python postprocess.py
 
       - name: Get last commit message
         id: last-commit-message
