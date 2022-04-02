@@ -19,5 +19,4 @@ for x1, y1, x2, y2 in lines:
     for i in range(max(abs(x2 - x1), abs(y2 - y1)) + 1):
         field[y1 + i * dy][x1 + i * dx] += 1
 
-
 print(sum(sum(1 for item in line if item >= 2) for line in field))
