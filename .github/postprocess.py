@@ -1,156 +1,156 @@
-from timeit import timeit
-from io import StringIO
-import sys
+# from markdownTable import markdownTable
 import os
 import re
+
+# from readme_exec import readme_exec
 
 
 ROOT_PATH = "../"
 
 REGEX = {
     "markdown_code": r"`[^`\n\t\b\r]+`",
-    "exec_code": re.compile(
-        (
-            r"^<!-- Execute code: \"([\w\-\.]+)\" -->$(?:\s*```(\w+?)\s.*?```)?"
-            r"(?:\s*```.*?```)?\s*(?:^#+\s+Execution time:\s*(.+?)?)?$"
-        ),
-        flags=re.MULTILINE | re.UNICODE | re.DOTALL
-    ),
-    "exec_code_replace": "<!-- Execute code: \"{}\" -->\n```{}\n{}\n```\n```\n{}\n```\n###### Execution time: {}"
+    "global_table": r"(<!-- Global table start -->).+(<!-- Global table end -->)"
 }
-
-MAX_EXEC_TIME = 30000 / 1000
-REPEATS_CLAMP = (5, 100)
-
-
-def clamp(x, b, t):
-    return b if x < b else t if x > t else x
 
 
 def mkpath(*paths):
-    return os.path.normpath(os.path.join(*paths))
+    return os.path.normpath(os.path.join(*map(str, paths)))
 
 
-def format_time(seconds):
-    if seconds is None:
-        return "None"
-
-    milliseconds = seconds * 1000
-
-    if milliseconds < 1:
-        return "< 1ms"
-
-    if milliseconds < 250:
-        return "{}ms".format(round(milliseconds))
-
-    if milliseconds < 950:
-        return "< 1s"
-
-    return "{}s".format(round(seconds))
+def md_link(text, link):
+    return "[{}]({})".format(text, link)
 
 
-def need_time_change(old_time, new_time):
-    if not old_time:
-        return False
+def global_readme_table(solved):
+    with open(mkpath(ROOT_PATH, "README.md"), 'r', encoding="utf-8") as file:
+        readme = file.read()
 
-    if old_time == "< 1ms" and new_time == "1ms":
-        return False
+    table = [[""]] + [["Day {}".format(day)] for day in range(1, 26)]
 
-    if old_time == "< 1s" and new_time == "1s":
-        return False
+    for year in solved:
+        table[0].append(md_link(year, "./{}".format(year)))
+        for day in range(1, 26):
+            day_path_name = "Day {:02d}".format(day)
+            day_url_name = day_path_name.replace(' ', "%20")
+            day_path = mkpath(ROOT_PATH, year, day_path_name)
 
-    match1 = re.fullmatch(r"(<\s+)?(\d+)(m?s)", old_time, re.IGNORECASE)
-    match2 = re.fullmatch(r"(<\s+)?(\d+)(m?s)", new_time, re.IGNORECASE)
+            if os.path.isfile(mkpath(day_path, "README.md")):
+                # Day has README (both parts solved)
+                table[day].append(md_link("⭐⭐", "./{}/{}".format(year, day_url_name)))
 
-    if not match1:
-        return True
+            elif day == 25 and \
+                    os.path.isfile(mkpath(day_path, "part1.py")) and \
+                    not os.path.isfile(mkpath(day_path, "part2.py")):
+                # This is the 25th day, which can provide both starts for solving one part
+                table[day].append(md_link("⭐⭐", "./{}/{}/part1.py".format(year, day_url_name)))
 
-    if not match2:
-        exit("Regex is broken")
+            else:
+                table[day].append(
+                    (md_link("⭐", "./{}/{}/part1.py".format(year, day_url_name)) if solved[year][day - 1][0] else "") +
+                    (md_link("⭐", "./{}/{}/part2.py".format(year, day_url_name)) if solved[year][day - 1][1] else "")
+                )
 
-    if not match1.group(1) and not match2.group(1) and match1.group(3) == match2.group(3) and \
-            abs(int(match1.group(2)) - int(match2.group(2))) <= 1:
-        return False
+    markdown = [[]]
 
-    return True
+    # Precalculate table column sizes
+    column_sizes = [0] * len(table[0])
+    for column in range(len(table[0])):
+        for line in table:
+            column_sizes[column] = max(column_sizes[column], len(line[column]))
 
+    # Header
+    for column in range(len(table[0])):
+        column_size = column_sizes[column]
+        if column != 0 and '⭐' not in table[0][column]:
+            column_size += 1  # Asjustment for ⭐ symbol
 
-def count_time(code, repeats, stdout=None):
-    cur_stdout = sys.stdout
-    sys.stdout = stdout
-    try:
-        exec_time = timeit(code if code else "pass", number=repeats) / repeats
-    except Exception as e:
-        print(e, sys.stdout, file=cur_stdout)
-        exec_time = None
-    sys.stdout = cur_stdout
+        markdown[-1].append(" {:^{}} ".format(table[0][column], column_size))
 
-    return exec_time
+    # Header separator
+    markdown.append([
+        ':' + '-' * (column_size + (2 if column == 0 else 1)) + ':'
+        for column, column_size in enumerate(column_sizes)
+    ])
+    markdown[-1][0] = markdown[-1][0].strip(':')
 
+    # Table content
+    for line in range(1, len(table)):
+        markdown.append([])
+        for column in range(len(table[0])):
 
-def exec_code(path):
-    print("Handling \"{}\"...".format(path))
-    folder, filename = os.path.split(path)
+            # Asjustment for ⭐ symbol
+            column_size = column_sizes[column] + (column != 0 and '⭐' not in table[line][column])
 
-    cur_path = os.getcwd()
-    os.chdir(folder)
+            markdown[-1].append(" {:<{}} ".format(table[line][column], column_size))
 
-    with open(filename, 'r', encoding="utf-8") as file:
-        code = file.read().strip()
+    # Build table from lines
+    markdown = '\n'.join("|{}|".format('|'.join(line)) for line in markdown)
 
-    stdout = StringIO()
-
-    repeats = int(MAX_EXEC_TIME / count_time(code, repeats=1, stdout=stdout))
-
-    exec_time = count_time(code, repeats=clamp(repeats, *REPEATS_CLAMP))
-
-    os.chdir(cur_path)
-    return code, stdout.getvalue().strip(), format_time(exec_time)
-
-
-def handle_match(path, match):
-    code, output, exec_time = exec_code(path)
-
-    return REGEX["exec_code_replace"].format(
-        match.group(1),
-        "python" if match.group(2) is None else match.group(2),
-        code, output,
-        exec_time if need_time_change(match.group(3), exec_time) else match.group(3)
+    readme = re.sub(
+        REGEX["global_table"],
+        lambda match: match.group(1) + '\n' + markdown + '\n' + match.group(2),
+        readme,
+        flags=re.IGNORECASE | re.DOTALL
     )
 
+    with open(mkpath(ROOT_PATH, "README.md"), 'w', encoding="utf-8") as file:
+        file.write(readme)
 
-def main(root_path):
-    for path, folders, files in os.walk(root_path):
-        for filename in files:
-            if os.path.splitext(filename)[1] == ".py":
-                with open(mkpath(path, filename), 'r', encoding="utf-8") as file:
-                    for line in file:
-                        if len(line.strip()) > 120:
-                            print("Warning: long line detected in {}".format(mkpath(path, filename)))
 
-        # continue
+def main():
+    solved = {}
 
-        if "README.md" not in files:
+    for year in range(2000, 3000):
+        year_path = mkpath(mkpath(ROOT_PATH, year))
+        if not os.path.isdir(year_path):
             continue
 
-        readme_path = mkpath(path, "README.md")
+        solved[year] = [[False, False] for _ in range(25)]
 
-        with open(readme_path, 'r', encoding="utf-8") as file:
-            readme = file.read()
+        # Handle days
+        for day in range(0, 25):
+            day_path = mkpath(year_path, "Day {:02d}".format(day + 1))
+            if not os.path.isdir(day_path):
+                continue
 
-        # Place non-breaking spaces in markdown `code` tags:
-        readme = re.sub(REGEX["markdown_code"], lambda m: m.group(0).replace(" ", " "), readme)
+            files = [filename for filename in os.listdir(day_path) if os.path.isfile(mkpath(day_path, filename))]
 
-        # Execution time
-        readme = re.sub(
-            REGEX["exec_code"],
-            lambda match: handle_match(mkpath(path, match.group(1)), match),
-            readme
-        )
+            if os.path.isfile(mkpath(day_path, "part1.py")):
+                solved[year][day][0] = True
+            if os.path.isfile(mkpath(day_path, "part2.py")):
+                solved[year][day][1] = True
 
-        with open(readme_path, 'w', encoding="utf-8") as file:
-            file.write(readme)
+            # Long line warning
+            for filename in files:
+                if os.path.splitext(filename)[1] == ".py":
+                    with open(mkpath(day_path, filename), 'r', encoding="utf-8") as file:
+                        for line in file:
+                            if len(line.strip()) > 120:
+                                print("Warning: long line detected in {}".format(mkpath(day_path, filename)))
+
+            # Handle day README
+            if "README.md" not in files:
+                continue
+
+            readme_path = mkpath(day_path, "README.md")
+
+            with open(readme_path, 'r', encoding="utf-8") as file:
+                readme = file.read()
+
+            # Place non-breaking spaces in markdown `code` tags:
+            readme = re.sub(REGEX["markdown_code"], lambda m: m.group(0).replace(" ", " "), readme)
+
+            # readme = readme_exec(readme, path)
+
+            with open(readme_path, 'w', encoding="utf-8") as file:
+                file.write(readme)
+
+        # Handle year README
+        # TODO
+
+    # Handle global README
+    global_readme_table(solved)
 
 
 if __name__ == "__main__":
-    main(ROOT_PATH)
+    main()
