@@ -5,9 +5,10 @@
     <img src="../docs/2020/AoC.min.svg">
 </div>
 
---------------------------------------------------------------------------------------------------------
+---
 
-|                                               |          Part 1           |           Part 2         |
+<!-- Solved table start -->
+|                                               |          Part 1           |          Part 2          |
 |-----------------------------------------------|:-------------------------:|:------------------------:|
 | [Day 1: Report Repair](./Day%2001)            | [⭐](./Day%2001/part1.py) | [⭐](./Day%2001/part2.py) |
 | [Day 2: Password Philosophy](./Day%2002)      | [⭐](./Day%2002/part1.py) | [⭐](./Day%2002/part2.py) |
@@ -33,8 +34,8 @@
 |  Day 22: Crab Combat                          | [⭐](./Day%2022/part1.py) | [⭐](./Day%2022/part2.py) |
 |  Day 23: Crab Cups                            | [⭐](./Day%2023/part1.py) | [⭐](./Day%2023/part2.py) |
 |  Day 24: Lobby Layout                         | [⭐](./Day%2024/part1.py) | [⭐](./Day%2024/part2.py) |
-|  Day 25: Combo Breaker                        | [⭐](./Day%2024/part1.py) | [⭐](./Day%2024/part1.py) |
-
+|  Day 25: Combo Breaker                        | [⭐](./Day%2025/part1.py) | [⭐](./Day%2025/part2.py) |
+<!-- Solved table end -->
 
 <!-- |                                               |                           |                          |
 |  Total:                                       |           25/25           |          25/25           | -->

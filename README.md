@@ -9,7 +9,7 @@ This is a repository of my [Advent of Code](https://adventofcode.com "Visit adve
 
 I try to optimize each solution as much as possible, so even though they are written in Python, many of them execute in less than a second.
 
-<!-- Global table start -->
+<!-- Solved table start -->
 |        |                       [2020](./2020)                        |                       [2021](./2021)                        |
 |--------|:-----------------------------------------------------------:|:-----------------------------------------------------------:|
 | Day 1  | [⭐⭐](./2020/Day%2001)                                      | [⭐](./2021/Day%2001/part1.py)[⭐](./2021/Day%2001/part2.py) |
@@ -37,4 +37,4 @@ I try to optimize each solution as much as possible, so even though they are wri
 | Day 23 | [⭐](./2020/Day%2023/part1.py)[⭐](./2020/Day%2023/part2.py) |                                                             |
 | Day 24 | [⭐](./2020/Day%2024/part1.py)[⭐](./2020/Day%2024/part2.py) |                                                             |
 | Day 25 | [⭐⭐](./2020/Day%2025/part1.py)                             |                                                             |
-<!-- Global table end -->
+<!-- Solved table end -->

@@ -1,11 +1,10 @@
 import os
 
+from utils import mkpath
+
+
 ROOT = "../"
 EXTENSIONS = (".py", ".md")
-
-
-def mkpath(*paths):
-    return os.path.normpath(os.path.join(*paths))
 
 
 print("Replacing tabs with spaces...")
