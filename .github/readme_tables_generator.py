@@ -1,9 +1,8 @@
 from bs4 import BeautifulSoup
 from os.path import isfile
-import requests
 import re
 
-from utils import mkpath, md_link
+from utils import mkpath, md_link, req_get_parallel
 
 
 REGEX = {
@@ -11,44 +10,36 @@ REGEX = {
     "puzzle_title": r"---\s*Day\s*\d+:\s*(.+?)\s*---"
 }
 
-SESSION = requests.Session()
-SESSION.mount(
-    'http://',
-    requests.adapters.HTTPAdapter(
-        pool_connections=100,
-        pool_maxsize=100
-    )
-)
-req_get = SESSION.get
 
-
-def gen_global(root_path, solved):
-    if not isfile(mkpath(root_path, "README.md")):
+def gen_global_table(root_path, solved):
+    print("Generating global README table...")
+    readme_path = mkpath(root_path, "README.md")
+    if not isfile(readme_path):
         return
 
-    table = [[""]] + [["Day {}".format(day)] for day in range(1, 26)]
+    table = [[""]] + [["Day {}".format(day + 1)] for day in range(25)]
     columns_num = len(solved) + 1
 
     for year in solved:
         table[0].append(md_link(year, "./{}".format(year)))
-        for day in range(1, 26):
-            day_path_name = "Day {:02d}".format(day)
+        for day in range(25):
+            read_day = day + 1
+            day_path_name = "Day {:02d}".format(read_day)
             day_url_name = day_path_name.replace(' ', "%20")
             day_path = mkpath(root_path, year, day_path_name)
 
             if isfile(mkpath(day_path, "README.md")):
                 # Day has README (both parts solved)
-                table[day].append(md_link("⭐⭐", "./{}/{}".format(year, day_url_name)))
+                table[read_day].append(md_link("⭐⭐", "./{}/{}".format(year, day_url_name)))
 
-            elif day == 25 and isfile(mkpath(day_path, "part1.py")) and \
-                    not isfile(mkpath(day_path, "part2.py")):
+            elif read_day == 25 and solved[year][day][0] and not solved[year][day][1]:
                 # This is the 25th day, which can provide both starts for solving the only part
-                table[day].append(md_link("⭐⭐", "./{}/{}/part1.py".format(year, day_url_name)))
+                table[read_day].append(md_link("⭐⭐", "./{}/{}/part1.py".format(year, day_url_name)))
 
             else:
-                table[day].append(
-                    (md_link("⭐", "./{}/{}/part1.py".format(year, day_url_name)) if solved[year][day - 1][0] else "") +
-                    (md_link("⭐", "./{}/{}/part2.py".format(year, day_url_name)) if solved[year][day - 1][1] else "")
+                table[read_day].append(
+                    (md_link("⭐", "./{}/{}/part1.py".format(year, day_url_name)) if solved[year][day][0] else "") +
+                    (md_link("⭐", "./{}/{}/part2.py".format(year, day_url_name)) if solved[year][day][1] else "")
                 )
 
     markdown = [[]]
@@ -86,7 +77,7 @@ def gen_global(root_path, solved):
     # Build table from lines
     markdown = '\n'.join("|{}|".format('|'.join(line)) for line in markdown)
 
-    with open(mkpath(root_path, "README.md"), 'r', encoding="utf-8") as file:
+    with open(readme_path, 'r', encoding="utf-8") as file:
         readme = file.read()
 
     readme = re.sub(
@@ -96,37 +87,42 @@ def gen_global(root_path, solved):
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    with open(mkpath(root_path, "README.md"), 'w', encoding="utf-8") as file:
+    with open(readme_path, 'w', encoding="utf-8") as file:
         file.write(readme)
 
 
-def gen_year(year_path, solved, year):
-    if not isfile(mkpath(year_path, "README.md")):
+def gen_year_table(year_path, solved, year):
+    print("Generating README table for year {}...".format(year))
+    readme_path = mkpath(year_path, "README.md")
+    if not isfile(readme_path):
         return
 
     table = [["", "Part 1", "Part 2"]]
 
-    for day in range(1, 26):
-        day_path_name = "Day {:02d}".format(day)
+    day_pages = req_get_parallel("https://adventofcode.com/{}/day/{}".format(year, day + 1) for day in range(25))
+
+    for day in range(25):
+        real_day = day + 1
+        day_path_name = "Day {:02d}".format(real_day)
         day_url_name = day_path_name.replace(' ', "%20")
         day_path = mkpath(year_path, day_path_name)
 
         puzzle_title = re.fullmatch(
             REGEX["puzzle_title"],
-            BeautifulSoup(req_get("https://adventofcode.com/{}/day/{}".format(year, day)).text, "lxml")
+            BeautifulSoup(day_pages[day].text, "lxml")
             .find("body").find("main").find("article").find("h2").text,
             flags=re.IGNORECASE | re.UNICODE
         ).group(1)
 
-        day_name = "Day {}: {}".format(day, puzzle_title)
+        day_name = "Day {}: {}".format(real_day, puzzle_title)
 
         table.append([
             md_link(day_name, "./" + day_url_name) if isfile(mkpath(day_path, "README.md")) else " " + day_name,
 
-            md_link("⭐", "./" + day_url_name + "/part1.py") if isfile(mkpath(day_path, "part1.py")) else "",
+            md_link("⭐", "./" + day_url_name + "/part1.py") if solved[day][0] else "",
 
-            md_link("⭐", "./" + day_url_name + "/part2.py") if day == 25 and isfile(mkpath(day_path, "part1.py"))
-            else md_link("⭐", "./" + day_url_name + "/part2.py") if isfile(mkpath(day_path, "part2.py"))
+            md_link("⭐", "./" + day_url_name + "/part2.py") if real_day == 25 and solved[day][0]
+            else md_link("⭐", "./" + day_url_name + "/part2.py") if solved[day][1]
             else ""
         ])
 
@@ -165,7 +161,7 @@ def gen_year(year_path, solved, year):
     # Build table from lines
     markdown = '\n'.join("|{}|".format('|'.join(line)) for line in markdown)
 
-    with open(mkpath(year_path, "README.md"), 'r', encoding="utf-8") as file:
+    with open(readme_path, 'r', encoding="utf-8") as file:
         readme = file.read()
 
     readme = re.sub(
@@ -175,5 +171,5 @@ def gen_year(year_path, solved, year):
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    with open(mkpath(year_path, "README.md"), 'w', encoding="utf-8") as file:
+    with open(readme_path, 'w', encoding="utf-8") as file:
         file.write(readme)

@@ -2,7 +2,8 @@ from os.path import isdir, isfile
 import os
 import re
 
-from readme_tables_generator import gen_global, gen_year
+from readme_tables_generator import gen_global_table, gen_year_table
+# from website_generator import gen_home_page, gen_year_page
 from readme_exec import readme_exec
 from utils import mkpath
 
@@ -15,6 +16,7 @@ REGEX = {
 
 
 def main():
+    print("Starting...")
     solved = {}
 
     for year in range(2000, 3000):
@@ -31,11 +33,7 @@ def main():
                 continue
 
             files = [filename for filename in os.listdir(day_path) if isfile(mkpath(day_path, filename))]
-
-            if isfile(mkpath(day_path, "part1.py")):
-                solved[year][day][0] = True
-            if isfile(mkpath(day_path, "part2.py")):
-                solved[year][day][1] = True
+            solved[year][day] = ["part1.py" in files, "part2.py" in files]
 
             # Long line warning
             for filename in files:
@@ -48,25 +46,25 @@ def main():
             # Handle day README
             if "README.md" not in files:
                 continue
-
             readme_path = mkpath(day_path, "README.md")
 
             with open(readme_path, 'r', encoding="utf-8") as file:
                 readme = file.read()
 
             # Place non-breaking spaces in markdown `code` tags:
-            readme = re.sub(REGEX["markdown_code"], lambda m: m.group(0).replace(" ", " "), readme)
+            readme = re.sub(REGEX["markdown_code"], lambda m: m.group(0).replace(' ', chr(0x2007)), readme)
 
+            # Handle "<!-- Execute code: "smth" -->" blocks
             readme = readme_exec(readme, day_path)
 
             with open(readme_path, 'w', encoding="utf-8") as file:
                 file.write(readme)
 
         # Handle year README
-        gen_year(year_path, solved, year)
+        gen_year_table(year_path, solved[year], year)
 
     # Handle global README
-    gen_global(ROOT_PATH, solved)
+    gen_global_table(ROOT_PATH, solved)
 
 
 if __name__ == "__main__":
