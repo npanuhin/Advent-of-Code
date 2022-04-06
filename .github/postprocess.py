@@ -3,7 +3,7 @@ import os
 import re
 
 from readme_tables_generator import gen_global_table, gen_year_table
-# from website_generator import gen_home_page, gen_year_page
+from website_generator import gen_home_page, gen_year_page
 from readme_exec import readme_exec
 from utils import mkpath
 
@@ -24,7 +24,8 @@ def main():
         if not isdir(year_path):
             continue
 
-        solved[year] = [[False, False] for _ in range(25)]
+        #                part1  part1  README
+        solved[year] = [[False, False, False] for _ in range(25)]
 
         # Handle days
         for day in range(0, 25):
@@ -33,7 +34,7 @@ def main():
                 continue
 
             files = [filename for filename in os.listdir(day_path) if isfile(mkpath(day_path, filename))]
-            solved[year][day] = ["part1.py" in files, "part2.py" in files]
+            solved[year][day] = ["part1.py" in files, "part2.py" in files, "README.md" in files]
 
             # Long line warning
             for filename in files:
@@ -60,11 +61,13 @@ def main():
             with open(readme_path, 'w', encoding="utf-8") as file:
                 file.write(readme)
 
-        # Handle year README
+        # Handle year README and webpage
         gen_year_table(year_path, solved[year], year)
+        gen_year_page(mkpath(ROOT_PATH, "docs", year, "index.html"), solved[year], year)
 
-    # Handle global README
+    # Handle global README and webpage
     gen_global_table(ROOT_PATH, solved)
+    gen_home_page(mkpath(ROOT_PATH, "docs", "index.html"), solved)
 
 
 if __name__ == "__main__":
