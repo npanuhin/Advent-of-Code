@@ -115,6 +115,7 @@ main .center, main .right {
     top: 25px;
     width: 25%;
     text-align: center;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1200px) {
@@ -126,19 +127,11 @@ main .center, main .right {
         width: 100%;
         padding: 0 12%;
         float: left;
-        box-sizing: border-box;
-
-        position: relative;
     }
 
     main .center, main .right {
         width: 50%;
         float: left;
-        text-align: center;
-
-        position: relative;
-        top: 25px;
-        box-sizing: border-box;
     }
 
     main .center {
@@ -163,28 +156,36 @@ main .center, main .right {
 
 /* ----------------------------------------------------------------- */
 
-main table tr {
-    width: 100%;
-}
-
 main table td {
-    min-width: 50px;
     border: 1px solid rgba(119, 119, 165, 0.4);
+    min-width: 52px;
 }
 
-main table .wrapper {
-    padding: 6px 13px;
-    font-size: 1.005em;
+main table td[colspan="2"] a {
+    text-align: center;
+}
+
+main table td a {
+    display: block;
+    margin: -1px;
+    padding: 7px 14px;
+    min-height: 24.8px;
+
+    font-size: 1em;
     font-weight: 400;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.021em;
 }
 
-main table tr:nth-child(2n) {
-    background-color: rgba(119, 119, 165, 0.2);
+main table td a:hover {
+    text-decoration: none;
+    color: #090;
+}
+
+main table tr:nth-child(2n + 1) {
+    background-color: rgba(119, 119, 165, 0.15);
 }
 
 main table tr:hover {
-    cursor: pointer;
     background-color: rgba(119, 119, 165, 0.4);
 }
 
