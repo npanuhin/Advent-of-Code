@@ -1,4 +1,5 @@
-import os
+from os import walk as os_walk
+from os.path import splitext
 
 from utils import mkpath
 
@@ -9,9 +10,9 @@ EXTENSIONS = (".py", ".md")
 
 print("Replacing tabs with spaces...")
 
-for path, folders, files in os.walk(mkpath(ROOT)):
+for path, folders, files in os_walk(mkpath(ROOT)):
     for filename in files:
-        if os.path.splitext(filename)[1] in EXTENSIONS:
+        if splitext(filename)[1] in EXTENSIONS:
             print(mkpath(path, filename))
 
             with open(mkpath(path, filename), 'r', encoding="utf-8") as file:

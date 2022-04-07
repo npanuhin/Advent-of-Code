@@ -29,7 +29,7 @@ jobs:
 
       - name: Generate READMEs
         working-directory: .github
-        run: python postprocess.py
+        run: python postprocess.py no-debug
 
       - name: Get last commit message
         id: last-commit-message

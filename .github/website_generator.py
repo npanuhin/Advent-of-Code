@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import os
+from os.path import isfile
 import re
 
 from utils import mkpath, req_get
@@ -15,7 +15,7 @@ YEAR_END = max(
 
 def gen_home_page(root_path, solved):
     path = mkpath(root_path, "index.html")
-    if not os.path.isfile(path):
+    if not isfile(path):
         return
 
     list_items = [
@@ -44,7 +44,7 @@ def gen_home_page(root_path, solved):
 
 
 def gen_year_page(target_path, solved, year):
-    if not os.path.isfile(target_path):
+    if not isfile(target_path):
         return
 
     table = [

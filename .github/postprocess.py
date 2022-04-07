@@ -1,4 +1,5 @@
 from os.path import isdir, isfile
+from sys import argv
 import os
 import re
 
@@ -10,12 +11,8 @@ from utils import mkpath
 
 ROOT_PATH = "../"
 
-REGEX = {
-    "markdown_code": r"`[^`\n\t\b\r]+`"
-}
 
-
-def main():
+def main(no_debug=True):
     print("Starting...")
     solved = {}
 
@@ -53,22 +50,25 @@ def main():
                 readme = file.read()
 
             # Place non-breaking spaces in markdown `code` tags:
-            readme = re.sub(REGEX["markdown_code"], lambda m: m.group(0).replace(' ', chr(0x2007)), readme)
+            readme = re.sub(r"`[^`\n\t\b\r]+`", lambda m: m.group(0).replace(' ', chr(0x2007)), readme)
 
             # Handle "<!-- Execute code: "smth" -->" blocks
-            readme = readme_exec(readme, day_path)
+            if no_debug:
+                readme = readme_exec(readme, day_path)
 
             with open(readme_path, 'w', encoding="utf-8") as file:
                 file.write(readme)
 
         # Handle year README and webpage
-        gen_year_table(year_path, solved[year], year)
-        gen_year_page(mkpath(ROOT_PATH, "docs", year, "index.html"), solved[year], year)
+        if no_debug:
+            gen_year_table(year_path, solved[year], year)
+            gen_year_page(mkpath(ROOT_PATH, "docs", year, "index.html"), solved[year], year)
 
     # Handle global README and webpage
-    gen_global_table(ROOT_PATH, solved)
-    gen_home_page(mkpath(ROOT_PATH, "docs", "index.html"), solved)
+    if no_debug:
+        gen_global_table(ROOT_PATH, solved)
+        gen_home_page(mkpath(ROOT_PATH, "docs", "index.html"), solved)
 
 
 if __name__ == "__main__":
-    main()
+    main(len(argv) > 1 and argv[1] == "no-debug")

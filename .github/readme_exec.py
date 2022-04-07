@@ -1,8 +1,9 @@
+from os.path import split as path_split
+from os import getcwd, chdir
 from timeit import timeit
 from io import StringIO
 from math import ceil
 import sys
-import os
 import re
 
 from utils import mkpath, clamp
@@ -80,10 +81,10 @@ def count_time(code, repeats=1, stdout=None):
 
 def exec_code(path):
     print("Handling \"{}\"...".format(path))
-    folder, filename = os.path.split(path)
+    folder, filename = path_split(path)
 
-    cur_path = os.getcwd()
-    os.chdir(folder)
+    cur_path = getcwd()
+    chdir(folder)
 
     with open(filename, 'r', encoding="utf-8") as file:
         code = file.read().strip()
@@ -94,7 +95,7 @@ def exec_code(path):
 
     exec_time = count_time(code, repeats=clamp(repeats, *REPEATS_CLAMP))
 
-    os.chdir(cur_path)
+    chdir(cur_path)
     return code, stdout.getvalue().strip(), format_time(exec_time)
 
 

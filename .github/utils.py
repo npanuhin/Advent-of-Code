@@ -1,13 +1,14 @@
-import concurrent.futures
-import requests
+from os.path import join as os_join, normpath as os_normpath
+from concurrent.futures import ThreadPoolExecutor
+from requests.adapters import HTTPAdapter
+from requests import Session
 import asyncio
-import os
 
 
-SESSION = requests.Session()
+SESSION = Session()
 SESSION.mount(
     'http://',
-    requests.adapters.HTTPAdapter(
+    HTTPAdapter(
         pool_connections=100,
         pool_maxsize=100
     )
@@ -16,7 +17,7 @@ req_get = SESSION.get
 
 
 def mkpath(*paths):
-    return os.path.normpath(os.path.join(*map(str, paths)))
+    return os_normpath(os_join(*map(str, paths)))
 
 
 def clamp(x, bottom, top):
@@ -30,7 +31,7 @@ def md_link(text, link):
 def req_get_parallel(urls):
     async def get_pages(urls):
         loop = asyncio.get_event_loop()
-        with concurrent.futures.ThreadPoolExecutor(max_workers=25) as executor:
+        with ThreadPoolExecutor(max_workers=25) as executor:
             futures = [
                 loop.run_in_executor(executor, req_get, url)
                 for url in urls
