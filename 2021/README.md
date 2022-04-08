@@ -8,33 +8,137 @@
 ---
 
 <!-- Solved table start -->
-|                                  |          Part 1           |          Part 2          |
-|----------------------------------|:-------------------------:|:------------------------:|
-|  Day 1: Sonar Sweep              | [⭐](./Day%2001/part1.py) | [⭐](./Day%2001/part2.py) |
-|  Day 2: Dive!                    | [⭐](./Day%2002/part1.py) | [⭐](./Day%2002/part2.py) |
-|  Day 3: Binary Diagnostic        | [⭐](./Day%2003/part1.py) | [⭐](./Day%2003/part2.py) |
-|  Day 4: Giant Squid              | [⭐](./Day%2004/part1.py) | [⭐](./Day%2004/part2.py) |
-|  Day 5: Hydrothermal Venture     | [⭐](./Day%2005/part1.py) | [⭐](./Day%2005/part2.py) |
-|  Day 6: Lanternfish              | [⭐](./Day%2006/part1.py) | [⭐](./Day%2006/part2.py) |
-|  Day 7: The Treachery of Whales  | [⭐](./Day%2007/part1.py) | [⭐](./Day%2007/part2.py) |
-|  Day 8: Seven Segment Search     | [⭐](./Day%2008/part1.py) | [⭐](./Day%2008/part2.py) |
-|  Day 9: Smoke Basin              | [⭐](./Day%2009/part1.py) | [⭐](./Day%2009/part2.py) |
-|  Day 10: Syntax Scoring          | [⭐](./Day%2010/part1.py) | [⭐](./Day%2010/part2.py) |
-|  Day 11: Dumbo Octopus           | [⭐](./Day%2011/part1.py) | [⭐](./Day%2011/part2.py) |
-|  Day 12: Passage Pathing         |                           |                          |
-|  Day 13: Transparent Origami     |                           |                          |
-|  Day 14: Extended Polymerization |                           |                          |
-|  Day 15: Chiton                  |                           |                          |
-|  Day 16: Packet Decoder          |                           |                          |
-|  Day 17: Trick Shot              |                           |                          |
-|  Day 18: Snailfish               |                           |                          |
-|  Day 19: Beacon Scanner          |                           |                          |
-|  Day 20: Trench Map              |                           |                          |
-|  Day 21: Dirac Dice              |                           |                          |
-|  Day 22: Reactor Reboot          |                           |                          |
-|  Day 23: Amphipod                |                           |                          |
-|  Day 24: Arithmetic Logic Unit   |                           |                          |
-|  Day 25: Sea Cucumber            |                           |                          |
+<table>
+	<tr>
+		<th></th>
+		<th>Part 1</th>
+		<th>Part 2</th>
+	</tr>
+	<tr>
+		<td>Day 1: Sonar Sweep</td>
+		<td align="center"><a href="./Day%2001/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2001/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 2: Dive!</td>
+		<td align="center"><a href="./Day%2002/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2002/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 3: Binary Diagnostic</td>
+		<td align="center"><a href="./Day%2003/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2003/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 4: Giant Squid</td>
+		<td align="center"><a href="./Day%2004/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2004/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 5: Hydrothermal Venture</td>
+		<td align="center"><a href="./Day%2005/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2005/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 6: Lanternfish</td>
+		<td align="center"><a href="./Day%2006/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2006/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 7: The Treachery of Whales</td>
+		<td align="center"><a href="./Day%2007/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2007/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 8: Seven Segment Search</td>
+		<td align="center"><a href="./Day%2008/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2008/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 9: Smoke Basin</td>
+		<td align="center"><a href="./Day%2009/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2009/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 10: Syntax Scoring</td>
+		<td align="center"><a href="./Day%2010/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2010/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 11: Dumbo Octopus</td>
+		<td align="center"><a href="./Day%2011/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2011/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 12: Passage Pathing</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 13: Transparent Origami</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 14: Extended Polymerization</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 15: Chiton</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 16: Packet Decoder</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 17: Trick Shot</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 18: Snailfish</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 19: Beacon Scanner</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 20: Trench Map</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 21: Dirac Dice</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 22: Reactor Reboot</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 23: Amphipod</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 24: Arithmetic Logic Unit</td>
+		<td align="center"></td>
+		<td align="center"></td>
+	</tr>
+	<tr>
+		<td>Day 25: Sea Cucumber</td>
+		<td colspan="2" align="center"></td>
+	</tr>
+</table>
 <!-- Solved table end -->
 
 <!-- |                                               |                           |                          |

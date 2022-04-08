@@ -28,6 +28,10 @@ def md_link(text, link):
     return "[{}]({})".format(text, link)
 
 
+def html_link(text, link):
+    return '<a href="{}">{}</a>'.format(link, text)
+
+
 def req_get_parallel(urls):
     async def get_pages(urls):
         loop = asyncio.get_event_loop()

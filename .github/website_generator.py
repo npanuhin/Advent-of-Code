@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from os.path import isfile
 import re
 
-from utils import mkpath, req_get
+from utils import req_get
 
 
 YEAR_START = 2015

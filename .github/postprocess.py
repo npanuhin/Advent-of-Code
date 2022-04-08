@@ -70,12 +70,12 @@ def main(no_debug=True):
 
         # Handle year README and webpage
         if no_debug:
-            gen_year_table(year_path, solved[year], year)
+            gen_year_table(mkpath(year_path, "README.md"), solved[year], year)
             gen_year_page(mkpath(ROOT_PATH, "docs", year, "index.html"), solved[year], year)
 
     # Handle global README and webpage
     if no_debug:
-        gen_global_table(ROOT_PATH, solved)
+        gen_global_table(mkpath(ROOT_PATH, "README.md"), solved)
         gen_home_page(mkpath(ROOT_PATH, "docs", "index.html"), solved)
 
 
