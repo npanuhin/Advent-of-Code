@@ -27,7 +27,7 @@ jobs:
         working-directory: .github
         run: pip install -r requirements.txt
 
-      - name: Generate READMEs
+      - name: Run postprocess
         working-directory: .github
         run: python postprocess.py no-debug
 

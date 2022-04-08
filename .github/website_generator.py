@@ -13,21 +13,20 @@ YEAR_END = max(
 )
 
 
-def gen_home_page(root_path, solved):
-    path = mkpath(root_path, "index.html")
-    if not isfile(path):
+def gen_home_page(target_path, solved):
+    if not isfile(target_path):
         return
 
     list_items = [
         (
-            '<li><a href="{}">[{}]</a></li>'
+            '<li><a href="{year}">[{year}]</a></li>'
             if year in solved else
-            '<li>[{}]</li>'
-        ).format(year)
+            '<li>[{year}]</li>'
+        ).format(year=year)
         for year in range(YEAR_START, YEAR_END + 1)
     ]
 
-    with open(path, 'r', encoding="utf-8") as file:
+    with open(target_path, 'r', encoding="utf-8") as file:
         page = file.read()
 
     page = re.sub(
@@ -39,7 +38,7 @@ def gen_home_page(root_path, solved):
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    with open(path, 'w', encoding="utf-8") as file:
+    with open(target_path, 'w', encoding="utf-8") as file:
         file.write(page)
 
 
@@ -55,7 +54,7 @@ def gen_year_page(target_path, solved, year):
                 '\t\t<a href="https://github.com/npanuhin/Advent-of-Code/tree/master/{year}/Day%20{day:02d}">Day {day}</a>'
             ),
             "\t</td>",
-            '\t' + ('<td colspan="2">' if day + 1 == 25 and solved[day][0] and not solved[day][1] else "<td>"),
+            '\t' + ('<td colspan="2">' if day + 1 == 25 and not solved[day][1] else "<td>"),
             (
                 (
                     '\t\t<a href="https://github.com/npanuhin/Advent-of-Code/tree/master/{year}/Day%20{day:02d}/part1.py">' +

@@ -1,22 +1,26 @@
-from os import walk as os_walk
-from os.path import splitext
+def replace_tabs(path):
+    with open(path, 'r', encoding="utf-8") as file:
+        content = file.read()
 
-from utils import mkpath
-
-
-ROOT = "../"
-EXTENSIONS = (".py", ".md")
+    with open(path, 'w', encoding="utf-8") as file:
+        file.write(content.replace('\t', ' ' * 4))
 
 
-print("Replacing tabs with spaces...")
+def main():
+    from os import walk as os_walk
+    from os.path import splitext
+    from utils import mkpath
 
-for path, folders, files in os_walk(mkpath(ROOT)):
-    for filename in files:
-        if splitext(filename)[1] in EXTENSIONS:
-            print(mkpath(path, filename))
+    ROOT = "../"
+    EXTENSIONS = (".py", ".md")
 
-            with open(mkpath(path, filename), 'r', encoding="utf-8") as file:
-                content = file.read()
+    print("Replacing tabs with spaces...")
+    for path, folders, files in os_walk(mkpath(ROOT)):
+        for filename in files:
+            if splitext(filename)[1] in EXTENSIONS:
+                print(mkpath(path, filename))
+                replace_tabs(mkpath(path, filename))
 
-            with open(mkpath(path, filename), 'w', encoding="utf-8") as file:
-                file.write(content.replace('\t', ' ' * 4))
+
+if __name__ == "__main__":
+    main()

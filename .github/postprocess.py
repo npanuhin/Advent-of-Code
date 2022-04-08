@@ -5,7 +5,9 @@ import re
 
 from readme_tables_generator import gen_global_table, gen_year_table
 from website_generator import gen_home_page, gen_year_page
+from replace_tabs import replace_tabs
 from readme_exec import readme_exec
+
 from utils import mkpath
 
 
@@ -40,6 +42,13 @@ def main(no_debug=True):
                         for line in file:
                             if len(line.strip()) > 120:
                                 print("Warning: long line detected in {}".format(mkpath(day_path, filename)))
+
+            # Handle solution files: Replace tabs with spaces
+            if no_debug:
+                if solved[year][day][0]:
+                    replace_tabs(mkpath(day_path, "part1.py"))
+                if solved[year][day][1]:
+                    replace_tabs(mkpath(day_path, "part2.py"))
 
             # Handle day README
             if "README.md" not in files:
