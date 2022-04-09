@@ -71,8 +71,8 @@
 	</tr>
 	<tr>
 		<td>Day 12: Passage Pathing</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="./Day%2012/part1.py">⭐</a></td>
+		<td align="center"><a href="./Day%2012/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 13: Transparent Origami</td>
