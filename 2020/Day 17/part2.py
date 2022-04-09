@@ -1,63 +1,37 @@
-from copy import deepcopy
+from collections import Counter
+from itertools import product
 
-
-def count_neighbors(space, x, y, z, w):
-    result = -space[w][z][y][x]
-    for w1 in range(w - 1, w + 2):
-        for z1 in range(z - 1, z + 2):
-            for y1 in range(y - 1, y + 2):
-                for x1 in range(x - 1, x + 2):
-                    if space[w1][z1][y1][x1]:
-                        result += 1
-    return result
-
-
-CYCLES = 6
+ADJACENT_DIRECTIONS = (-1, 0, 1)
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    inp = [[box == '#' for box in line] for line in file]
+    cur_active = set(
+        (x, y, 0, 0)
+        for y, line in enumerate(file)
+        for x, box in enumerate(line)
+        if box == '#'
+    )
 
-height, width, depth = len(inp) + (CYCLES + 1) * 2, len(inp[0]) + (CYCLES + 1) * 2, 1 + (CYCLES + 1) * 2
+for cycle in range(6):
+    next_active = set()
+    adjacent_points = []
 
-space = [
-    [[[[False for x in range(width)] for y in range(height)] for z in range(depth)] for w in range(CYCLES + 1)] +
-    [
-        [[[False for x in range(width)] for y in range(height)] for z in range(CYCLES + 1)] +
-        [
-            [[False for x in range(width)] for y in range(CYCLES + 1)] +
+    for point in cur_active:
+        adjacent = set(product(*(
+            tuple(dimension + delta for delta in ADJACENT_DIRECTIONS) for dimension in point
+        )))
+        adjacent.remove(point)
 
-            [
-                [False for x in range(CYCLES + 1)] +
-                line +
-                [False for x in range(CYCLES + 1)] for line in inp
-            ] +
+        adjacent_points += adjacent
 
-            [[False for x in range(width)] for y in range(CYCLES + 1)]
-        ] +
-        [[[False for x in range(width)] for y in range(height)] for z in range(CYCLES + 1)]
-    ] +
-    [[[[False for x in range(width)] for y in range(height)] for z in range(depth)] for w in range(CYCLES + 1)]
-][0]
+        if 2 <= len(adjacent.intersection(cur_active)) <= 3:
+            next_active.add(point)
 
-space1, space2 = space, deepcopy(space)
+    next_active.update(
+        point
+        for point, count in Counter(adjacent_points).items()
+        if count == 3 and point not in cur_active
+    )
 
-for cycle in range(CYCLES):
-    for w in range(1, (CYCLES + 1) * 2):
-        for z in range(1, depth - 1):
-            for y in range(1, height - 1):
-                for x in range(1, width - 1):
-                    if space1[w][z][y][x] and not (2 <= count_neighbors(space1, x, y, z, w) <= 3):
-                        space2[w][z][y][x] = False
-                    elif not space1[w][z][y][x] and count_neighbors(space1, x, y, z, w) == 3:
-                        space2[w][z][y][x] = True
-                    else:
-                        space2[w][z][y][x] = space1[w][z][y][x]
-    space1, space2 = space2, space1
+    cur_active = next_active
 
-print(sum(
-    space1[w][z][y][x]
-    for x in range(1, width - 1)
-    for y in range(1, height - 1)
-    for z in range(1, depth - 1)
-    for w in range(1, (CYCLES + 1) * 2 - 1)
-))
+print(len(cur_active))

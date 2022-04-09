@@ -20,7 +20,7 @@ REGEX = {
     "exec_code_replace": "<!-- Execute code: \"{}\" -->\n```{}\n{}\n```\n```\n{}\n```\n###### Execution time: {}"
 }
 
-MAX_EXEC_TIME = 10000
+MAX_EXEC_TIME = 3000
 REPEATS_CLAMP = (3, 30)
 
 
