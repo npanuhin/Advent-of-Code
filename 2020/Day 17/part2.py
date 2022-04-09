@@ -1,6 +1,7 @@
 from collections import Counter
 from itertools import product
 
+
 ADJACENT_DIRECTIONS = (-1, 0, 1)
 
 with open("input.txt", 'r', encoding="utf-8") as file:

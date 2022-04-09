@@ -1,3 +1,5 @@
+from collections import Counter
+
 MOVES = {
     "nw": (1, -1),
     "sw": (1, 1),
@@ -7,25 +9,24 @@ MOVES = {
     "e": (-2, 0)
 }
 
-black = set()
+
+def neighors(x, y):
+    for dx, dy in MOVES.values():
+        yield x + dx, y + dy
+
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    for line in file:
-        line_pos = 0
-        coords = [0, 0]
+    flipped = []
+    for line in map(str.strip, file):
+        pos = x = y = 0
+        while pos < len(line):
+            for move, delta in MOVES.items():
+                if line.startswith(move, pos):
+                    x += delta[0]
+                    y += delta[1]
+                    pos += len(move)
+                    break
 
-        while line_pos < len(line.strip()):
+        flipped.append((x, y))
 
-            for move in MOVES:
-                if line.startswith(move, line_pos):
-                    coords[0] += MOVES[move][0]
-                    coords[1] += MOVES[move][1]
-                    line_pos += len(move)
-
-        coords = tuple(coords)
-        if coords in black:
-            black.remove(coords)
-        else:
-            black.add(coords)
-
-print(len(black))
+print(sum(1 for count in Counter(flipped).values() if count % 2 == 1))
