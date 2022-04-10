@@ -1,12 +1,12 @@
 from collections import deque
 from itertools import islice
 
+
 player1, player2 = deque(), deque()
 input_player = 0
 
 with open("input.txt", 'r', encoding="utf-8") as file:
     for line in (line.strip() for line in file if line.strip()):
-
         if line.isnumeric():
             (player1 if input_player == 1 else player2).append(int(line))
         else:
@@ -17,7 +17,6 @@ def play_game(player1, player2):
     game_history = set()
 
     while player1 and player2:
-
         if (tuple(player1), tuple(player2)) in game_history:
             return 1
 

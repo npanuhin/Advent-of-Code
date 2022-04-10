@@ -61,7 +61,6 @@ with open("input.txt", 'r', encoding="utf-8") as file:
     inp = sorted(map(int, file))
 
 for i in range(len(inp) - 2):
-
     if inp[i] * 3 >= 2020:
         break
 

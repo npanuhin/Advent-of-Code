@@ -1,5 +1,6 @@
 from copy import deepcopy
 
+
 with open("input.txt", 'r') as file:
     sequence = list(map(int, file.readline().split(',')))
 

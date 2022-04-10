@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 MOVES = {
     "nw": (1, -1),
     "sw": (1, 1),

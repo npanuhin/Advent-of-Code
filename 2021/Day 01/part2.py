@@ -13,5 +13,4 @@ with open("input.txt", 'r') as file:
             answer += 1
         prev = cur
 
-
 print(answer)

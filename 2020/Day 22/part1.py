@@ -1,11 +1,11 @@
 from collections import deque
 
+
 player1, player2 = deque(), deque()
 input_player = 0
 
 with open("input.txt", 'r', encoding="utf-8") as file:
     for line in (line.strip() for line in file if line.strip()):
-
         if line.isnumeric():
             (player1 if input_player == 1 else player2).append(int(line))
         else:
