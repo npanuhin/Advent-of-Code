@@ -35,7 +35,7 @@ def main(no_debug=True):
             files = [filename for filename in os.listdir(day_path) if isfile(mkpath(day_path, filename))]
             solved[year][day] = ["part1.py" in files, "part2.py" in files, "README.md" in files]
 
-            # Long line warning
+            # ------------------------------------------- Long line warning --------------------------------------------
             for filename in files:
                 if os.path.splitext(filename)[1] == ".py":
                     with open(mkpath(day_path, filename), 'r', encoding="utf-8") as file:
@@ -43,30 +43,43 @@ def main(no_debug=True):
                             if len(line.strip()) > 120:
                                 print("Warning: long line detected in {}".format(mkpath(day_path, filename)))
 
-            # Handle solution files: Replace tabs with spaces
+            # -------------------------------- Solution files: Replace tabs with spaces --------------------------------
             if no_debug:
                 if solved[year][day][0]:
                     replace_tabs(mkpath(day_path, "part1.py"))
                 if solved[year][day][1]:
                     replace_tabs(mkpath(day_path, "part2.py"))
 
-            # Handle day README
-            if "README.md" not in files:
-                continue
-            readme_path = mkpath(day_path, "README.md")
+            # ----------------------------------------------- Day README -----------------------------------------------
+            if "README.md" in files:
+                readme_path = mkpath(day_path, "README.md")
 
-            with open(readme_path, 'r', encoding="utf-8") as file:
-                readme = file.read()
+                with open(readme_path, 'r', encoding="utf-8") as file:
+                    readme = file.read()
 
-            # Place non-breaking spaces in markdown `code` tags:
-            readme = re.sub(r"`[^`\n\t\b\r]+`", lambda m: m.group(0).replace(' ', chr(0x2007)), readme)
+                # Place non-breaking spaces in markdown `code` tags:
+                readme = re.sub(r"`[^`\n\t\b\r]+`", lambda m: m.group(0).replace(' ', chr(0x2007)), readme)
 
-            # Handle "<!-- Execute code: "smth" -->" blocks
-            if no_debug:
-                readme = readme_exec(readme, day_path)
+                # Handle "<!-- Execute code: "smth" -->" blocks
+                if no_debug:
+                    readme = readme_exec(readme, day_path)
 
-            with open(readme_path, 'w', encoding="utf-8") as file:
-                file.write(readme)
+                with open(readme_path, 'w', encoding="utf-8") as file:
+                    file.write(readme)
+
+            # ----------------------------------------- TXT files (input.txt) ------------------------------------------
+            for filename in files:
+                if os.path.splitext(filename)[1] == ".txt":
+                    filepath = mkpath(day_path, filename)
+
+                    with open(filepath, 'r', encoding="utf-8") as file:
+                        file.seek(0, 2)
+                        file.seek(file.tell() - 1, 0)
+                        ends_with_newline = file.read() == '\n'
+
+                    if not ends_with_newline:
+                        with open(filepath, 'a', encoding="utf-8") as file:
+                            file.write('\n')
 
         # Handle year README and webpage
         if no_debug:
