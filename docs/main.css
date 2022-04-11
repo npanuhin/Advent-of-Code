@@ -105,14 +105,11 @@ main .left {
     box-sizing: border-box;
     padding-left: 3%;
     padding-right: 6%;
-
-    position: relative;
 }
 
 main .center, main .right {
-    position: relative;
     float: left;
-    top: 25px;
+    margin-top: 25px;
     width: 25%;
     text-align: center;
     box-sizing: border-box;
