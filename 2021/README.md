@@ -16,73 +16,73 @@
 	</tr>
 	<tr>
 		<td>Day 1: Sonar Sweep</td>
-		<td align="center"><a href="./Day%2001/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2001/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2001/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2001/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 2: Dive!</td>
-		<td align="center"><a href="./Day%2002/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2002/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2002/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2002/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 3: Binary Diagnostic</td>
-		<td align="center"><a href="./Day%2003/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2003/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2003/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2003/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 4: Giant Squid</td>
-		<td align="center"><a href="./Day%2004/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2004/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2004/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2004/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 5: Hydrothermal Venture</td>
-		<td align="center"><a href="./Day%2005/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2005/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2005/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2005/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 6: Lanternfish</td>
-		<td align="center"><a href="./Day%2006/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2006/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2006/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2006/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 7: The Treachery of Whales</td>
-		<td align="center"><a href="./Day%2007/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2007/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2007/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2007/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 8: Seven Segment Search</td>
-		<td align="center"><a href="./Day%2008/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2008/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2008/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2008/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 9: Smoke Basin</td>
-		<td align="center"><a href="./Day%2009/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2009/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2009/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2009/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 10: Syntax Scoring</td>
-		<td align="center"><a href="./Day%2010/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2010/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2010/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2010/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 11: Dumbo Octopus</td>
-		<td align="center"><a href="./Day%2011/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2011/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2011/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2011/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 12: Passage Pathing</td>
-		<td align="center"><a href="./Day%2012/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2012/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2012/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2012/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 13: Transparent Origami</td>
-		<td align="center"><a href="./Day%2013/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2013/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2013/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2013/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 14: Extended Polymerization</td>
-		<td align="center"><a href="./Day%2014/part1.py">⭐</a></td>
-		<td align="center"><a href="./Day%2014/part2.py">⭐</a></td>
+		<td align="center"><a href="Day%2014/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2014/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 15: Chiton</td>

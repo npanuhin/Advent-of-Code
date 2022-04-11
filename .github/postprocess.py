@@ -69,13 +69,16 @@ def main(no_debug=True):
 
             # ----------------------------------------- TXT files (input.txt) ------------------------------------------
             for filename in files:
-                if os.path.splitext(filename)[1] == ".txt":
+                if os.path.splitext(filename)[1] in (".txt", ".py", ".md"):
                     filepath = mkpath(day_path, filename)
 
                     with open(filepath, 'r', encoding="utf-8") as file:
                         file.seek(0, 2)
-                        file.seek(file.tell() - 1, 0)
-                        ends_with_newline = file.read() == '\n'
+                        if file.tell() == 0:
+                            ends_with_newline = True
+                        else:
+                            file.seek(file.tell() - 1, 0)
+                            ends_with_newline = file.read() == '\n'
 
                     if not ends_with_newline:
                         with open(filepath, 'a', encoding="utf-8") as file:

@@ -58,22 +58,22 @@ def gen_global_table(readme_path, solved):
     table = [[""]] + [["Day {}".format(day + 1)] for day in range(25)]
 
     for year in solved:
-        table[0].append(md_link(year, "./{}".format(year)))
+        table[0].append(md_link(year, year))
         for day in range(25):
             day_url_name = "Day%20{:02d}".format(day + 1)
 
             if solved[year][day][2]:
                 # Day has README (both parts solved)
-                table[day + 1].append(md_link("⭐⭐", "./{}/{}".format(year, day_url_name)))
+                table[day + 1].append(md_link("⭐⭐", "{}/{}".format(year, day_url_name)))
 
             elif day + 1 == 25 and solved[year][day][0] and not solved[year][day][1]:
                 # This is the 25th day, which can provide both starts for solving the only part
-                table[day + 1].append(md_link("⭐⭐", "./{}/{}/part1.py".format(year, day_url_name)))
+                table[day + 1].append(md_link("⭐⭐", "{}/{}/part1.py".format(year, day_url_name)))
 
             else:
                 table[day + 1].append(
-                    (md_link("⭐", "./{}/{}/part1.py".format(year, day_url_name)) if solved[year][day][0] else "") +
-                    (md_link("⭐", "./{}/{}/part2.py".format(year, day_url_name)) if solved[year][day][1] else "")
+                    (md_link("⭐", "{}/{}/part1.py".format(year, day_url_name)) if solved[year][day][0] else "") +
+                    (md_link("⭐", "{}/{}/part2.py".format(year, day_url_name)) if solved[year][day][1] else "")
                 )
 
     with open(readme_path, 'r', encoding="utf-8") as file:
@@ -128,13 +128,13 @@ def gen_year_table(readme_path, solved, year):
         table.append(html_wrap(
             (
                 "<td>" + (
-                    html_link(day_name, "./" + day_url_name) if solved[day][2] else day_name
+                    html_link(day_name, day_url_name) if solved[day][2] else day_name
                 ) + "</td>",
 
                 '<td{} align="center">'.format(' colspan="2"' if day + 1 == 25 and not solved[day][1] else "") + (
-                    html_link("⭐⭐", "./" + day_url_name + "/part1.py")
+                    html_link("⭐⭐", day_url_name + "/part1.py")
                     if solved[day][0] and day + 1 == 25 and not solved[day][1] else
-                    html_link("⭐", "./" + day_url_name + "/part1.py")
+                    html_link("⭐", day_url_name + "/part1.py")
                     if solved[day][0] else
                     ""
                 ) + "</td>",
@@ -143,7 +143,7 @@ def gen_year_table(readme_path, solved, year):
                     () if day + 1 == 25 and not solved[day][1] else
                     (
                         '<td align="center">' + (
-                            html_link("⭐", "./" + day_url_name + "/part2.py") if solved[day][1] else ""
+                            html_link("⭐", day_url_name + "/part2.py") if solved[day][1] else ""
                         ) + "</td>",
                     )
                 )

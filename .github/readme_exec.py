@@ -60,7 +60,7 @@ def need_time_change(old_time, new_time):
             abs(int(match1.group(2)) - int(match2.group(2))) <= ceil(max(
                 abs(int(match1.group(2))),
                 abs(int(match2.group(2)))
-            ) / 10):
+            ) / 5):
         return False
 
     return True
