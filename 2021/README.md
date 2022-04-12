@@ -91,8 +91,8 @@
 	</tr>
 	<tr>
 		<td>Day 16: Packet Decoder</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2016/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2016/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 17: Trick Shot</td>
