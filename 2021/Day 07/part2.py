@@ -5,7 +5,7 @@ def calc(target):
     return sum(map(lambda d: d * (d + 1) // 2, (abs(crab - target) for crab in crabs)))
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt", 'r') as file:
     crabs = list(map(int, file.read().split(',')))
 
 mean = sum(crabs) / len(crabs)

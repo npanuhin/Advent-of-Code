@@ -1,6 +1,6 @@
 answer = 0
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt", 'r') as file:
     for line in file:
         patterns, output = (
             list(map(frozenset, item.split()))

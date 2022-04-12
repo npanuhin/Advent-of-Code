@@ -1,4 +1,4 @@
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt", 'r') as file:
     heightmap = [list(map(int, line.strip())) for line in file]
 
 n, m = len(heightmap), len(heightmap[0])
