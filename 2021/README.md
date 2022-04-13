@@ -96,8 +96,8 @@
 	</tr>
 	<tr>
 		<td>Day 17: Trick Shot</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2017/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2017/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 18: Snailfish</td>
