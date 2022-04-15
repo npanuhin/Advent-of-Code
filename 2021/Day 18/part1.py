@@ -11,8 +11,7 @@ def check_nested(cur, n=4):
             continue
 
         if n == 1:
-            result = RESULT
-            result[:2] = item
+            result = [*item, True]
             cur[i] = 0
         elif not (result := check_nested(item, n - 1))[2]:
             continue
@@ -27,7 +26,6 @@ def check_nested(cur, n=4):
                 cur[i] += result[j]
 
             result[j] = None
-
         return result
 
     return EMPTY_RESULT
@@ -37,7 +35,8 @@ def check_greater(cur):
     for i, item in enumerate(cur):
         if isinstance(item, int):
             if item >= 10:
-                a, b = divmod(item, 2)
+                a = item >> 1
+                b = item & 1
                 cur[i] = [a, a + b]
                 return True
         elif check_greater(item):
