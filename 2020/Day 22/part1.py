@@ -1,16 +1,11 @@
 from collections import deque
 
 
-player1, player2 = deque(), deque()
-input_player = 0
-
 with open("input.txt", 'r', encoding="utf-8") as file:
-    for line in (line.strip() for line in file if line.strip()):
-        if line.isnumeric():
-            (player1 if input_player == 1 else player2).append(int(line))
-        else:
-            input_player += 1
-
+    player1, player2 = (
+        deque(map(int, player.splitlines()[1:]))
+        for player in file.read().split("\n\n")
+    )
 
 while player1 and player2:
     if player1[0] > player2[0]:
@@ -18,9 +13,4 @@ while player1 and player2:
     else:
         player2.extend((player2.popleft(), player1.popleft()))
 
-winner = player1 + player2
-
-print(sum(
-    card * (len(winner) - i)
-    for i, card in enumerate(winner)
-))
+print(sum(i * card for i, card in enumerate(reversed(player1 + player2), 1)))
