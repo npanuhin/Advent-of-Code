@@ -1,7 +1,7 @@
 with open("input.txt", 'r', encoding="utf-8") as file:
     cups = list(map(int, file.readline().strip()))
 
-carousel = [i + 1 for i in range(1_000_000 + 1)]
+carousel = list(range(1, 1_000_002))
 carousel[-1] = 1
 for i in range(len(cups) - 1):
     carousel[cups[i]] = cups[i + 1]
