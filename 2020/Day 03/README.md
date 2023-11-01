@@ -12,7 +12,7 @@ In Part 1, we were asked to count the number of trees on a map with specific coo
 
 > From your starting position at the top-left, check the position that is right 3 and down 1. Then, check the position that is right 3 and down 1 from there, and so on until you go past the bottom of the map.
 
-However, due to *something about arboreal genetics and biome stability*, the map repeats endlessly to the right. Regarding the code, we can just use the `%` operator on the X-axis: `x % m`
+However, due to *something about arboreal genetics and biome stability*, the map repeats endlessly to the right. Regarding the code, we can just use the `%` operator on the X-axis: `x % m`
 
 This implementation uses an additional function to get the answer. Although this is not necessary here, it will be very helpful when dealing with Part 2.
 

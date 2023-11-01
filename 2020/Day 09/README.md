@@ -12,7 +12,7 @@ In Part 1, we were asked to find an invalid instance in a set of numbers that ob
 
 > First, `25` numbers are initialized. After that, each number must be the sum of any two of the `25` immediately previous numbers (these two numbers must be different).
 
-I find the task quite easy because it has such a small input range of `25`. The simplest solution will have complexity `O(25^2 * n) = O(n)`
+I find the task quite easy because it has such a small input range of `25`. The simplest solution will have complexity `O(25^2 * n) = O(n)`
 
 <!-- Execute code: "part1.py" -->
 ```python

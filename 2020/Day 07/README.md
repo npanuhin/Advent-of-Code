@@ -8,7 +8,7 @@
 
 ## Part 1
 
-In Part 1, we were asked to parse sentences and count the number of bags that could possibly contain the given `shiny gold` bag.
+In Part 1, we were asked to parse sentences and count the number of bags that could possibly contain the given `shiny gold` bag.
 
 An example of these sentences:
 ```
@@ -23,9 +23,9 @@ faded blue bags contain no other bags.
 dotted black bags contain no other bags.
 ```
 
-We can see that each sentence contains a *name* followed by `bags contain` and then either `no other bags` or a comma-separated list of bags. I used [regular expressions](https://en.wikipedia.org/wiki/Regular_expression "Visit wikipedia.org/Regular_expression") for this puzzle. To parse the sentence, I used [this regex](https://regex101.com/r/2O46M8/1) and to strip the name of the bag - [this regex](https://regex101.com/r/vvHX0M/1) (a list of bags can be simply splitted by a comma).
+We can see that each sentence contains a *name* followed by `bags contain` and then either `no other bags` or a comma-separated list of bags. I used [regular expressions](https://en.wikipedia.org/wiki/Regular_expression "Visit wikipedia.org/Regular_expression") for this puzzle. To parse the sentence, I used [this regex](https://regex101.com/r/2O46M8/1) and to strip the name of the bag - [this regex](https://regex101.com/r/vvHX0M/1) (a list of bags can be simply splitted by a comma).
 
-After parsing the sentences, we can run a recursive function to *count the number of bags that can contain the **current bag*** (the initial bag is `shiny gold` of course).
+After parsing the sentences, we can run a recursive function to *count the number of bags that can contain the **current bag*** (the initial bag is `shiny gold` of course).
 
 <!-- Execute code: "part1.py" -->
 ```python
@@ -67,7 +67,7 @@ print(count(data, "shiny gold") - 1)
 
 ## Part 2
 
-In Part 2, we were asked to count the exact opposite: the number of bags that can fit in a `shiny gold` bag.
+In Part 2, we were asked to count the exact opposite: the number of bags that can fit in a `shiny gold` bag.
 
 To do this, we can swap the keys and values in the `data` dict and start counting again, taking into account the number of bags in each sentence. The regexes above still apply.
 

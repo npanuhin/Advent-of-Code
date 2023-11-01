@@ -27,9 +27,9 @@ We can also take advantage of Python's dictionary implementation to get the defa
 last = nums.get(cur, step)
 ```
 
-So now `last` contains the index of the last occurrence of the current number. Then we store the index of the current number in the dictionary (`nums[cur] = step`) and calculate the next number (`cur = step - last`).
+So now `last` contains the index of the last occurrence of the current number. Then we store the index of the current number in the dictionary (`nums[cur] = step`) and calculate the next number (`cur = step - last`).
 
-Thus, if a number has not been spoken, `cur` will be equal to `step (default value) - step = 0`. 
+Thus, if a number has not been spoken, `cur` will be equal to `step (default value) - step = 0`. 
 
 The answer will be the 2020th number spoken:
 
@@ -55,7 +55,7 @@ print(cur)
 ###### Execution time: < 1ms
 ## Part 2
 
-In Part 2, we were asked to simulate the same game with the same rule, except now until the `30 * 10^6`th step.
+In Part 2, we were asked to simulate the same game with the same rule, except now until the `30 * 10^6`th step.
 
 As I mentioned earlier, I haven't come up with anything smarter, so this is a 10s+ implementation:
 

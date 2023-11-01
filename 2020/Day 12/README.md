@@ -24,7 +24,7 @@ In Part 1, we were asked to navigate the ship using the following actions:
 >
 > Action **F** means to move forward by the given value in the direction the ship is currently facing.
 
-Suppose the ship is initially at coordinate `(0, 0)`. At the end, its position will be `(END_X, END_Y)`. We should yield the [Manhattan distance](https://en.wikipedia.org/wiki/Manhattan_distance "Visit wikipedia.org/Manhattan_distance") *(sum of the absolute values of its east/west position and its north/south position)* between the starting position and the destination.
+Suppose the ship is initially at coordinate `(0, 0)`. At the end, its position will be `(END_X, END_Y)`. We should yield the [Manhattan distance](https://en.wikipedia.org/wiki/Manhattan_distance "Visit wikipedia.org/Manhattan_distance") *(sum of the absolute values of its east/west position and its north/south position)* between the starting position and the destination.
 
 To solve this puzzle, I created a dictionary that maps each action to a [**lambda function**](https://docs.python.org/3/reference/expressions.html#lambda "Visit docs.python.org#lambda").
 
@@ -104,7 +104,7 @@ def rotate(i, j, n):
 'R': i, j = *rotate(i, j, n // 90)
 ```
 
-You may notice that I'm using `n % 4` to find the required number of clockwise rotations. It is possible due to the behavior of Python's modulo operator for negative numbers: `-1 (turn counter-clockwise) % 4 = 3`, which means that one turn `90` degrees counter-clockwise is equal to three turns `90` degrees clockwise.
+You may notice that I'm using `n % 4` to find the required number of clockwise rotations. It is possible due to the behavior of Python's modulo operator for negative numbers: `-1 (turn counter-clockwise) % 4 = 3`, which means that one turn `90` degrees counter-clockwise is equal to three turns `90` degrees clockwise.
 
 The whole code looks like this:
 

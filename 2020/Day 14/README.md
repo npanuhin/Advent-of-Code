@@ -12,8 +12,8 @@
 
 In Part 1, we were asked to execute an algorithm consisting of the following two types of instructions:
 
-- `mask = {sequence of zeros, ones or letters X}` - sets or updates the bitmask.
-- `mem[{address}] = {value}` - applies a bitmask to a `{value} and `writes the result to memory `{address}`.
+- `mask = {sequence of zeros, ones or letters X}` - sets or updates the bitmask.
+- `mem[{address}] = {value}` - applies a bitmask to a `{value} and `writes the result to memory `{address}`.
 
 The bitmask is applied as follows: a `0` or `1` overwrites the corresponding bit in the value, while an `X` leaves the bit in the value unchanged.
 
@@ -28,7 +28,7 @@ mem[8] = 0
 
 Then there are attempts to write the value into memory:
 
-- `mem[8] = 11`:
+- `mem[8] = 11`:
 
   The program attempts to write the value `11` to memory address `8`. The value is converted:
   ```
@@ -38,11 +38,11 @@ Then there are attempts to write the value into memory:
   ```
   Thus, `73` is written to address `8`.
 
-- `mem[7] = 101`: Value `101` is converted using a bitmask to `101` and then is written to address `7`.
+- `mem[7] = 101`: Value `101` is converted using a bitmask to `101` and then is written to address `7`.
 
-- `mem[8] = 0`:  Value `0` is converted using a bitmask to `64` and then is written to address `8`.
+- `mem[8] = 0`:  Value `0` is converted using a bitmask to `64` and then is written to address `8`.
 
-At the end, `mem = {8: 64, 7: 101}`
+At the end, `mem = {8: 64, 7: 101}`
 
 #### Solution
 
@@ -52,11 +52,11 @@ First, I parsed each line and extracted the `bitmask` or `address` with the `val
 
 After that, I used [bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operation "Visit wikipedia.org/Bitwise_operation") to change the value most efficiently:
 
-To force overwrite any bit with `0`, we can use the bitwise `AND` operation (which in python is aliased as `&`) with `0`: `0 and 0 = 0` and `1 and 0 = 0`
+To force overwrite any bit with `0`, we can use the bitwise `AND` operation (which in python is aliased as `&`) with `0`: `0 and 0 = 0` and `1 and 0 = 0`
 
-To force overwrite any bit with `1`, we can use the bitwise `OR` operation (which in python is aliased as `|`) with `1`: `0 or 1 = 1` and `1 or 1 = 1`
+To force overwrite any bit with `1`, we can use the bitwise `OR` operation (which in python is aliased as `|`) with `1`: `0 or 1 = 1` and `1 or 1 = 1`
 
-Thus, everything together will look like `value = (value | 11111...) & 00000...`
+Thus, everything together will look like `value = (value | 11111...) & 00000...`
 
 <!-- Execute code: "part1.py" -->
 ```python
@@ -100,7 +100,7 @@ In Part 2, we were asked to execute the same algorithm, however now the instruct
 
 **Floating bit** refers to any possible bit (e.i. `0` or `1`), so if there are several of them in the address, the number of possible addresses becomes `2^k`, where `k` is the number of `X` in the address.
 
-I haven’t come up with anything smarter than iterating over all possible bitmasks: I made a recursive function-generator `gen_mask`. If the entire mask consists only of `X`, then the complexity of this algorithm becomes `O(q * (2 ^ 36))`, which is a lot. However, there are no such tests in the given input.
+I haven’t come up with anything smarter than iterating over all possible bitmasks: I made a recursive function-generator `gen_mask`. If the entire mask consists only of `X`, then the complexity of this algorithm becomes `O(q * (2 ^ 36))`, which is a lot. However, there are no such tests in the given input.
 
 As I mentioned in Part 1, to replace any bit with `1`, we can use the bitwise `OR` operation (the `overwrite_1` variable).
 

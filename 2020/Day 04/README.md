@@ -21,7 +21,7 @@ eyr:2024
 ecl:brn pid:760753108 byr:1931
 ```
 
-To parse it, we can first split each line by spaces, and then each word by `:`. Thus, we get a `key : value` structure. Finally, we can create a dictionary for each passport to easily validate the fields. I also used Python's [`all()`](https://docs.python.org/3/library/functions.html#all)  function, which is very nice, be sure to check it out (as well as the [`any()`](https://docs.python.org/3/library/functions.html#any)).
+To parse it, we can first split each line by spaces, and then each word by `:`. Thus, we get a `key : value` structure. Finally, we can create a dictionary for each passport to easily validate the fields. I also used Python's [`all()`](https://docs.python.org/3/library/functions.html#all)  function, which is very nice, be sure to check it out (as well as the [`any()`](https://docs.python.org/3/library/functions.html#any)).
 
 <!-- Execute code: "part1.py" -->
 ```python
