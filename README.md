@@ -5,9 +5,10 @@
 
 ---
 
-This is a repository of my [Advent of Code](https://adventofcode.com "Visit adventofcode.com") solutions. It also contains a short description of some puzzle solved.
+This is a repository of my [Advent of Code](https://adventofcode.com "Visit adventofcode.com") solutions.
+Some puzzle are accompanied by concise descriptions 😉
 
-I try to optimize each solution as much as possible, so even though they are written in Python, many of them execute in less than a second.
+I try to optimize each solution as much as possible, so although they are written in Python, many of them run in less than a second!
 
 <!-- Solved table start -->
 |        |                      [2020](2020)                       |                      [2021](2021)                       |
@@ -38,3 +39,8 @@ I try to optimize each solution as much as possible, so even though they are wri
 | Day 24 | [⭐](2020/Day%2024/part1.py)[⭐](2020/Day%2024/part2.py) |                                                         |
 | Day 25 | [⭐⭐](2020/Day%2025/part1.py)                           |                                                         |
 <!-- Solved table end -->
+
+💎 — A brief description is available
+
+
+<!-- TODO: I generally do not edit old code, aside from fixing code style wihout even remembering what the task was about -->

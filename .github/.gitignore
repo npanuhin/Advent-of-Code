@@ -1,3 +1,5 @@
+# Python cache
 __pycache__/
 
+# Execution times
 src/exec_time_result.txt

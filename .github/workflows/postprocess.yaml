@@ -1,9 +1,6 @@
 name: Postprocess
 
-on:
-  push:
-  workflow_dispatch:
-
+on: [push, workflow_dispatch]
 
 jobs:
   postprocess:
@@ -16,10 +13,9 @@ jobs:
           fetch-depth: 2
 
       - name: Install Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.8
-          architecture: x64
+          python-version: 3.11
           cache: pip
           cache-dependency-path: .github/requirements.txt
 
@@ -39,7 +35,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: ${{ steps.last-commit-message.outputs.msg }}
-          commit_options: '--amend --no-edit'
+          commit_options: --amend --no-edit
           push_options: --force
           skip_fetch: true
           commit_user_name: GitHub Actions
