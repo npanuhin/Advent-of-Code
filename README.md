@@ -10,7 +10,7 @@ Some puzzle are accompanied by concise descriptions 😉
 
 I try to optimize each solution as much as possible, so although they are written in Python, many of them run in less than a second!
 
-<!-- Solved table start -->
+<!-- Main table start -->
 |        |                      [2020](2020)                       |                      [2021](2021)                       |
 |--------|:-------------------------------------------------------:|:-------------------------------------------------------:|
 | Day 1  | [⭐⭐](2020/Day%2001)                                    | [⭐](2021/Day%2001/part1.py)[⭐](2021/Day%2001/part2.py) |
@@ -38,9 +38,12 @@ I try to optimize each solution as much as possible, so although they are writte
 | Day 23 | [⭐](2020/Day%2023/part1.py)[⭐](2020/Day%2023/part2.py) |                                                         |
 | Day 24 | [⭐](2020/Day%2024/part1.py)[⭐](2020/Day%2024/part2.py) |                                                         |
 | Day 25 | [⭐⭐](2020/Day%2025/part1.py)                           |                                                         |
-<!-- Solved table end -->
+<!-- Main table end -->
 
 💎 — A brief description is available
 
+---
 
-<!-- TODO: I generally do not edit old code, aside from fixing code style wihout even remembering what the task was about -->
+Some facts about this repository:
+
+- My goal is to keep solutions as close to the original as possible, so **I generally do not edit past solutions**. Sometimes I correct the code style (without even remembering what the task was about), but in the future I will try not to do this

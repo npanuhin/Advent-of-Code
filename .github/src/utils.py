@@ -1,8 +1,9 @@
-from os.path import join as os_join, normpath as os_normpath
 from concurrent.futures import ThreadPoolExecutor
+import asyncio
+import os
+
 from requests.adapters import HTTPAdapter
 from requests import Session
-import asyncio
 
 
 SESSION = Session()
@@ -17,7 +18,7 @@ req_get = SESSION.get
 
 
 def mkpath(*paths):
-    return os_normpath(os_join(*map(str, paths)))
+    return os.path.normpath(os.path.join(*map(str, paths)))
 
 
 def clamp(x, bottom, top):
