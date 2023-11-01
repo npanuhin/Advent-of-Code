@@ -3,7 +3,6 @@ import os
 
 # from src.readme_tables_generator import gen_global_table, gen_year_table
 # from src.website_generator import gen_home_page, gen_year_page
-from src.replace_tabs import replace_tabs
 # from src.readme_exec import readme_exec
 from src.utils import mkpath
 
@@ -51,13 +50,6 @@ def main(no_debug=True):
         for day in solved[year]:
             if not day.solved:
                 continue
-
-            # -------------------------------- Solution files: Replace tabs with spaces --------------------------------
-            if no_debug:
-                if day.part1_solved:
-                    replace_tabs(mkpath(day.path, 'part1.py'))
-                if day.part2_solved:
-                    replace_tabs(mkpath(day.path, 'part2.py'))
 
             # ----------------------------------------------- Day README -----------------------------------------------
             if day.readme_exists:

@@ -21,16 +21,16 @@ def mkpath(*paths):
     return os.path.normpath(os.path.join(*map(str, paths)))
 
 
-def clamp(x, bottom, top):
-    return bottom if x < bottom else top if x > top else x
+def clamp(value, bottom, top):
+    return bottom if value < bottom else top if value > top else value
 
 
-def md_link(text, link):
-    return "[{}]({})".format(text, link)
+def md_link(text: str, link: str) -> str:
+    return f"[{text}]({link})"
 
 
-def html_link(text, link):
-    return '<a href="{}">{}</a>'.format(link, text)
+def html_link(text: str, link: str) -> str:
+    return f'<a href="{link}">{text}</a>'
 
 
 def req_get_parallel(urls):
