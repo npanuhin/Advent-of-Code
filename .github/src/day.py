@@ -10,7 +10,9 @@ class Day:
         self.year = year
         self.day = day
 
-        self.path = mkpath(Day.ROOT_PATH, year, f'Day {day:02d}')
+        self.folder_name = f'Day {day:02d}'
+
+        self.path = mkpath(Day.ROOT_PATH, year, self.folder_name)
         self.solved = os.path.isdir(self.path)
 
         self.part1_path = mkpath(self.path, 'part1.py')

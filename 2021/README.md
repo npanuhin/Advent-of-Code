@@ -11,8 +11,8 @@
 <table>
 	<tr>
 		<th></th>
-		<th>Part 1</th>
-		<th>Part 2</th>
+		<th align="center">Part 1</th>
+		<th align="center">Part 2</th>
 	</tr>
 	<tr>
 		<td>Day 1: Sonar Sweep</td>

@@ -11,8 +11,8 @@
 <table>
 	<tr>
 		<th></th>
-		<th>Part 1</th>
-		<th>Part 2</th>
+		<th align="center">Part 1</th>
+		<th align="center">Part 2</th>
 	</tr>
 	<tr>
 		<td><a href="Day%2001">Day 1: Report Repair</a></td>

@@ -1,7 +1,7 @@
 from sys import argv
 import os
 
-from src.readme_tables_generator import gen_year_table  # , gen_global_table
+from src.readme_tables_generator import gen_year_table, gen_global_table
 # from src.website_generator import gen_home_page, gen_year_page
 # from src.readme_exec import readme_exec
 from src.utils import mkpath
@@ -63,13 +63,11 @@ def main(no_debug=True):
         # Handle year README and webpage
         gen_year_table(year)
         # if no_debug:
-        #     gen_year_table(mkpath(year_path, 'README.md'), solved[year], year)
         #     gen_year_page(mkpath(ROOT_PATH, 'docs', year, 'index.html'), solved[year], year)
 
     # Handle global README and webpage
-    # gen_global_table(mkpath(ROOT_PATH, 'README.md'), solved)
+    gen_global_table(solved, mkpath(ROOT_PATH, 'README.md'))
     # if no_debug:
-    #     gen_global_table(mkpath(ROOT_PATH, 'README.md'), solved)
     #     gen_home_page(mkpath(ROOT_PATH, 'docs', 'index.html'), solved)
 
 
