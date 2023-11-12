@@ -136,7 +136,7 @@
 	</tr>
 	<tr>
 		<td>Day 25: Sea Cucumber</td>
-		<td colspan="2" align="center"></td>
+		<td align="center" colspan="2"></td>
 	</tr>
 </table>
 <!-- Solved table end -->

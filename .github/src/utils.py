@@ -27,20 +27,3 @@ def clamp(value, bottom, top):
 
 def md_link(text: str, link: str) -> str:
     return f"[{text}]({link})"
-
-
-def html_link(text: str, link: str) -> str:
-    return f'<a href="{link}">{text}</a>'
-
-
-def req_get_parallel(urls):
-    async def get_pages(urls):
-        loop = asyncio.get_event_loop()
-        with ThreadPoolExecutor(max_workers=25) as executor:
-            futures = [
-                loop.run_in_executor(executor, req_get, url)
-                for url in urls
-            ]
-        return await asyncio.gather(*futures)
-
-    return asyncio.get_event_loop().run_until_complete(get_pages(urls))

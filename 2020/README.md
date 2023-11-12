@@ -136,7 +136,7 @@
 	</tr>
 	<tr>
 		<td>Day 25: Combo Breaker</td>
-		<td colspan="2" align="center"><a href="Day%2025/part1.py">⭐⭐</a></td>
+		<td align="center" colspan="2"><a href="Day%2025/part1.py">⭐⭐</a></td>
 	</tr>
 </table>
 <!-- Solved table end -->

@@ -1,53 +1,29 @@
 from sys import argv
 import os
 
-# from src.readme_tables_generator import gen_global_table, gen_year_table
+from src.readme_tables_generator import gen_year_table  # , gen_global_table
 # from src.website_generator import gen_home_page, gen_year_page
 # from src.readme_exec import readme_exec
 from src.utils import mkpath
+from src.year import Year
+from src.day import Day
 
 
-ROOT_PATH = '../'
-
-
-class Day:
-    def __init__(self, year, day):
-        self.year = year
-        self.day = day
-
-        self.path = mkpath(ROOT_PATH, year, f'Day {(day + 1):02d}')
-        self.solved = os.path.isdir(self.path)
-
-        self.part1_path = mkpath(self.path, 'part1.py')
-        self.part1_solved = os.path.isfile(self.part1_path)
-
-        self.part2_path = mkpath(self.path, 'part2.py')
-        self.part2_solved = os.path.isfile(self.part2_path)
-
-        self.readme_path = mkpath(self.path, 'README.md')
-        self.readme_exists = os.path.isfile(self.readme_path)
-
-    def read_readme(self):
-        with open(self.readme_path, 'r', encoding='utf-8') as file:
-            return file.read()
-
-    def write_readme(self, readme):
-        with open(self.readme_path, 'w', encoding='utf-8') as file:
-            file.write(readme)
+ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../'
 
 
 def main(no_debug=True):
     print('Starting...')
-    solved: dict[str, list[Day]] = {}
+    solved: dict[int, Year] = {}
 
-    for year in range(2000, 3000):
-        year_path = mkpath(ROOT_PATH, year)
-        if not os.path.isdir(year_path):
+    for year_num in range(2000, 3000):
+        year = Year(year_num)
+        if not year.solved:
             continue
 
-        solved[year] = [Day(year, day + 1) for day in range(25)]
+        solved[year] = Year(year)
 
-        for day in solved[year]:
+        for day in year.days:
             if not day.solved:
                 continue
 
@@ -84,12 +60,14 @@ def main(no_debug=True):
                         with open(filepath, 'a', encoding='utf-8') as file:
                             file.write('\n')
 
-        # # Handle year README and webpage
+        # Handle year README and webpage
+        gen_year_table(year)
         # if no_debug:
         #     gen_year_table(mkpath(year_path, 'README.md'), solved[year], year)
         #     gen_year_page(mkpath(ROOT_PATH, 'docs', year, 'index.html'), solved[year], year)
 
-    # # Handle global README and webpage
+    # Handle global README and webpage
+    # gen_global_table(mkpath(ROOT_PATH, 'README.md'), solved)
     # if no_debug:
     #     gen_global_table(mkpath(ROOT_PATH, 'README.md'), solved)
     #     gen_home_page(mkpath(ROOT_PATH, 'docs', 'index.html'), solved)
