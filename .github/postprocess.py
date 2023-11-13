@@ -2,7 +2,7 @@ from sys import argv
 import os
 
 from src.readme_tables_generator import gen_year_table, gen_global_table
-# from src.website_generator import gen_home_page, gen_year_page
+from src.website_generator import gen_global_page  # , gen_year_page
 # from src.readme_exec import readme_exec
 from src.utils import mkpath
 from src.year import Year
@@ -21,7 +21,7 @@ def main(no_debug=True):
         if not year.solved:
             continue
 
-        solved[year] = Year(year)
+        solved[year_num] = year
 
         for day in year.days:
             if not day.solved:
@@ -62,13 +62,11 @@ def main(no_debug=True):
 
         # Handle year README and webpage
         gen_year_table(year)
-        # if no_debug:
-        #     gen_year_page(mkpath(ROOT_PATH, 'docs', year, 'index.html'), solved[year], year)
+        # gen_year_page(year, mkpath(ROOT_PATH, 'docs', year.year, 'index.html'))
 
     # Handle global README and webpage
     gen_global_table(solved, mkpath(ROOT_PATH, 'README.md'))
-    # if no_debug:
-    #     gen_home_page(mkpath(ROOT_PATH, 'docs', 'index.html'), solved)
+    gen_global_page(solved, mkpath(ROOT_PATH, 'docs', 'index.html'))
 
 
 if __name__ == '__main__':

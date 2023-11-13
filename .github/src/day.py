@@ -6,13 +6,13 @@ from src.utils import mkpath
 class Day:
     ROOT_PATH = "."
 
-    def __init__(self, year, day):
-        self.year = year
-        self.day = day
+    def __init__(self, year_num, day_num):
+        self.year = year_num
+        self.day = day_num
 
-        self.folder_name = f'Day {day:02d}'
+        self.folder_name = f'Day {day_num:02d}'
 
-        self.path = mkpath(Day.ROOT_PATH, year, self.folder_name)
+        self.path = mkpath(Day.ROOT_PATH, year_num, self.folder_name)
         self.solved = os.path.isdir(self.path)
 
         self.part1_path = mkpath(self.path, 'part1.py')
@@ -31,3 +31,6 @@ class Day:
     def write_readme(self, readme):
         with open(self.readme_path, 'w', encoding='utf-8') as file:
             file.write(readme)
+
+    def __repr__(self):
+        return f'Day({self.year}, {self.day}, solved={self.solved}, readme_exists={self.readme_exists}, part_1_solved={self.part1_solved}, part_2_solved={self.part2_solved})'

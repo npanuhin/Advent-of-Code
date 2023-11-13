@@ -1,50 +1,51 @@
 from bs4 import BeautifulSoup
-from os.path import isfile
+import os
 import re
 
-from utils import req_get
+from src.html import wrap_tag, html_link
+from src.utils import req_get
+from src.year import Year
 
 
-YEAR_START = 2015
-YEAR_END = max(
-    int(event.text.strip()[1:-1])
-    for event in BeautifulSoup(req_get("https://adventofcode.com/2015/events").text, "lxml")
-    .find("body").find("main").find_all("div", class_="eventlist-event")
-)
+soup = BeautifulSoup(req_get('https://adventofcode.com/2015/events').text, 'lxml')
+YEARS = [
+    int(item.find('a').text.lstrip('[').rstrip(']'))
+    for item in soup.find('body').find('main').find_all('div', class_='eventlist-event')
+]
 
 
-def gen_home_page(target_path, solved):
-    if not isfile(target_path):
+def gen_global_page(solved: dict[int, Year], html_path: str):
+    if not os.path.isfile(html_path):
         return
+    print('Generating global HTML table...')
 
     list_items = [
-        (
-            '<li><a href="{year}">[{year}]</a></li>'
-            if year in solved else
-            '<li>[{year}]</li>'
-        ).format(year=year)
-        for year in range(YEAR_START, YEAR_END + 1)
+        wrap_tag('li', (
+            html_link(f'[{year_num}]', year_num) if year_num in solved else f'[{year_num}]'
+        ))
+        for year_num in YEARS
     ]
 
-    with open(target_path, 'r', encoding="utf-8") as file:
+    with open(html_path, 'r', encoding="utf-8") as file:
         page = file.read()
 
     page = re.sub(
-        r"(\t+)<ul\s+class=\"year_list\">.+?</ul>",
+        r'(\t+)<ul\s+class="year_list">.+?</ul>',  # \1 -- original padding of ul
         r'\1<ul class="year_list">{}\n\1</ul>'.format(
-            ''.join('\n\t' + r'\1' + str(item) for item in reversed(list_items))
+            ''.join(rf'\n\1\t{item}' for item in list_items)
         ),
         page,
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    with open(target_path, 'w', encoding="utf-8") as file:
+    with open(html_path, 'w', encoding="utf-8") as file:
         file.write(page)
 
 
-def gen_year_page(target_path, solved, year):
-    if not isfile(target_path):
+def gen_year_page(year: Year, html_path: str):
+    if not os.path.isfile(html_path):
         return
+    print(f'Generating HTML table for year {year.year}...')
 
     table = [
         ['\t' + line.format(year=year, day=day + 1) for line in (
@@ -80,7 +81,7 @@ def gen_year_page(target_path, solved, year):
     table_center = ["<table>"] + sum(table[:13], []) + ["</table>"]
     table_right = ["<table>"] + sum(table[13:], []) + ["</table>"]
 
-    with open(target_path, 'r', encoding="utf-8") as file:
+    with open(html_path, 'r', encoding="utf-8") as file:
         page = file.read()
 
     page = re.sub(
@@ -97,5 +98,5 @@ def gen_year_page(target_path, solved, year):
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    with open(target_path, 'w', encoding="utf-8") as file:
+    with open(html_path, 'w', encoding="utf-8") as file:
         file.write(page)
