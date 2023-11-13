@@ -1,3 +1,17 @@
+/* Colors */
+:root{
+    --background: #0f0f23;
+    --text: #ccc;
+    --highlight: #fff;
+    --link: #090;
+    --link-hover: #9f9;
+    --title: #0c0;
+    --title-shadow: #0c0;
+    --table-border: rgba(119, 119, 165, 0.4);
+    --table-odd: rgba(119, 119, 165, 0.15);
+    --table-hover: rgba(119, 119, 165, 0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +20,7 @@
     /* top: 0; */
     /* left: 0; */
     text-decoration: none;
-    text-align: left;
+    /* text-align: left; */
     z-index: 1;
     color: #000;
     transform-origin: center center;
@@ -27,37 +41,35 @@ li {
 }
 
 html {
-    background-color: #0f0f23;
+    background-color: var(--background);
 }
 
-a, .wrapper {
-    color: #090;
+a {
+    color: var(--link);
 }
 
 a:hover {
-    color: #9f9;
+    color: var(--link-hover);
 }
 
 em {
-    color: #fff;
-    text-shadow: 0 0 5px #ffffff;
+    color: var(--highlight);
+    text-shadow: 0 0 5px var(--highlight);
 }
 
 .title h1 {
     text-align: center;
     margin: 40px 0 10px 0;
-    color: #0c0;
-    text-shadow: 0 0 2px #0c0, 0 0 5px #0c0;
+    color: var(--title);
+    text-shadow: 0 0 2px var(--title-shadow), 0 0 5px var(--title-shadow);
     font-size: 32pt;
 }
-
 .title p {
     text-align: center;
     margin: 0px 0 50px 0;
     font-size: 14.5pt;
     font-weight: 400;
 }
-
 .title p a {
     font-size: 14pt;
     font-weight: 400;
@@ -69,7 +81,6 @@ main {
     margin: 0 auto;
     padding: 0 20px 30px 20px;
 }
-
 main.wide {
     width: 1200px;
     max-width: 100%;
@@ -78,14 +89,13 @@ main.wide {
     overflow: hidden;
 }
 
-/* main p {
+main p {
     text-align: justify;
-} */
+}
 
 .year_list {
     text-align: center;
 }
-
 .year_list li {
     display: inline-block;
 }
@@ -93,26 +103,27 @@ main.wide {
 main table {
     display: inline-block;
     border-spacing: 0;
-    border: 2px solid rgba(119, 119, 165, 0.4);
+    border: 2px solid var(--table-border);
 }
 
 
-/* ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+main .left, main .center, main .right {
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+}
 
 main .left {
     width: 50%;
-    float: left;
-    box-sizing: border-box;
     padding-left: 3%;
     padding-right: 6%;
 }
 
 main .center, main .right {
-    float: left;
     margin-top: 25px;
     width: 25%;
-    text-align: center;
-    box-sizing: border-box;
 }
 
 @media (max-width: 1200px) {
@@ -123,12 +134,10 @@ main .center, main .right {
     main .left {
         width: 100%;
         padding: 0 12%;
-        float: left;
     }
 
     main .center, main .right {
         width: 50%;
-        float: left;
     }
 
     main .center {
@@ -151,14 +160,14 @@ main .center, main .right {
 }
 
 
-/* ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 main table td {
-    border: 1px solid rgba(119, 119, 165, 0.4);
+    border: 1px solid var(--table-border);
     min-width: 52px;
+    text-align: left;
 }
-
-main table td[colspan="2"] a {
+main table tr td:not(:first-child){
     text-align: center;
 }
 
@@ -175,17 +184,13 @@ main table td a {
 
 main table td a:hover {
     text-decoration: none;
-    color: #090;
+    color: var(--link-hover);
 }
 
 main table tr:nth-child(2n + 1) {
-    background-color: rgba(119, 119, 165, 0.15);
-}
-
-main table tr:hover {
-    background-color: rgba(119, 119, 165, 0.4);
+    background-color: var(--table-odd);
 }
 
 main table td:hover {
-    background-color: rgba(119, 119, 165, 0.5);
+    background-color: var(--table-hover);
 }
