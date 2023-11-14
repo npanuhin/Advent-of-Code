@@ -162,7 +162,7 @@ main .center, main .right {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 
-main table td {
+main table tr td {
     border: 1px solid var(--table-border);
     min-width: 52px;
     text-align: left;
@@ -171,7 +171,7 @@ main table tr td:not(:first-child){
     text-align: center;
 }
 
-main table td a {
+main table tr td a {
     display: block;
     margin: -1px;
     padding: 7px 14px;
@@ -182,7 +182,14 @@ main table td a {
     letter-spacing: 0.021em;
 }
 
-main table td a:hover {
+main table tr td a:not(.readme) {
+    color: var(--text);
+}
+main table tr td a:not(.readme):hover {
+    color: var(--highlight);
+}
+
+main table tr td a:hover {
     text-decoration: none;
     color: var(--link-hover);
 }

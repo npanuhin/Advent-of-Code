@@ -35,8 +35,9 @@ def wrap_tag(tag, content, inline=True, tag_args={}):
     return f'{before}\n{content}\n{after}'
 
 
-def html_link(text: str, link: str) -> str:
-    return wrap_tag('a', text, tag_args={'href': link})
+def html_link(text: str, link: str, tag_args={}) -> str:
+    tag_args['href'] = link
+    return wrap_tag('a', text, tag_args=tag_args)
     # return f'<a href="{link}">{text}</a>'
 
 

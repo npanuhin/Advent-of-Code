@@ -11,6 +11,7 @@ class Day:
         self.day = day_num
 
         self.folder_name = f'Day {day_num:02d}'
+        self.url_name = self.folder_name.replace(' ', '%20')
 
         self.path = mkpath(Day.ROOT_PATH, year_num, self.folder_name)
         self.solved = os.path.isdir(self.path)

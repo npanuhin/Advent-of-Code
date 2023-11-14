@@ -22,7 +22,7 @@ def gen_global_table(solved: dict[int, Year], readme_path):
                 table[day.day].append(None)
                 continue
 
-            folder_link = f'{year.year}/{day.folder_name.replace(" ", "%20")}'
+            folder_link = f'{year.year}/{day.url_name}'
 
             if day.readme_exists:
                 stars = 2 if day.day == 25 and day.part1_solved else day.part1_solved + day.part2_solved
@@ -54,7 +54,7 @@ def gen_global_table(solved: dict[int, Year], readme_path):
         readme = file.read()
 
     readme = re.sub(
-        r'(<!-- Main table start -->).+(<!-- Main table end -->)',
+        r'(<!-- Main table start -->).*(<!-- Main table end -->)',
         lambda match: match.group(1) + '\n' + table_to_html(table, headers_on=True) + '\n' + match.group(2),
         readme,
         flags=re.IGNORECASE | re.DOTALL
@@ -80,7 +80,7 @@ def gen_year_table(year: Year):
         day_name = day_name.strip('-').strip()
 
         if day.readme_exists:
-            line = [html_link(day_name, f'Day%20{day.day:02d}')]
+            line = [html_link(day_name, day.url_name)]
         else:
             line = [day_name]
 
@@ -88,14 +88,14 @@ def gen_year_table(year: Year):
 
         if day.day == 25:
             if day.part1_solved:  # and not day.part2_solved:
-                part_1 = html_link('⭐⭐', f'Day%20{day.day:02d}/part1.py')
+                part_1 = html_link('⭐⭐', f'{day.url_name}/part1.py')
             line.append([part_1, {'align': 'center', 'colspan': '2'}])
 
         else:
             if day.part1_solved:
-                part_1 = html_link('⭐', f'Day%20{day.day:02d}/part1.py')
+                part_1 = html_link('⭐', f'{day.url_name}/part1.py')
             if day.part2_solved:
-                part_2 = html_link('⭐', f'Day%20{day.day:02d}/part2.py')
+                part_2 = html_link('⭐', f'{day.url_name}/part2.py')
             line.append([part_1, {'align': 'center'}])
             line.append([part_2, {'align': 'center'}])
 
@@ -105,7 +105,7 @@ def gen_year_table(year: Year):
         readme = file.read()
 
     readme = re.sub(
-        r'(<!-- Solved table start -->).+(<!-- Solved table end -->)',
+        r'(<!-- Solved table start -->).*(<!-- Solved table end -->)',
         lambda match: match.group(1) + '\n' + table_to_html(table, headers_on=True) + '\n' + match.group(2),
         readme,
         flags=re.IGNORECASE | re.DOTALL

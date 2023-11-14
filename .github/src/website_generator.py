@@ -2,14 +2,17 @@ from bs4 import BeautifulSoup
 import os
 import re
 
-from src.html import wrap_tag, html_link
+from src.html import wrap_tag, html_link, table_to_html
 from src.utils import req_get
 from src.year import Year
 
 
+URL_PREFIX = "https://github.com/npanuhin/Advent-of-Code/tree/master"
+
+
 soup = BeautifulSoup(req_get('https://adventofcode.com/2015/events').text, 'lxml')
 YEARS = [
-    int(item.find('a').text.lstrip('[').rstrip(']'))
+    int(item.find('a').text.removeprefix('[').removesuffix(']'))
     for item in soup.find('body').find('main').find_all('div', class_='eventlist-event')
 ]
 
@@ -30,7 +33,7 @@ def gen_global_page(solved: dict[int, Year], html_path: str):
         page = file.read()
 
     page = re.sub(
-        r'(\t+)<ul\s+class="year_list">.+?</ul>',  # \1 -- original padding of ul
+        r'(\t+)<ul\s+class="year_list">.*?</ul>',  # \1 - original padding of ul
         r'\1<ul class="year_list">{}\n\1</ul>'.format(
             ''.join(rf'\n\1\t{item}' for item in list_items)
         ),
@@ -47,53 +50,46 @@ def gen_year_page(year: Year, html_path: str):
         return
     print(f'Generating HTML table for year {year.year}...')
 
-    table = [
-        ['\t' + line.format(year=year, day=day + 1) for line in (
-            "<tr>",
-            "\t<td>",
-            (
-                '\t\t<a href="https://github.com/npanuhin/Advent-of-Code/tree/master/{year}/Day%20{day:02d}">Day {day}</a>'
-            ),
-            "\t</td>",
-            '\t' + ('<td colspan="2">' if day + 1 == 25 and not solved[day][1] else "<td>"),
-            (
-                (
-                    '\t\t<a href="https://github.com/npanuhin/Advent-of-Code/tree/master/{year}/Day%20{day:02d}/part1.py">' +
-                    ('⭐⭐' if day + 1 == 25 and solved[day][0] and not solved[day][1] else '⭐') +
-                    '</a>'
-                )
-                if solved[day][0] else ""
-            ),
-            "\t</td>",
-            *((
-                "\t<td>",
-                (
-                    '\t\t<a href="https://github.com/npanuhin/Advent-of-Code/tree/master/{year}/Day%20{day:02d}/part2.py">⭐</a>'
-                    if solved[day][1] else ""
-                ),
-                "\t</td>"
-            ) if day + 1 != 25 or solved[day][1] else tuple()),
-            "</tr>"
-        )]
-        for day in range(25)
-    ]
+    table = []
+    for day in year.days:
+        tag_args = {'class': 'readme'} if day.readme_exists else {}
+        line = [html_link(f'Day {day.day}', f'{URL_PREFIX}/{year.year}/{day.url_name}', tag_args)]
 
-    table_center = ["<table>"] + sum(table[:13], []) + ["</table>"]
-    table_right = ["<table>"] + sum(table[13:], []) + ["</table>"]
+        part_1 = part_2 = None
+
+        if day.day == 25:
+            if day.part1_solved:  # and not day.part2_solved:
+                part_1 = html_link('⭐⭐', f'{URL_PREFIX}/{year.year}/{day.url_name}/part1.py')
+            line.append([part_1, {'colspan': '2'}])
+
+        else:
+            if day.part1_solved:
+                part_1 = html_link('⭐', f'{URL_PREFIX}/{year.year}/{day.url_name}/part1.py')
+            if day.part2_solved:
+                part_2 = html_link('⭐', f'{URL_PREFIX}/{year.year}/{day.url_name}/part2.py')
+            line.append(part_1)
+            line.append(part_2)
+
+        table.append(line)
+
+    table_center, table_right = table[:13], table[13:]
+
+    table_center = wrap_tag('div', table_to_html(table_center), inline=False, tag_args={'class': 'center'})
+    table_right = wrap_tag('div', table_to_html(table_right), inline=False, tag_args={'class': 'right'})
 
     with open(html_path, 'r', encoding="utf-8") as file:
         page = file.read()
 
     page = re.sub(
-        r"(\t+)<div class=\"center\">.+?</div>",
-        r'\1<div class="center">\n{}\n\1</div>'.format('\n'.join(r'\1' + '\t' + line for line in table_center)),
+        r"(\t+)<div class=\"center\">.*?</div>",  # \1 - original padding of div
+        '\n'.join(rf'\1{line}' for line in table_center.splitlines()),
         page,
         flags=re.IGNORECASE | re.DOTALL
     )
 
     page = re.sub(
-        r"(\t+)<div class=\"right\">.+?</div>",
-        r'\1<div class="right">\n{}\n\1</div>'.format('\n'.join(r'\1' + '\t' + line for line in table_right)),
+        r"(\t+)<div class=\"right\">.+?</div>",  # \1 - original padding of div
+        '\n'.join(rf'\1{line}' for line in table_right.splitlines()),
         page,
         flags=re.IGNORECASE | re.DOTALL
     )

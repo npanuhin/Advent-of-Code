@@ -13,10 +13,14 @@ class Year:
         self.path = mkpath(Year.ROOT_PATH, year_num)
         self.solved = os.path.isdir(self.path)
 
-        self.days = [Day(year_num, day + 1) for day in range(25)]
-
         self.readme_path = mkpath(self.path, 'README.md')
-        self.readme_exists = os.path.isfile(self.readme_path)
+
+        if not self.solved:
+            self.days = []
+            self.readme_exists = False
+        else:
+            self.days = [Day(year_num, day + 1) for day in range(25)]
+            self.readme_exists = os.path.isfile(self.readme_path)
 
     def read_readme(self):
         with open(self.readme_path, 'r', encoding='utf-8') as file:
