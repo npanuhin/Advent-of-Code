@@ -17,11 +17,11 @@ def table_to_html(table: list[list], headers_on=False):
     return wrap_tag('table', '\n'.join(table_result), inline=False)
 
 
-def wrap_tag(tag, content, inline=True, tag_args={}):
+def wrap_tag(tag, content, inline=True, tag_args=None):
     if content is None:
         content = ''
 
-    args = ' '.join(f'{key}="{value}"' for key, value in tag_args.items())
+    args = ' '.join(f'{key}="{value}"' for key, value in (tag_args or {}).items())
     if args:
         before = f'<{tag} {args}>'
     else:
@@ -35,7 +35,9 @@ def wrap_tag(tag, content, inline=True, tag_args={}):
     return f'{before}\n{content}\n{after}'
 
 
-def html_link(text: str, link: str, tag_args={}) -> str:
+def html_link(text: str, link: str, tag_args=None) -> str:
+    if tag_args is None:
+        tag_args = {}
     tag_args['href'] = link
     return wrap_tag('a', text, tag_args=tag_args)
     # return f'<a href="{link}">{text}</a>'

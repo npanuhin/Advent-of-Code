@@ -1,6 +1,7 @@
-from bs4 import BeautifulSoup
 import os
 import re
+
+from bs4 import BeautifulSoup
 
 from src.html import wrap_tag, html_link, table_to_html
 from src.utils import req_get

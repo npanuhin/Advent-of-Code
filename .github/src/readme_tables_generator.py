@@ -1,7 +1,8 @@
-from bs4 import BeautifulSoup
-import requests
 import os
 import re
+
+from bs4 import BeautifulSoup
+import requests
 
 from src.html import table_to_html, html_link
 from src.year import Year

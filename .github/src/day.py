@@ -34,4 +34,7 @@ class Day:
             file.write(readme)
 
     def __repr__(self):
-        return f'Day({self.year}, {self.day}, solved={self.solved}, readme_exists={self.readme_exists}, part_1_solved={self.part1_solved}, part_2_solved={self.part2_solved})'
+        return (
+            f'Day({self.year}, {self.day}, solved={self.solved}, readme_exists={self.readme_exists}, '
+            f'part_1_solved={self.part1_solved}, part_2_solved={self.part2_solved})'
+        )
