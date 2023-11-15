@@ -1,4 +1,3 @@
-from sys import argv
 import os
 
 from src.readme_tables_generator import gen_year_table, gen_global_table
@@ -12,7 +11,7 @@ from src.day import Day
 ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../'
 
 
-def main(no_debug=True):
+def main():
     print('Starting...')
     solved: dict[int, Year] = {}
 
@@ -70,4 +69,4 @@ def main(no_debug=True):
 
 
 if __name__ == '__main__':
-    main(len(argv) > 1 and argv[1] == 'no-debug')
+    main()
