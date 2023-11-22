@@ -19,15 +19,11 @@ def gen_global_table(solved: dict[int, Year], readme_path):
         table[0].append((html_link(year.year, year.year), {'align': 'center'}))
 
         for day in year.days:
-            if not day.part1_solved and not day.part2_solved:
-                table[day.day].append(None)
-                continue
-
             folder_link = f'{year.year}/{day.url_name}'
 
             if day.readme_exists:
                 stars = 2 if day.day == 25 and day.part1_solved else day.part1_solved + day.part2_solved
-                table[day.day].append((html_link('💎' * stars, folder_link), {'align': 'center'}))
+                table[day.day].append([html_link('💎' * stars, folder_link), {'align': 'center'}])
                 continue
 
             part_1_link = f'{folder_link}/part1.py'
@@ -35,8 +31,7 @@ def gen_global_table(solved: dict[int, Year], readme_path):
 
             if day.day == 25:
                 table[day.day].append(
-                    (html_link('⭐' * 2, part_1_link), {'align': 'center'})
-                    if day.part1_solved else None
+                    [(html_link('⭐' * 2, part_1_link) if day.part1_solved else None), {'align': 'center'}]
                 )
 
             else:
@@ -46,10 +41,7 @@ def gen_global_table(solved: dict[int, Year], readme_path):
                 if day.part2_solved:
                     text += html_link('⭐', part_2_link)
 
-                if not text:
-                    table[day.day].append(None)
-                else:
-                    table[day.day].append((text, {'align': 'center'}))
+                table[day.day].append((text, {'align': 'center'}))
 
     with open(readme_path, 'r', encoding='utf-8') as file:
         readme = file.read()
