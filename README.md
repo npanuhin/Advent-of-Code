@@ -110,7 +110,7 @@ I try to optimize each solution as much as possible, so although they are writte
 	<tr>
 		<td>Day 19</td>
 		<td align="center"><a href="2020/Day%2019/part1.py">⭐</a><a href="2020/Day%2019/part2.py">⭐</a></td>
-		<td></td>
+		<td align="center"><a href="2021/Day%2019/part1.py">⭐</a><a href="2021/Day%2019/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 20</td>
