@@ -111,8 +111,8 @@
 	</tr>
 	<tr>
 		<td>Day 20: Trench Map</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2020/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2020/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 21: Dirac Dice</td>
