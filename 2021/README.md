@@ -116,8 +116,8 @@
 	</tr>
 	<tr>
 		<td>Day 21: Dirac Dice</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2021/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2021/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 22: Reactor Reboot</td>
