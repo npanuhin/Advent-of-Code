@@ -121,8 +121,8 @@
 	</tr>
 	<tr>
 		<td>Day 22: Reactor Reboot</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2022/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2022/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 23: Amphipod</td>
