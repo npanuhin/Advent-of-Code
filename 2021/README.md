@@ -126,8 +126,8 @@
 	</tr>
 	<tr>
 		<td>Day 23: Amphipod</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2023/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2023/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 24: Arithmetic Logic Unit</td>
