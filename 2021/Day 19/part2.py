@@ -58,7 +58,7 @@ scanner_positions[0] = (0, 0, 0)
 while not all(scanner_processed):
     for ref_index in compress(range(total_scanners), scanner_processed):
         ref_scanner = scanner_readings[ref_index]
-        for test_index in compress(range(total_scanners), map(lambda processed: not processed, scanner_processed)):
+        for test_index in compress(range(total_scanners), (not processed for processed in scanner_processed)):
             test_scanner = scanner_readings[test_index]
 
             for rotation in ALL_VECTOR_ROTATIONS:
@@ -72,16 +72,10 @@ while not all(scanner_processed):
 
                 most_common_offset = max(offsets, key=offsets.get)
                 if offsets[most_common_offset] >= 12:
-                    # print(ref_index, test_index, most_common_offset, offsets[most_common_offset], rotation)
                     scanner_positions[test_index] = add_vectors(most_common_offset, scanner_positions[ref_index])
                     scanner_processed[test_index] = True
                     scanner_readings[test_index] = test_rotation
                     break
-
-
-# for scanner, shift in zip(scanner_readings, scanner_positions):
-#     for i, reading in enumerate(scanner):
-#         scanner[i] = sub_vectors(reading, shift)
 
 largest_distance = 0
 for i in range(total_scanners):

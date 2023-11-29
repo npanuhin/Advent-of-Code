@@ -23,13 +23,14 @@ for number in sequence:
                     line[i] = None
 
         for i in range(5):
-            if all(board[i][j] is None for j in range(5)) or \
-                    all(board[j][i] is None for j in range(5)):
+            if (
+                all(board[i][j] is None for j in range(5))
+                or all(board[j][i] is None for j in range(5))
+            ) and not has_won[board_index]:
 
-                if not has_won[board_index]:
-                    has_won[board_index] = True
-                    last_won = deepcopy(board)
-                    last_won_number = number
+                has_won[board_index] = True
+                last_won = deepcopy(board)
+                last_won_number = number
 
 
 board_sum = sum(

@@ -2,7 +2,7 @@ from math import floor, ceil
 
 
 def calc(target):
-    return sum(map(lambda d: d * (d + 1) // 2, (abs(crab - target) for crab in crabs)))
+    return sum(d * (d + 1) // 2 for d in (abs(crab - target) for crab in crabs))
 
 
 with open("input.txt", 'r') as file:

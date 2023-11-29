@@ -51,10 +51,10 @@ for cuboid, mul in reboot_steps:
 volume = 0
 for cuboid, mul in cuboids.items():
     volume += (
-        (cuboid.max_x - cuboid.min_x + 1) *
-        (cuboid.max_y - cuboid.min_y + 1) *
-        (cuboid.max_z - cuboid.min_z + 1) *
-        mul
+        (cuboid.max_x - cuboid.min_x + 1)
+        * (cuboid.max_y - cuboid.min_y + 1)
+        * (cuboid.max_z - cuboid.min_z + 1)
+        * mul
     )
 
 print(volume)

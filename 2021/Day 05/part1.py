@@ -1,6 +1,6 @@
 with open("input.txt", 'r') as file:
     lines = [
-        sum(map(lambda x: tuple(map(int, x.split(','))), line.split("->")), start=())
+        list(map(int, line.replace("->", ',').split(',')))
         for line in file
     ]
 
