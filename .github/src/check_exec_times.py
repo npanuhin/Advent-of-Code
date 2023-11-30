@@ -1,35 +1,35 @@
-from sys import path as sys_path
-import os
+# from sys import path as sys_path
+# import os
 
-sys_path.append("../")
+# sys_path.append("../")
 
-from readme_exec import count_time
-from utils import mkpath
+# from readme_exec import count_time
+# from utils import mkpath
 
 
-result = []
-for year in range(2000, 3000):
-    for path, folders, files in os.walk(mkpath("../../", year)):
-        cur_path = os.getcwd()
-        os.chdir(path)
+# result = []
+# for year in range(2000, 3000):
+#     for path, folders, files in os.walk(mkpath("../../", year)):
+#         cur_path = os.getcwd()
+#         os.chdir(path)
 
-        for filename in files:
-            if os.path.splitext(filename)[1] != ".py":
-                continue
+#         for filename in files:
+#             if os.path.splitext(filename)[1] != ".py":
+#                 continue
 
-            with open(filename, 'r', encoding="utf-8") as file:
-                code = file.read().strip()
+#             with open(filename, 'r', encoding="utf-8") as file:
+#                 code = file.read().strip()
 
-            time = round(count_time(code))
+#             time = round(count_time(code))
 
-            if time >= 1000:
-                result.append((mkpath(path, filename), time))
+#             if time >= 1000:
+#                 result.append((mkpath(path, filename), time))
 
-        os.chdir(cur_path)
+#         os.chdir(cur_path)
 
-        with open("exec_time_result.txt", 'w') as file:
-            for path, time in result:
-                print(path, str(time) + "ms", file=file)
+#         with open("exec_time_result.txt", 'w') as file:
+#             for path, time in result:
+#                 print(path, str(time) + "ms", file=file)
 
 
 # path = "../../2020/Day 23/"

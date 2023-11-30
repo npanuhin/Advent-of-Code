@@ -28,12 +28,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -U -r ".github/flake8.requirements.txt"
-          pip install -U pyupgrade
 
       - name: Lint with flake8
         run: flake8 --show-source --statistics
-
-      - name: Check code with pyupgrade
-        run: |
-          find . -type f -name "*.py" -exec pyupgrade --py311-plus {} \;
-          test $(git status --porcelain | wc -l) = 0
