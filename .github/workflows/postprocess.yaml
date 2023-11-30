@@ -2,6 +2,10 @@ name: Postprocess
 
 on: [push, workflow_dispatch]
 
+concurrency:
+  group: "all"
+  cancel-in-progress: false
+
 jobs:
   postprocess:
     name: Postprocess
