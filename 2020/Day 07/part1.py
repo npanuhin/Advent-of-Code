@@ -1,7 +1,7 @@
 from re import fullmatch
 
 
-def count(data, bag, parent_bags=set()):
+def count(data, bag, parent_bags):
     parent_bags.add(bag)
 
     if bag in data:
@@ -27,4 +27,4 @@ with open("input.txt", 'r', encoding="utf-8") as file:
 
                 data[bag].append(cur_bag)
 
-print(count(data, "shiny gold") - 1)
+print(count(data, "shiny gold", set()) - 1)

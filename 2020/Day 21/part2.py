@@ -2,9 +2,9 @@ with open("input.txt", 'r', encoding="utf-8") as file:
     food = [
         (
             set(ingredients.split()),
-            set(map(str.strip, allergens.strip().lstrip("contains").split(", ")))
+            set(map(str.strip, allergens.strip().removeprefix("contains").split(',')))
         )
-        for ingredients, allergens in (line.strip().rstrip(')').split('(') for line in file)
+        for ingredients, allergens in (line.strip().removesuffix(')').split('(') for line in file)
     ]
 
 mapped_ingredients = {}

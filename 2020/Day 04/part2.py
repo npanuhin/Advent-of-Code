@@ -7,8 +7,8 @@ fields = {  # All fields except "cid"
     "eyr": lambda x: 2020 <= int(x) <= 2030,
 
     "hgt": lambda x:
-        (x[-2:] == "cm" and 150 <= int(x[:-2]) <= 193) or
-        (x[-2:] == "in" and 59 <= int(x[:-2]) <= 76),
+        (x[-2:] == "cm" and 150 <= int(x[:-2]) <= 193)
+        or (x[-2:] == "in" and 59 <= int(x[:-2]) <= 76),
 
     "hcl": lambda x: fullmatch(r"#[\da-f]{6}", x),
 

@@ -22,8 +22,8 @@ for range_start in range(len(inp)):
 
     if summ == invalid_num and range_start != range_end:
         print(
-            min(inp[i] for i in range(range_start, range_end + 1)) +
-            max(inp[i] for i in range(range_start, range_end + 1))
+            min(inp[i] for i in range(range_start, range_end + 1))
+            + max(inp[i] for i in range(range_start, range_end + 1))
         )
 
     summ -= inp[range_start]

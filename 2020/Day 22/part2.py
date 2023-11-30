@@ -26,7 +26,7 @@ def play(player1, player2):
         else:
             player2.extend((card2, card1))
 
-    return True if player1 else False
+    return player1
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:

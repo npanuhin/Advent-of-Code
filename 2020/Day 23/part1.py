@@ -15,7 +15,7 @@ for step in range(100):
     second = carousel[first]
     third = carousel[second]
 
-    while dest == first or dest == second or dest == third:
+    while dest in (first, second, third):
         dest = dest - 1 if dest > 1 else 9
 
     carousel[current] = carousel[third]

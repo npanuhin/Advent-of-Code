@@ -1,5 +1,5 @@
 def identify_fields(possible_field_pos):
-    def gen(b=[]):
+    def gen(b):
         if len(b) == len(possible_field_pos):
             return True
 
@@ -10,7 +10,7 @@ def identify_fields(possible_field_pos):
                     return b
                 b.pop()
 
-    return gen()
+    return gen([])
 
 
 with open("input.txt", 'r', encoding="utf-8") as file:
@@ -46,7 +46,7 @@ with open("input.txt", 'r', encoding="utf-8") as file:
 
         line = file.readline().strip()
 
-possible_field_pos = [list() for _ in range(len(my_ticket))]
+possible_field_pos = [[] for _ in range(len(my_ticket))]
 
 for field_index in range(len(my_ticket)):
     for field, range_ in fields.items():

@@ -16,28 +16,27 @@ def gen_mask(mask, index=0):
 mem = {}
 
 with open("input.txt", 'r', encoding="utf-8") as file:
-    for line in file:
-        line = line.strip()
+    for line in map(str.strip, file):
 
         if line.startswith("mask"):
-            mask = line.lstrip("mask").lstrip().lstrip("=").lstrip()
+            mask = line.removeprefix("mask = ")
 
             overwrite_1 = int(mask.replace('X', '0'), 2)
-            overwrite_X = int(mask.replace('1', '0').replace('X', '1'), 2)
+            overwrite_x = int(mask.replace('1', '0').replace('X', '1'), 2)
 
             mask = list(mask)
 
         else:
             address, num = map(str.strip, line.split('='))
 
-            address = int(address.lstrip("mem[").rstrip("]"))
+            address = int(address.removeprefix("mem[").removesuffix("]"))
             num = int(num)
 
             address |= overwrite_1
-            address &= ~overwrite_X
+            address &= ~overwrite_x
 
             for new_mask in gen_mask(mask):
 
-                mem[address | (int(new_mask, 2) & overwrite_X)] = num
+                mem[address | (int(new_mask, 2) & overwrite_x)] = num
 
 print(sum(mem.values()))
