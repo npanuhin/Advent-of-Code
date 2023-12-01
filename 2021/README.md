@@ -136,7 +136,7 @@
 	</tr>
 	<tr>
 		<td>Day 25: Sea Cucumber</td>
-		<td align="center" colspan="2"></td>
+		<td align="center" colspan="2"><a href="Day%2025/part1.py">⭐⭐</a></td>
 	</tr>
 </table>
 <!-- Solved table end -->
