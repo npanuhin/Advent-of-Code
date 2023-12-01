@@ -66,11 +66,15 @@ def gen_year_table(year: Year):
 
     for day in year.days:
         aoc_page = requests.get(f'https://adventofcode.com/{year.year}/day/{day.day}')
-        assert aoc_page.status_code == 200, f'Day {day.day} page is not available'
-        soup = BeautifulSoup(aoc_page.text, 'lxml')
+        if aoc_page.status_code == 200:
+            soup = BeautifulSoup(aoc_page.text, 'lxml')
 
-        day_name = soup.find('body').find('main').find('article', class_='day-desc').find('h2').text.strip()
-        day_name = day_name.strip('-').strip()
+            day_name = soup.find('body').find('main').find('article', class_='day-desc').find('h2').text.strip()
+            day_name = day_name.strip('-').strip()
+
+        else:
+            print(f'Day {day.year}/{day.day} page is not available')
+            day_name = f'Day {day.day}'
 
         if day.readme_exists:
             line = [html_link(day_name, day.url_name)]

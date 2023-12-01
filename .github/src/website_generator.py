@@ -20,6 +20,7 @@ YEARS = [
 
 def gen_global_page(solved: dict[int, Year], html_path: str):
     if not os.path.isfile(html_path):
+        print("WARNING! Global HTML not found!")
         return
     print('Generating global HTML table...')
 
@@ -48,6 +49,7 @@ def gen_global_page(solved: dict[int, Year], html_path: str):
 
 def gen_year_page(year: Year, html_path: str):
     if not os.path.isfile(html_path):
+        print(f"WARNING! Year {year.year} HTML not found!")
         return
     print(f'Generating HTML table for year {year.year}...')
 
