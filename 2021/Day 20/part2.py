@@ -36,7 +36,7 @@ with open("input.txt", 'r') as file:
     INFINITY_SYMBOL_DARK = algorithm[0]
     INFINITY_SYMBOL_LIGHT = algorithm[2 ** 9 - 1]
 
-    image = Image(list(filter(None, map(list, map(str.strip, file)))))
+    image = Image(list(map(list, filter(None, map(str.strip, file)))))
 
 
 ENHANCEMENTS = 50

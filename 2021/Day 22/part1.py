@@ -5,7 +5,7 @@ Cuboid = namedtuple('Cuboid', ['min_x', 'max_x', 'min_y', 'max_y', 'min_z', 'max
 
 with open("input.txt", 'r') as file:
     reboot_steps = []
-    for line in filter(None, file):
+    for line in filter(None, map(str.strip, file)):
         switch, coords = line.split()
         x, y, z = (
             list(map(int, coord[2:].split('..')))

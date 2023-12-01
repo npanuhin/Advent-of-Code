@@ -175,6 +175,18 @@ I try to optimize each solution as much as possible, so although they are writte
 
 ---
 
-Some facts about this repository:
+#### Some facts about this repository:
 
 - My goal is to keep solutions as close to the original as possible, so **I generally do not edit past solutions**. Sometimes I correct the code style (without even remembering what the task was about), but in the future I will try not to do this
+
+#### I also follow some rules for writing my solutions:
+
+- The entire repository is [PEP8](https://pep8.org/) compliant, as [verified](../../actions/workflows/lint.yaml) by the `flake8` linter (with the [exception of some rules](tox.ini#L23-L52))
+
+- **Input files may contain any number of empty lines**, especially at the end. In some cases, this also applies to whitespace characters.<br>
+  Currently I like to handle this rule using the following general snippet to read files:
+
+  ```py
+  with open('input.txt') as file:
+ 	 lines = list(filter(None, map(str.strip, file)))
+  ```
