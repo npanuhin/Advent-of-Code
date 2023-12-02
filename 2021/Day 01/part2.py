@@ -2,7 +2,7 @@ from collections import deque
 
 answer = 0
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     window = deque(int(file.readline()) for _ in range(3))
     prev = sum(window)
     for line in file:

@@ -11,7 +11,7 @@
 In Part 1, we were asked to **find two entries that add up to 2020** in a given list of numbers, and then multiply them to get the result. This can be done by brute-forcing with the complexity `O(n^2)`:
 
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     inp = list(map(int, file.readlines()))
 
 for i in range(len(inp) - 1):
@@ -27,7 +27,7 @@ However, using binary search, we can reduce the complexity to `O(n log(n))`:
 
 <!-- Execute code: "part1.py" -->
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     inp = sorted(map(int, file))
 
 for i in range(len(inp) - 1):
@@ -57,7 +57,7 @@ In the implementation below, I've added additional `breaks` to reduce the execut
 
 <!-- Execute code: "part2.py" -->
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     inp = sorted(map(int, file))
 
 for i in range(len(inp) - 2):

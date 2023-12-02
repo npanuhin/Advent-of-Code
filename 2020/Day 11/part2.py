@@ -15,7 +15,7 @@ def has_occupied(layout, sight, y, x, amount):
     return False
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     layout = [list(line.strip()) for line in file]
 
 size_y, size_x = len(layout), len(layout[0])

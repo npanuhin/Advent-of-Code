@@ -17,7 +17,7 @@ actions = {
 y, x = 0, 0   # Ship
 i, j = 1, 10  # Waypoint
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         action, n = line[0], int(line[1:])
         x, y, i, j = actions[action](x, y, i, j, n)

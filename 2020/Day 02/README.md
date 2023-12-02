@@ -27,7 +27,7 @@ To parse the input, we can split each line by whitespace. Then we can get bounda
 ```python
 answer = 0
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         boundaries, charecter, string = line.split()
 
@@ -52,7 +52,7 @@ In Part 2, we were asked to parse the same input, but now *exactly one of these 
 ```python
 answer = 0
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         boundaries, charecter, string = line.split()
 

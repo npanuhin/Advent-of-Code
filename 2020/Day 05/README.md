@@ -32,7 +32,7 @@ The result is the maximum ID of those counted. Nothing interesting here, I just 
 ```python
 max_ID = -1
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for string in file:
         string = string.strip()
 
@@ -92,7 +92,7 @@ To find this ID, I sorted all IDs and ran through them in a loop, looking for th
 ```python
 IDs = []
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for string in file:
         string = string.strip()
 

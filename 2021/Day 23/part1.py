@@ -2,7 +2,7 @@ from heapq import heappush, heappop
 from collections import namedtuple
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     house = list(filter(None, (line.strip('\n') for line in file)))
     room_size = len(house) - 3
 

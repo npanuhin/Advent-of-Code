@@ -1,7 +1,7 @@
 from math import ceil
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     departure_time = int(file.readline())
     buses = set(int(i) for i in file.readline().split(',') if i != 'x')
 

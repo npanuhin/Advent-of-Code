@@ -53,7 +53,7 @@ class Packet:
 
 root_packet = Packet()
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     packet = file.readline().strip()
 
     root_packet.read(bin(int(packet, 16))[2:].zfill(len(packet) * 4))

@@ -1,6 +1,6 @@
 answer = 0
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     for line in file:
         digit_map = {}
         patterns, output = (

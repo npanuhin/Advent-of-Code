@@ -1,6 +1,6 @@
 mem = {}
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in map(str.strip, file):
 
         if line.startswith("mask"):

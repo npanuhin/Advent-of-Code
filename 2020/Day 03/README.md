@@ -33,7 +33,7 @@ def count(field, dx, dy):
     return result
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     # Converting input to a two-dimensional bool array
     field = [[place == '#' for place in line.strip()] for line in file]
 
@@ -67,7 +67,7 @@ def count(field, dx, dy):
     return result
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     # Converting input to a two-dimensional bool array
     field = [[place == '#' for place in line.strip()] for line in file]
 

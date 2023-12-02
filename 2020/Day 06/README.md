@@ -16,7 +16,7 @@ The sum of these counts for each group of people will be the answer.
 ```python
 data = [set()]
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         if not line.strip():
             data.append(set())
@@ -41,7 +41,7 @@ from string import ascii_letters
 
 data = [set(ascii_letters)]
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         if not line.strip():
             data.append(set(ascii_letters))

@@ -1,4 +1,4 @@
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     sequence = list(map(int, file.readline().split(',')))
 
     boards = [[]]

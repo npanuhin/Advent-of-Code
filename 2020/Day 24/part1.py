@@ -16,7 +16,7 @@ def neighors(x, y):
         yield x + dx, y + dy
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     flipped = []
     for line in map(str.strip, file):
         pos = x = y = 0

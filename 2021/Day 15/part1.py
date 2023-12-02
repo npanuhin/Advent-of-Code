@@ -3,7 +3,7 @@ from heapq import heapify, heappush, heappop
 
 MOVES = ((0, 1), (0, -1), (1, 0), (-1, 0))
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     cavern = [list(map(int, line)) for line in map(str.strip, file) if line]
 
 size_y, size_x = len(cavern), len(cavern[0])

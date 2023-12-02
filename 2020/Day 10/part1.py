@@ -1,4 +1,4 @@
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     adapters = sorted(list(map(int, file)) + [0])
 
 jolt_diff = [0, 0, 0, 1]

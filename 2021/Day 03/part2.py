@@ -13,7 +13,7 @@ def search(array, condition):
     return int("".join(map(str, array[0])), 2)
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     report = [list(map(int, line.strip())) for line in file]
 
 print(

@@ -10,7 +10,7 @@ def find_right(line: str) -> str:
             return line[i]
 
 
-with open('input.txt', 'r') as file:
+with open('input.txt') as file:
     lines = list(filter(None, map(str.strip, file)))
 
 print(sum(

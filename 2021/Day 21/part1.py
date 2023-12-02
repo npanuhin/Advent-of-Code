@@ -1,4 +1,4 @@
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     players = [int(file.readline().split()[-1]) - 1 for _ in range(2)]
 
 dice = -1

@@ -64,7 +64,7 @@ edges = {}
 tile = []
 tileid = None
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in iterator_chain(file, [""]):
         line = line.strip()
 
@@ -170,7 +170,7 @@ for y in range(sea_height):
     cur_y += tilesize
 
 # Searching for sea monsters:
-with open("sea_monster.txt", 'r', encoding="utf-8") as file:
+with open("sea_monster.txt") as file:
     sea_monster = [line.strip('\n') for line in file]
 
 for image in get_transformations(image):

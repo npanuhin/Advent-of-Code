@@ -19,7 +19,7 @@ def traverse(cur_cave, visited):
 
 graph = defaultdict(list)
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     for line in file:
         cave1, cave2 = line.strip().split('-')
         graph[cave1].append(cave2)

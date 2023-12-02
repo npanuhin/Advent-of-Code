@@ -44,7 +44,7 @@ def search(digit_num, z=0):
             return result
 
 
-with open('input.txt', 'r') as file:
+with open('input.txt') as file:
     programm = list(map(str.split, filter(None, map(str.strip, file))))
     for instruction in programm:
         if instruction[-1] not in ('w', 'x', 'y', 'z'):

@@ -3,7 +3,7 @@ from collections import namedtuple, defaultdict
 
 Cuboid = namedtuple('Cuboid', ['min_x', 'max_x', 'min_y', 'max_y', 'min_z', 'max_z'])
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     reboot_steps = []
     for line in filter(None, map(str.strip, file)):
         switch, coords = line.split()

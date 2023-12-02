@@ -29,7 +29,7 @@ def play(player1, player2):
     return player1
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     players = [
         deque(map(int, player.splitlines()[1:]))
         for player in file.read().split("\n\n")

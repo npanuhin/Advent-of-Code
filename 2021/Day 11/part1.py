@@ -1,4 +1,4 @@
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     octopuses = [list(map(int, line.strip())) for line in file]
 
 n = len(octopuses)

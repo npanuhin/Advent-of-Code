@@ -2,7 +2,7 @@ def sign(x):
     return 0 if x == 0 else 1 if x > 0 else -1
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     lines = [
         list(map(int, line.replace("->", ',').split(',')))
         for line in file

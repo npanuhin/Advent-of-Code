@@ -1,7 +1,7 @@
 from re import fullmatch
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     target = tuple(map(int, fullmatch(
         r"target area: x=([\d-]+)..([\d-]+), y=([\d-]+)..([\d-]+)",
         file.readline().strip()

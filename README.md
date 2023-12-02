@@ -188,5 +188,5 @@ I try to optimize each solution as much as possible, so although they are writte
 
   ```py
   with open('input.txt') as file:
- 	 lines = list(filter(None, map(str.strip, file)))
+      lines = list(filter(None, map(str.strip, file)))
   ```

@@ -1,4 +1,4 @@
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     bit_rate = [[0, 0] for _ in range(len(file.readline().strip()))]
     file.seek(0)
     for line in file:

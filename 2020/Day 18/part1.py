@@ -40,7 +40,7 @@ def myeval(string, i, j):
     return result
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     print(sum(
         myeval(line, 0, len(line)) for line in (line.strip().replace(' ', '') for line in file)
     ))

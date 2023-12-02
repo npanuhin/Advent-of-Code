@@ -1,6 +1,6 @@
 horizontal = depth = 0
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     for line in file:
         command, amount = line.split()
         amount = int(amount)

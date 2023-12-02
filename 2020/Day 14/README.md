@@ -62,7 +62,7 @@ Thus, everything together will look like `value = (value | 11111...) & 00000...`
 ```python
 mem = {}
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         line = line.strip()
 
@@ -165,7 +165,7 @@ def gen_mask(mask, index=0):
 
 mem = {}
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         line = line.strip()
 

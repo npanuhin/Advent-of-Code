@@ -5,7 +5,7 @@ def sign(x):
     return 1 if x > 0 else -1 if x < 0 else 0
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     target = tuple(map(int, fullmatch(
         r"target area: x=([\d-]+)..([\d-]+), y=([\d-]+)..([\d-]+)",
         file.readline().strip()

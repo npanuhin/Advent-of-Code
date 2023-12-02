@@ -22,7 +22,7 @@ def simulate(sea):
     return new_sea
 
 
-with open('input.txt', 'r') as file:
+with open('input.txt') as file:
     sea = [list(line) for line in filter(None, map(str.strip, file))]
 
 WIDTH, HIEGHT = len(sea[0]), len(sea)

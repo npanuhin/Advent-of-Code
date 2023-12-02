@@ -1,7 +1,7 @@
 from collections import deque
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     player1, player2 = (
         deque(map(int, player.splitlines()[1:]))
         for player in file.read().split("\n\n")

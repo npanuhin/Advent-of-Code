@@ -19,7 +19,7 @@ fields = {  # All fields except "cid"
 
 data = [{}]
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         if not line.strip():
             data.append({})

@@ -4,7 +4,7 @@ from itertools import product
 
 ADJACENT_DIRECTIONS = (-1, 0, 1)
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     cur_active = set(
         (x, y, 0)
         for y, line in enumerate(file)

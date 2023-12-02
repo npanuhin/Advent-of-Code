@@ -12,7 +12,7 @@ illegal_points = {
     '>': 25137
 }
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     lines = [line.strip() for line in file]
 
 answer = 0

@@ -37,7 +37,7 @@ def sub_vectors(vector1: Vector, vector2: Vector) -> Vector:
 ALL_VECTOR_ROTATIONS = vector_rotations((1, 2, 3))
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     scanner_readings = []
 
     for line in file:

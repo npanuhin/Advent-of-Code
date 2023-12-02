@@ -12,7 +12,7 @@ completion_points = {
     '>': 4
 }
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     lines = [line.strip() for line in file]
 
 scores = []

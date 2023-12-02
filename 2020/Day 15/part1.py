@@ -1,4 +1,4 @@
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     inp = list(map(int, file.readline().split(',')))
 
 nums = {num: i + 1 for i, num in enumerate(inp[:-1])}

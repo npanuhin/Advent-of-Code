@@ -3,7 +3,7 @@ from collections import deque
 
 count = deque(0 for _ in range(9))
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     for item in map(int, file.read().split(',')):
         count[item] += 1
 

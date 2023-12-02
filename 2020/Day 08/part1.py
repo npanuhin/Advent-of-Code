@@ -17,7 +17,7 @@ def run_instructions(instructions):
         cur_instruction += argument if operation == 'jmp' else 1
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     instructions = [[operation, int(argument)] for operation, argument in (line.split() for line in file)]
 
 print(run_instructions(instructions))

@@ -35,7 +35,7 @@ The answer will be the 2020th number spoken:
 
 <!-- Execute code: "part1.py" -->
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     inp = list(map(int, file.readline().split(',')))
 
 nums = {num: i + 1 for i, num in enumerate(inp[:-1])}
@@ -61,7 +61,7 @@ As I mentioned earlier, I haven't come up with anything smarter, so this is a 10
 
 <!-- Execute code: "part2.py" -->
 ```python
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     inp = list(map(int, file.readline().split(',')))
 
 nums = [None] * 30_000_000

@@ -1,6 +1,6 @@
 answer = 0
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     prev = file.readline()
     for cur in file:
         if int(prev) < int(cur):

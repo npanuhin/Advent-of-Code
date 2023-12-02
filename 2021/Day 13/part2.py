@@ -4,7 +4,7 @@ from re import fullmatch
 max_x = max_y = 0
 dots = []
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     for line in file:
         if not line.strip():
             break

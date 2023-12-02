@@ -8,7 +8,7 @@ def find_first_invalid(numbers):
             return numbers[k]
 
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     inp = list(map(int, file))
 
 print(find_first_invalid(inp))

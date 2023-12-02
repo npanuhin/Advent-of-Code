@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     polymer = list(file.readline().strip())
 
     rules = {}

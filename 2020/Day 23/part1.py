@@ -1,4 +1,4 @@
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     cups = list(map(int, file.readline().strip()))
 
 carousel = [None] * (len(cups) + 1)

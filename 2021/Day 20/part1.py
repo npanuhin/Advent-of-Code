@@ -30,7 +30,7 @@ class Image:
         self.image = new_image
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     algorithm = file.readline()
 
     INFINITY_SYMBOL_DARK = algorithm[0]

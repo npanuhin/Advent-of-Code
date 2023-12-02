@@ -1,4 +1,4 @@
-with open('input.txt', 'r') as file:
+with open('input.txt') as file:
     games = []
     for line in filter(None, map(str.strip, file)):
         games.append([])

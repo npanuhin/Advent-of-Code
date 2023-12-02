@@ -13,7 +13,7 @@ def count(data, bag):
 
 data = {}
 
-with open("input.txt", 'r', encoding="utf-8") as file:
+with open("input.txt") as file:
     for line in file:
         cur_bag, inner_bags = fullmatch(r"([\w ]+) bags contain ([\w \,]+)\.", line.strip()).groups()
 

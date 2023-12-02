@@ -102,7 +102,7 @@ def magnitude(number: SnailfishNumber) -> int:
     return 3 * magnitude(number[0]) + 2 * magnitude(number[1])
 
 
-with open("input.txt", 'r') as file:
+with open("input.txt") as file:
     numbers = list(map(eval, filter(None, map(str.strip, file))))
 
 print(max(
