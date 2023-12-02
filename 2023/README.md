@@ -20,9 +20,9 @@
 		<td align="center"><a href="Day%2001/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 2</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 2: Cube Conundrum</td>
+		<td align="center"><a href="Day%2002/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2002/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 3</td>
