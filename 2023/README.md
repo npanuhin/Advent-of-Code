@@ -25,9 +25,9 @@
 		<td align="center"><a href="Day%2002/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 3</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 3: Gear Ratios</td>
+		<td align="center"><a href="Day%2003/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2003/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 4</td>
