@@ -24,22 +24,6 @@
 # REPEATS_CLAMP = (3, 30)
 
 
-# def format_time(milliseconds):
-#     if milliseconds is None:
-#         return "None"
-
-#     if milliseconds < 1:
-#         return "< 1ms"
-
-#     if milliseconds < 250:
-#         return "{}ms".format(round(milliseconds))
-
-#     if milliseconds < 950:
-#         return "< 1s"
-
-#     return "{}s".format(round(milliseconds / 1000))
-
-
 # def need_time_change(old_time, new_time):
 #     if not old_time:
 #         return False

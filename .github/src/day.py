@@ -4,9 +4,9 @@ from src.utils import mkpath
 
 
 class Day:
-    ROOT_PATH = "."
+    ROOT_PATH = '.'
 
-    def __init__(self, year_num, day_num):
+    def __init__(self, year_num: int, day_num: int):
         self.year = year_num
         self.day = day_num
 
@@ -25,11 +25,14 @@ class Day:
         self.readme_path = mkpath(self.path, 'README.md')
         self.readme_exists = os.path.isfile(self.readme_path)
 
+        self.dual_solution_path = mkpath(self.path, 'solution.py')
+        self.dual_solution_exists = os.path.isfile(self.dual_solution_path)
+
     def read_readme(self):
         with open(self.readme_path, 'r', encoding='utf-8') as file:
             return file.read()
 
-    def write_readme(self, readme):
+    def write_readme(self, readme: str):
         with open(self.readme_path, 'w', encoding='utf-8') as file:
             file.write(readme)
 

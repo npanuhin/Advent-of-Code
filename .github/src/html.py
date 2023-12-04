@@ -1,4 +1,4 @@
-def table_to_html(table: list[list], headers_on=False):
+def table_to_html(table: list[list], headers_on: bool = False) -> str:
     table_result = []
 
     for line_num, line in enumerate(table):
@@ -17,7 +17,7 @@ def table_to_html(table: list[list], headers_on=False):
     return wrap_tag('table', '\n'.join(table_result), inline=False)
 
 
-def wrap_tag(tag, content, inline=True, tag_args=None):
+def wrap_tag(tag: str, content: str, inline: bool = True, tag_args: dict[str, str] = None) -> str:
     if content is None:
         content = ''
 
@@ -35,7 +35,7 @@ def wrap_tag(tag, content, inline=True, tag_args=None):
     return f'{before}\n{content}\n{after}'
 
 
-def html_link(text: str, link: str, tag_args=None) -> str:
+def html_link(text: str, link: str, tag_args: dict[str, str] = None) -> str:
     if tag_args is None:
         tag_args = {}
     tag_args['href'] = link
@@ -43,7 +43,7 @@ def html_link(text: str, link: str, tag_args=None) -> str:
     # return f'<a href="{link}">{text}</a>'
 
 
-if __name__ == "__main__":  # Tests
+if __name__ == '__main__':  # Tests
     table = [
         [
             ['a', {'align': 'center'}],

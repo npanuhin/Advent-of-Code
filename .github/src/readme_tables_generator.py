@@ -8,7 +8,7 @@ from src.html import table_to_html, html_link
 from src.year import Year
 
 
-def gen_global_table(solved: dict[int, Year], readme_path):
+def gen_global_table(solved: dict[int, Year], readme_path: str):
     if not os.path.isfile(readme_path):
         return
     print('Generating global README table...')

@@ -8,7 +8,7 @@ from src.utils import req_get
 from src.year import Year
 
 
-URL_PREFIX = "https://github.com/npanuhin/Advent-of-Code/tree/master"
+URL_PREFIX = 'https://github.com/npanuhin/Advent-of-Code/tree/master'
 
 
 soup = BeautifulSoup(req_get('https://adventofcode.com/2015/events').text, 'lxml')
@@ -20,7 +20,7 @@ YEARS = [
 
 def gen_global_page(solved: dict[int, Year], html_path: str):
     if not os.path.isfile(html_path):
-        print("WARNING! Global HTML not found!")
+        print('WARNING! Global HTML not found!')
         return
     print('Generating global HTML table...')
 
@@ -31,7 +31,7 @@ def gen_global_page(solved: dict[int, Year], html_path: str):
         for year_num in YEARS
     ]
 
-    with open(html_path, 'r', encoding="utf-8") as file:
+    with open(html_path, 'r', encoding='utf-8') as file:
         page = file.read()
 
     page = re.sub(
@@ -43,13 +43,13 @@ def gen_global_page(solved: dict[int, Year], html_path: str):
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    with open(html_path, 'w', encoding="utf-8") as file:
+    with open(html_path, 'w', encoding='utf-8') as file:
         file.write(page)
 
 
 def gen_year_page(year: Year, html_path: str):
     if not os.path.isfile(html_path):
-        print(f"WARNING! Year {year.year} HTML not found!")
+        print(f'WARNING! Year {year.year} HTML not found!')
         return
     print(f'Generating HTML table for year {year.year}...')
 
@@ -80,22 +80,22 @@ def gen_year_page(year: Year, html_path: str):
     table_center = wrap_tag('div', table_to_html(table_center), inline=False, tag_args={'class': 'center'})
     table_right = wrap_tag('div', table_to_html(table_right), inline=False, tag_args={'class': 'right'})
 
-    with open(html_path, 'r', encoding="utf-8") as file:
+    with open(html_path, 'r', encoding='utf-8') as file:
         page = file.read()
 
     page = re.sub(
-        r"(\t+)<div class=\"center\">.*?</div>",  # \1 - original padding of div
+        r'(\t+)<div class="center">.*?</div>',  # \1 - original padding of div
         '\n'.join(rf'\1{line}' for line in table_center.splitlines()),
         page,
         flags=re.IGNORECASE | re.DOTALL
     )
 
     page = re.sub(
-        r"(\t+)<div class=\"right\">.+?</div>",  # \1 - original padding of div
+        r'(\t+)<div class="right">.+?</div>',  # \1 - original padding of div
         '\n'.join(rf'\1{line}' for line in table_right.splitlines()),
         page,
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    with open(html_path, 'w', encoding="utf-8") as file:
+    with open(html_path, 'w', encoding='utf-8') as file:
         file.write(page)

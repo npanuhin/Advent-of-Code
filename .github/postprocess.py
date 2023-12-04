@@ -2,7 +2,7 @@ import os
 
 from src.readme_tables_generator import gen_year_table, gen_global_table
 from src.website_generator import gen_global_page, gen_year_page
-# from src.readme_exec import readme_exec
+from src.code_exec import exec_code
 from src.utils import mkpath
 from src.year import Year
 from src.day import Day
@@ -42,7 +42,6 @@ def main():
             # ------------------------------------ Text files: newlines and the end ------------------------------------
             for filename in os.listdir(day.path):
                 filepath = mkpath(day.path, filename)
-
                 if not os.path.isfile(filepath):
                     continue
 
@@ -58,6 +57,21 @@ def main():
                     if not ends_with_newline:
                         with open(filepath, 'a', encoding='utf-8') as file:
                             file.write('\n')
+
+            # ------------------------------------------ Dual solution check -------------------------------------------
+            if day.dual_solution_exists:
+                part1_output = exec_code(day.part1_path)[1]
+                part2_output = exec_code(day.part2_path)[1]
+                dual_output = exec_code(day.dual_solution_path)[1]
+
+                combined_outputs = (part1_output + '\n' + part2_output).strip()
+
+                assert dual_output == combined_outputs, (
+                    f'Dual solution output mismatch!\n'
+                    f'Part 1 output:\n{part1_output}\n'
+                    f'Part 2 output:\n{part2_output}\n'
+                    f'Dual solution output:\n{dual_output}'
+                )
 
         # Handle year README and webpage
         gen_year_table(year)

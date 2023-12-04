@@ -5,9 +5,9 @@ from src.day import Day
 
 
 class Year:
-    ROOT_PATH = "."
+    ROOT_PATH = '.'
 
-    def __init__(self, year_num):
+    def __init__(self, year_num: int):
         self.year = year_num
 
         self.path = mkpath(Year.ROOT_PATH, year_num)
@@ -26,7 +26,7 @@ class Year:
         with open(self.readme_path, 'r', encoding='utf-8') as file:
             return file.read()
 
-    def write_readme(self, readme):
+    def write_readme(self, readme: str):
         with open(self.readme_path, 'w', encoding='utf-8') as file:
             file.write(readme)
 
