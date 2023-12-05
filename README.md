@@ -181,7 +181,7 @@ I try to optimize each solution as much as possible, so although they are writte
 
 #### I also follow some rules for writing my solutions:
 
-- The entire repository is [PEP8](https://pep8.org/) compliant, as [verified](../../actions/workflows/lint.yaml) by the `flake8` linter (with the [exception of some rules](tox.ini#L23-L52))
+- The entire repository is [PEP8](https://pep8.org/) compliant, as [verified](../../actions/workflows/lint.yaml) by the `flake8` linter (with the [exception of some rules](tox.ini#L23-L54))
 
 - **Input files may contain any number of empty lines**, especially at the end. In some cases, this also applies to whitespace characters.<br>
   Currently I like to handle this rule using the following general snippet to read files:

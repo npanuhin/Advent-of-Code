@@ -73,7 +73,7 @@ def gen_year_table(year: Year):
             day_name = day_name.strip('-').strip()
 
         else:
-            print(f'Day {day.year}/{day.day} page is not available')
+            print(f'AoC page for {day.year}/{day.folder_name} is not available')
             day_name = f'Day {day.day}'
 
         if day.readme_exists:
