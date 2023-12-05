@@ -19,7 +19,7 @@ def exec_code(path: str = "", repeats: int = 1) -> tuple[int, str]:
     cur_path = os.getcwd()
     os.chdir(folder)
 
-    with open(filename, 'r', encoding='utf-8') as file:
+    with open(filename, encoding='utf-8') as file:
         code = file.read().strip()
 
     cur_stdout = sys.stdout
@@ -46,6 +46,6 @@ def count_time(path: str) -> tuple[int, str]:
 
 
 def exec_file(path: str) -> str:
-    with open(path, 'r', encoding='utf-8') as file:
+    with open(path, encoding='utf-8') as file:
         code = file.read()
     return exec_code(code)

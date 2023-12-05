@@ -70,7 +70,7 @@
 #     cur_path = getcwd()
 #     chdir(folder)
 
-#     with open(filename, 'r', encoding="utf-8") as file:
+#     with open(filename, encoding='utf-8') as file:
 #         code = file.read().strip()
 
 #     stdout = StringIO()

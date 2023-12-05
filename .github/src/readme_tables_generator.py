@@ -43,7 +43,7 @@ def gen_global_table(solved: dict[int, Year], readme_path: str):
 
                 table[day.day].append((text, {'align': 'center'}))
 
-    with open(readme_path, 'r', encoding='utf-8') as file:
+    with open(readme_path, encoding='utf-8') as file:
         readme = file.read()
 
     readme = re.sub(
@@ -98,7 +98,7 @@ def gen_year_table(year: Year):
 
         table.append(line)
 
-    with open(year.readme_path, 'r', encoding='utf-8') as file:
+    with open(year.readme_path, encoding='utf-8') as file:
         readme = file.read()
 
     readme = re.sub(

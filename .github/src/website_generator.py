@@ -31,7 +31,7 @@ def gen_global_page(solved: dict[int, Year], html_path: str):
         for year_num in YEARS
     ]
 
-    with open(html_path, 'r', encoding='utf-8') as file:
+    with open(html_path, encoding='utf-8') as file:
         page = file.read()
 
     page = re.sub(
@@ -80,7 +80,7 @@ def gen_year_page(year: Year, html_path: str):
     table_center = wrap_tag('div', table_to_html(table_center), inline=False, tag_args={'class': 'center'})
     table_right = wrap_tag('div', table_to_html(table_right), inline=False, tag_args={'class': 'right'})
 
-    with open(html_path, 'r', encoding='utf-8') as file:
+    with open(html_path, encoding='utf-8') as file:
         page = file.read()
 
     page = re.sub(

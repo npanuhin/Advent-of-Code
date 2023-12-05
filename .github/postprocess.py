@@ -1,3 +1,4 @@
+import json
 import os
 
 from src.readme_tables_generator import gen_year_table, gen_global_table
@@ -10,9 +11,24 @@ from src.day import Day
 
 ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../'
 
+CHANGED_FILES_LIST = 'outputs/all_changed_files.json'
+
 
 def main():
     print('Starting...')
+
+    changed = set()
+
+    if os.path.isfile(CHANGED_FILES_LIST):
+        with open(CHANGED_FILES_LIST) as file:
+            for changed_path in json.load(file):
+                changed_path = mkpath(ROOT_PATH, changed_path)
+                while changed_path:
+                    changed.add(changed_path)
+                    changed_path = os.path.dirname(changed_path)
+
+    # ------------------------------------------------------------------------------------------------------------------
+
     solved: dict[int, Year] = {}
 
     for year_num in range(2000, 3000):
@@ -26,18 +42,22 @@ def main():
             if not day.solved:
                 continue
 
+            if changed and day.path not in changed:
+                print(f"Skipping day {day.year}/{day.folder_name} as it wasn't changed")
+                continue
+
             # ----------------------------------------------- Day README -----------------------------------------------
-            if day.readme_exists:
-                readme = day.read_readme()
+            # if day.readme_exists:
+            #     readme = day.read_readme()
 
-                # Place non-breaking spaces in markdown `code` tags:
-                # readme = re.sub(r'`[^`\n\t\b\r]+`', lambda m: m.group(0).replace(' ', chr(0x2007)), readme)
+            #     # Place non-breaking spaces in markdown `code` tags:
+            #     # readme = re.sub(r'`[^`\n\t\b\r]+`', lambda m: m.group(0).replace(' ', chr(0x2007)), readme)
 
-                # Handle '<!-- Execute code: 'smth' -->' blocks
-                # if no_debug:
-                #     readme = readme_exec(readme, day.path)
+            #     # Handle '<!-- Execute code: 'smth' -->' blocks
+            #     # if no_debug:
+            #     #     readme = readme_exec(readme, day.path)
 
-                day.write_readme(readme)
+            #     day.write_readme(readme)
 
             # ------------------------------------ Text files: newlines and the end ------------------------------------
             for filename in os.listdir(day.path):
@@ -46,7 +66,7 @@ def main():
                     continue
 
                 if os.path.splitext(filename)[1] in ('.txt', '.py', '.md'):
-                    with open(filepath, 'r', encoding='utf-8') as file:
+                    with open(filepath, encoding='utf-8') as file:
                         file.seek(0, 2)
                         if file.tell() == 0:
                             ends_with_newline = True

@@ -17,7 +17,7 @@
 #             if os.path.splitext(filename)[1] != ".py":
 #                 continue
 
-#             with open(filename, 'r', encoding="utf-8") as file:
+#             with open(filename, encoding='utf-8') as file:
 #                 code = file.read().strip()
 
 #             time = round(count_time(code))
@@ -38,7 +38,7 @@
 # cur_path = os.getcwd()
 # os.chdir(path)
 
-# with open(filename, 'r', encoding="utf-8") as file:
+# with open(filename, encoding='utf-8') as file:
 #     code = file.read().strip()
 
 # print(mkpath(path, filename), str(round(count_time(code))) + "ms")

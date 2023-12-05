@@ -17,6 +17,14 @@ jobs:
         with:
           fetch-depth: 2  # To be able to `commit --amend`
 
+      - name: Get changed files
+        if: github.event_name == 'push'
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          write_output_files: true
+          json: true
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -31,6 +39,9 @@ jobs:
       - name: Run postprocess
         working-directory: .github
         run: python postprocess.py
+
+      - name: Delete temporary files
+        run: rm -rf .github/outputs
 
       - name: Get last commit message
         id: last-commit-message

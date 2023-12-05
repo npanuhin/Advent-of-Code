@@ -29,7 +29,7 @@ class Day:
         self.dual_solution_exists = os.path.isfile(self.dual_solution_path)
 
     def read_readme(self):
-        with open(self.readme_path, 'r', encoding='utf-8') as file:
+        with open(self.readme_path, encoding='utf-8') as file:
             return file.read()
 
     def write_readme(self, readme: str):
