@@ -46,7 +46,7 @@ I try to optimize each solution as much as possible, so although they are writte
 		<td>Day 5</td>
 		<td align="center"><a href="2020/Day%2005">💎💎</a></td>
 		<td align="center"><a href="2021/Day%2005/part1.py">⭐</a><a href="2021/Day%2005/part2.py">⭐</a></td>
-		<td align="center"></td>
+		<td align="center"><a href="2023/Day%2005/part1.py">⭐</a><a href="2023/Day%2005/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 6</td>
