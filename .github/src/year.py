@@ -1,7 +1,7 @@
 import os
 
-from src.utils import mkpath
-from src.day import Day
+from utils import mkpath
+from day import Day
 
 
 class Year:

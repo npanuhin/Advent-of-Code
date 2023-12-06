@@ -1,6 +1,6 @@
 import os
 
-from src.utils import mkpath
+from utils import mkpath
 
 
 class Day:

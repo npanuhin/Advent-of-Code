@@ -6,7 +6,7 @@
 # import sys
 # import re
 
-# from src.utils import mkpath, clamp
+# from utils import mkpath, clamp
 
 
 # REGEX = {

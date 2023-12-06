@@ -1,15 +1,15 @@
 import json
 import os
 
-from src.readme_tables_generator import gen_year_table, gen_global_table
-from src.website_generator import gen_global_page, gen_year_page
-from src.code_exec import exec_code
-from src.utils import mkpath
-from src.year import Year
-from src.day import Day
+from readme_tables_generator import gen_year_table, gen_global_table
+from website_generator import gen_global_page, gen_year_page
+from code_exec import exec_file
+from utils import mkpath
+from year import Year
+from day import Day
 
 
-ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../'
+ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../../'
 
 CHANGED_FILES_LIST = 'outputs/all_changed_files.json'
 
@@ -80,9 +80,9 @@ def main():
 
             # ------------------------------------------ Dual solution check -------------------------------------------
             if day.dual_solution_exists:
-                part1_output = exec_code(day.part1_path)[1]
-                part2_output = exec_code(day.part2_path)[1]
-                dual_output = exec_code(day.dual_solution_path)[1]
+                part1_output = exec_file(day.part1_path)[1]
+                part2_output = exec_file(day.part2_path)[1]
+                dual_output = exec_file(day.dual_solution_path)[1]
 
                 combined_outputs = (part1_output + '\n' + part2_output).strip()
 

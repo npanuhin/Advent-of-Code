@@ -4,7 +4,7 @@ import sys
 import os
 
 
-from src.utils import clamp
+from utils import clamp
 
 
 MAX_EXEC_TIME = 3000  # 3 sec
@@ -12,9 +12,11 @@ REPEATS_MIN = 3
 REPEATS_MAX = 100
 
 
-def exec_code(path: str = "", repeats: int = 1) -> tuple[int, str]:
+def exec_file(path: str = "", repeats: int = 1) -> tuple[int, str]:
     print(f'Running "{path}...')
     folder, filename = os.path.split(path)
+    if not folder:
+        folder = '.'
 
     cur_path = os.getcwd()
     os.chdir(folder)
@@ -37,15 +39,18 @@ def exec_code(path: str = "", repeats: int = 1) -> tuple[int, str]:
 def count_time(path: str) -> tuple[int, str]:
     print(f'Running "{path}...')
 
-    single_time, output = exec_code(path)[0]
+    single_time, output = exec_file(path)[0]
 
     repeats = MAX_EXEC_TIME // single_time
-    exec_time = exec_code(path, repeats=clamp(repeats, REPEATS_MIN, REPEATS_MAX))[0]
+    exec_time = exec_file(path, repeats=clamp(repeats, REPEATS_MIN, REPEATS_MAX))[0]
 
     return exec_time, output
 
 
-def exec_file(path: str) -> str:
-    with open(path, encoding='utf-8') as file:
-        code = file.read()
-    return exec_code(code)
+if __name__ == '__main__':
+    with open('tmp.py', 'w', encoding='utf-8') as file:
+        file.write('print("Hello, world!")')
+
+    print(exec_file('tmp.py'))
+
+    os.remove('tmp.py')

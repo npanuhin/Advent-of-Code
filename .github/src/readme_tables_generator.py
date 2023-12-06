@@ -4,8 +4,8 @@ import re
 from bs4 import BeautifulSoup
 import requests
 
-from src.html import table_to_html, html_link
-from src.year import Year
+from html_tools import table_to_html, html_link
+from year import Year
 
 
 def gen_global_table(solved: dict[int, Year], readme_path: str):

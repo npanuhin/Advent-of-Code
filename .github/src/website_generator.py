@@ -3,9 +3,9 @@ import re
 
 from bs4 import BeautifulSoup
 
-from src.html import wrap_tag, html_link, table_to_html
-from src.utils import req_get
-from src.year import Year
+from html_tools import wrap_tag, html_link, table_to_html
+from utils import req_get
+from year import Year
 
 
 URL_PREFIX = 'https://github.com/npanuhin/Advent-of-Code/tree/master'
