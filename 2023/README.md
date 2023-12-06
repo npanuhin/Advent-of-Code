@@ -40,9 +40,9 @@
 		<td align="center"><a href="Day%2005/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 6</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 6: Wait For It</td>
+		<td align="center"><a href="Day%2006/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2006/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 7</td>
