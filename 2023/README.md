@@ -45,9 +45,9 @@
 		<td align="center"><a href="Day%2006/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 7</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 7: Camel Cards</td>
+		<td align="center"><a href="Day%2007/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2007/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 8</td>
