@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="414" height="455">
+    <defs>
+        <!-- <font id="SourceCodePro-Light" horiz-adv-x="600">
+            <font-face font-family="Source Code Pro Light" font-weight="300" font-stretch="normal" units-per-em="1000" panose-1="2 11 3 9 3 4 3 2 2 4" ascent="800" descent="-200" x-height="480" cap-height="659" bbox="-183 -454 783 1060" underline-thickness="50" underline-position="-100" unicode-range="U+0020-1F916" /> -->
+            <glyph id="#symbol" d="M221 -211l-16 32q63 31 93.5 76.5t30.5 116.5l-27 76l54 -67q-11 -14 -24 -18.5t-26 -4.5q-17 0 -30.5 6.5t-21.5 19.5t-8 33q0 31 18.5 45.5t41.5 14.5q35 0 52.5 -28t17.5 -74q0 -84 -43 -141t-112 -87z" />
+        <!-- </font> -->
+    </defs>
+
+    <use x="334.411" y="44.787" href="#symbol" fill="blue" />
+</svg>

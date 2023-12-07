@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://adventofcode.com/static/style.css?31">
+</head>
+
+<body>
+    <main>
+        <style>
+        .color-w2 {
+            color: #00b5ed;
+        }
+
+        .color-c5 {
+            display: inline-block;
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff, 0 0 5px #ff00ff, 0 0 5px #ff00ff, 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 10px #ff00ff, 0 0 10px #ff00ff;
+        }
+
+        .color-w20 {
+            color: #001759;
+        }
+
+        .color-w12 {
+            color: #004282;
+        }
+
+        .color-o {
+            color: #c74c30;
+        }
+
+        .color-w21 {
+            color: #001255;
+        }
+
+        .color-w13 {
+            color: #003b7b;
+        }
+
+        .color-c2 {
+            display: inline-block;
+            color: #ff9900;
+            text-shadow: 0 0 5px #ff9900, 0 0 5px #ff9900, 0 0 5px #ff9900, 0 0 5px #ff9900, 0 0 10px #ff9900, 0 0 10px #ff9900, 0 0 10px #ff9900;
+        }
+
+        .color-w9 {
+            color: #005a98;
+        }
+
+        .color-w23 {
+            color: #00094c;
+        }
+
+        .color-w19 {
+            color: #001b5e;
+        }
+
+        .color-c3 {
+            display: inline-block;
+            color: #009933;
+            text-shadow: 0 0 5px #009933, 0 0 5px #009933, 0 0 5px #009933, 0 0 5px #009933, 0 0 10px #009933, 0 0 10px #009933, 0 0 10px #009933;
+        }
+
+        .color-w14 {
+            color: #003374;
+        }
+
+        .color-w8 {
+            color: #00619f;
+        }
+
+        .color-w6 {
+            color: #0079b5;
+        }
+
+        .color-w3 {
+            color: #00a2db;
+        }
+
+        .color-w22 {
+            color: #000d51;
+        }
+
+        .color-g {
+            color: #a47a4d;
+        }
+
+        .color-c4 {
+            display: inline-block;
+            color: #0066ff;
+            text-shadow: 0 0 5px #0066ff, 0 0 5px #0066ff, 0 0 5px #0066ff, 0 0 5px #0066ff, 0 0 10px #0066ff, 0 0 10px #0066ff, 0 0 10px #0066ff;
+        }
+
+        .color-w1 {
+            color: #00c8ff;
+        }
+
+        .color-w10 {
+            color: #005291;
+        }
+
+        .color-w16 {
+            color: #00296b;
+        }
+
+        .color-w7 {
+            color: #006daa;
+        }
+
+        .color-w17 {
+            color: #002566;
+        }
+
+        .color-w18 {
+            color: #002062;
+        }
+
+        .color-w4 {
+            color: #0091cc;
+        }
+
+        .color-d {
+            color: #584338;
+        }
+
+        .color-c1 {
+            display: inline-block;
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 10px #ff0000, 0 0 10px #ff0000;
+        }
+
+        .color-s {
+            color: #ffffff;
+        }
+
+        .color-w5 {
+            color: #0085c0;
+        }
+
+        .color-w15 {
+            color: #002e6f;
+        }
+
+        .color-w11 {
+            color: #004a8a;
+        }
+
+        .color-r {
+            color: #ff0000;
+        }
+
+        </style>
+        <pre><span class="color-w1">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="color-w2"> .      .          . ' .   . .  </span> <span class="color-s">.</span> <span class="color-w2">. . '</span><span class="color-c2" style="opacity: 0.93;">.</span><span class="color-w2"> </span> <span class="color-g">..''''</span>
+<span class="color-w3">..  .   .. .  .~  . . .  .     </span> <span class="color-s">.</span> <span class="color-w3">   </span><span class="color-c3" style="opacity: 0.89;">.</span><span class="color-w3"> </span><span class="color-c5" style="opacity: 0.89;">.</span><span class="color-w3"> </span> <span class="color-g">:</span>
+<span class="color-w4">   .        '        .        </span><span class="color-c5" style="opacity: 0.86;">.</span> <span class="color-s">.'</span> <span class="color-c1" style="opacity: 0.86;">.</span><span class="color-w4"> </span> <span class="color-g">....'</span>
+<span class="color-w5"> .   '.  ..     . .    .    </span><span class="color-c3" style="opacity: 0.82;">.</span> <span class="color-o">.</span><span class="color-r">.</span><span class="color-s">|\</span><span class="color-r">.</span><span class="color-o">.</span><span class="color-g">''</span>
+<span class="color-w6">    .  .  .          .   . </span><span class="color-c1" style="opacity: 0.78;">.</span> <span class="color-g">:</span>
+<span class="color-w7"> .  '     '   ''     .. . </span><span class="color-c5" style="opacity: 0.75;">.</span><span class="color-g">:'</span>
+<span class="color-w8">    .   .    . .   ~.   . </span> <span class="color-c3" style="opacity: 0.71;">.</span><span class="color-g">'''''.....</span>  <span class="color-g">..</span><span class="color-o">.</span><span class="color-r">.</span>
+<span class="color-w9">   ...   .        .  ..  </span> <span class="color-g">:'..</span><span class="color-c2" style="opacity: 0.68;">.</span> <span class="color-g">..</span><span class="color-c3" style="opacity: 0.68;">.</span>  <span class="color-c3" style="opacity: 0.68;">.</span><span class="color-g">''</span><span class="color-c2" style="opacity: 0.68;">.</span>   <span class="color-r">':</span>
+<span class="color-w10">. ' .      .     . ''. . </span> <span class="color-g">:</span>   <span class="color-g">''</span>  <span class="color-g">''''..</span>  <span class="color-c2" style="opacity: 0.64;">.</span> <span class="color-c5" style="opacity: 0.64;">.</span><span class="color-o">'</span><span class="color-g">.</span>
+<span class="color-w11">  .    ..   .  ~    . . .</span> <span class="color-g">:</span>             <span class="color-g">'..'.</span><span class="color-c5" style="opacity: 0.60;">.</span><span class="color-g">:</span>
+<span class="color-w12"> .  . ..       '        </span> <span class="color-g">:</span>       <span class="color-g">:'''..</span>   <span class="color-g">..'</span><span class="color-c3" style="opacity: 0.57;">.</span><span class="color-g">:</span>
+<span class="color-w13">  .  .  .  '   ' .    </span> <span class="color-g">.'</span>    <span class="color-g">..''</span><span class="color-c5" style="opacity: 0.53;">.</span>   <span class="color-c5" style="opacity: 0.53;">.</span> <span class="color-g">'''</span><span class="color-c3" style="opacity: 0.53;">.</span><span class="color-g">...:</span>
+<span class="color-w14">'   . .    '   '     </span> <span class="color-g">:</span> <span class="color-g">...''</span><span class="color-c1" style="opacity: 0.50;">.</span> <span class="color-g">..':</span>   <span class="color-r">.</span><span class="color-o">.</span><span class="color-g">..'</span>
+<span class="color-w15">       .  '      </span><span class="color-c5" style="opacity: 0.46;">.</span><span class="color-w15">  </span><span class="color-c1" style="opacity: 0.46;">.</span> <span class="color-g">:'</span><span class="color-c2" style="opacity: 0.46;">.</span><span class="color-g">...'''</span>    <span class="color-o">'</span><span class="color-r">''</span>
+<span class="color-g">'.'.</span> <span class="color-w16">    . .. .</span><span class="color-c1" style="opacity: 0.42;">.</span><span class="color-g">:'.</span> <span class="color-g">....'</span>
+   <span class="color-g">:</span> <span class="color-w17">.  .. ..</span><span class="color-c4" style="opacity: 0.39;">.</span><span class="color-w17">.</span> <span class="color-g">:</span>  <span class="color-g">'</span>
+   <span class="color-d">:</span> <span class="color-w18"> .   ' </span><span class="color-c2" style="opacity: 0.35;">.</span> <span class="color-d">..'</span>
+   <span class="color-d">'.</span> <span class="color-w19">.  ' </span><span class="color-c5" style="opacity: 0.32;">.</span><span class="color-w19"> </span> <span class="color-d">:</span>
+    <span class="color-d">'.</span> <span class="color-w20">     </span><span class="color-c2" style="opacity: 0.28;">.</span> <span class="color-d">:</span>
+      <span class="color-d">:</span> <span class="color-w21">   </span><span class="color-c5" style="opacity: 0.24;">.</span> <span class="color-d">:</span>
+      <span class="color-d">'.</span> <span class="color-w22"> </span><span class="color-c3" style="opacity: 0.21;">.</span><span class="color-w22"> </span> <span class="color-d">:</span>
+       <span class="color-d">:</span> <span class="color-w23">  </span><span class="color-c1" style="opacity: 0.17;">.</span><span class="color-d">.'</span>
+       <span class="color-d">:</span> <span class="color-c2" style="opacity: 0.14;">.</span> <span class="color-d">.'</span>
+       <span class="color-d">:..:</span>
+</pre>
+    </main>
+</body>
+
+</html>
