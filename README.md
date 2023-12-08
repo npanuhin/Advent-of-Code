@@ -1,7 +1,9 @@
 <h1 align="center">🎄 Advent of Code 🎄</h1>
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
-<img alt="" src="docs/AoC.gif" align="center">
+<div align="center">
+	<img src="docs/AoC.gif" width="600px">
+</div>
 
 ---
 
@@ -9,6 +11,8 @@ This is a repository of my [Advent of Code](https://adventofcode.com "Visit adve
 Some puzzle are accompanied by concise descriptions 😉
 
 I try to optimize each solution as much as possible, so although they are written in Python, many of them run in less than a second!
+
+> Also check out [these cool annual AoC images](#gallery-of-amazing-annual-advent-of-code-images)!
 
 <!-- Main table start -->
 <table>
@@ -190,3 +194,18 @@ I try to optimize each solution as much as possible, so although they are writte
   with open('input.txt') as file:
       lines = list(filter(None, map(str.strip, file)))
   ```
+
+---
+
+<h3 align="center">Gallery of amazing annual Advent of Code images</h3>
+
+<table>
+	<tr>
+		<td align="center"><a href="2020"><img src="docs/2020/canvas.svg"><h3>2020</h3></a></td>
+		<td align="center"><a href="2021"><img src="docs/2021/canvas.svg"><h3>2021</h3></a></td>
+	</tr>
+</table>
+
+
+Wanna know how I automatically created ***animated vector images*** with transparent gradient borders **within GitHub Markdown**?
+Check out [this folder](.github/src/canvas)
