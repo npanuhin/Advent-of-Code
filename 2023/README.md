@@ -2,7 +2,7 @@
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
 <!-- <div align="center">
-    <img src="../docs/2023/AoC.min.svg">
+    <img src="../docs/2023/canvas.svg">
 </div> -->
 
 ---

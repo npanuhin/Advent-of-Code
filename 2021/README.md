@@ -1,9 +1,9 @@
 <h1 align="center">🎄 Advent of Code 2021 🎄</h1>
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
-<!-- <div align="center">
-    <img src="../docs/2021/AoC.min.svg">
-</div> -->
+<div align="center">
+    <img src="../docs/2021/canvas.svg">
+</div>
 
 ---
 

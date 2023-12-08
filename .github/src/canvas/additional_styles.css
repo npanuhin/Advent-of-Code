@@ -1,0 +1,158 @@
+/* Fixing width */
+body, svg {
+    min-width: fit-content;
+    display: inline-block;
+    margin: 0;
+}
+
+main {
+    font-size: 16px;  /* For em to work */
+    min-width: auto;
+    display: inline-block;
+    margin: 0;
+}
+
+.calendar {
+    display: inline-block;
+    margin: 1em;
+}
+
+/* To make html work, not needed for svg */
+html {
+    background: none;
+}
+
+body {
+    background: none;
+}
+
+/* main {
+    background: #0f0f23;
+} */
+
+/* Adding gradient on edges */
+main {
+    --gradient-size: 0.5em;
+
+    background: #0f0f23;
+    /* border-radius: 2em; */
+
+    /* for webkit-based browsers */
+    -webkit-mask-image:
+        linear-gradient(to top, black 0%, black 100%),
+        linear-gradient(to top, transparent 0%, black 100%),
+        linear-gradient(to right, transparent 0%, black 100%),
+        linear-gradient(to bottom, transparent 0%, black 100%),
+        linear-gradient(to left, transparent 0%, black 100%),
+        /* radial-gradient(circle farthest-corner at bottom right, transparent 33.61%, black 70.71%),
+        radial-gradient(circle farthest-corner at bottom left, transparent 33.61%, black 70.71%),
+        radial-gradient(circle farthest-corner at top right, transparent 33.61%, black 70.71%),
+        radial-gradient(circle farthest-corner at top left, transparent 33.61%, black 70.71%); */
+        radial-gradient(circle farthest-side at bottom right, transparent 50%, black 100%),
+        radial-gradient(circle farthest-side at bottom left, transparent 50%, black 100%),
+        radial-gradient(circle farthest-side at top right, transparent 50%, black 100%),
+        radial-gradient(circle farthest-side at top left, transparent 50%, black 100%);
+
+    -webkit-mask-position:
+        center,
+        top,
+        right,
+        bottom,
+        left,
+        top left,
+        top right,
+        bottom left,
+        bottom right;
+
+    -webkit-mask-size:
+        100% 100%,
+        calc(100% - var(--gradient-size) * 4) var(--gradient-size),
+        var(--gradient-size) calc(100% - var(--gradient-size) * 4),
+        calc(100% - var(--gradient-size) * 4) var(--gradient-size),
+        var(--gradient-size) calc(100% - var(--gradient-size) * 4),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2);
+
+    -webkit-mask-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+
+    -webkit-mask-composite:
+        source-out,
+        source-over,
+        source-over,
+        source-over,
+        source-over,
+        source-over,
+        source-over,
+        source-over,
+        source-over;
+
+    /* for browsers which have implemented the official spec */
+    mask-image:
+        linear-gradient(to top, black 0%, black 100%),
+        linear-gradient(to top, transparent 0%, black 100%),
+        linear-gradient(to right, transparent 0%, black 100%),
+        linear-gradient(to bottom, transparent 0%, black 100%),
+        linear-gradient(to left, transparent 0%, black 100%),
+        /* radial-gradient(circle farthest-corner at bottom right, transparent 33.61%, black 70.71%),
+        radial-gradient(circle farthest-corner at bottom left, transparent 33.61%, black 70.71%),
+        radial-gradient(circle farthest-corner at top right, transparent 33.61%, black 70.71%),
+        radial-gradient(circle farthest-corner at top left, transparent 33.61%, black 70.71%); */
+        radial-gradient(circle farthest-side at bottom right, transparent 50%, black 100%),
+        radial-gradient(circle farthest-side at bottom left, transparent 50%, black 100%),
+        radial-gradient(circle farthest-side at top right, transparent 50%, black 100%),
+        radial-gradient(circle farthest-side at top left, transparent 50%, black 100%);
+
+    mask-position:
+        center,
+        top,
+        right,
+        bottom,
+        left,
+        top left,
+        top right,
+        bottom left,
+        bottom right;
+
+    mask-size:
+        100% 100%,
+        calc(100% - var(--gradient-size) * 4) var(--gradient-size),
+        var(--gradient-size) calc(100% - var(--gradient-size) * 4),
+        calc(100% - var(--gradient-size) * 4) var(--gradient-size),
+        var(--gradient-size) calc(100% - var(--gradient-size) * 4),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2),
+        calc(var(--gradient-size) * 2) calc(var(--gradient-size) * 2);
+
+    mask-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+
+    mask-composite:
+        subtract,
+        add,
+        add,
+        add,
+        add,
+        add,
+        add,
+        add;
+}

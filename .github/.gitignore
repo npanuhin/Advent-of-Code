@@ -1,2 +1,7 @@
 # Python cache
 __pycache__/
+
+# Canvas
+src/canvas/*.html
+!src/canvas/page.html
+src/canvas/*.svg
