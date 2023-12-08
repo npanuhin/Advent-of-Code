@@ -50,9 +50,9 @@
 		<td align="center"><a href="Day%2007/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 8</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 8: Haunted Wasteland</td>
+		<td align="center"><a href="Day%2008/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2008/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 9</td>
