@@ -55,9 +55,9 @@
 		<td align="center"><a href="Day%2008/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 9</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 9: Mirage Maintenance</td>
+		<td align="center"><a href="Day%2009/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2009/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 10</td>
