@@ -60,9 +60,9 @@
 		<td align="center"><a href="Day%2009/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 10</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 10: Pipe Maze</td>
+		<td align="center"><a href="Day%2010/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2010/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 11</td>
