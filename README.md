@@ -8,11 +8,11 @@
 ---
 
 This is a repository of my [Advent of Code](https://adventofcode.com "Visit adventofcode.com") solutions.
-Some puzzle are accompanied by concise descriptions 😉
+Some puzzles are accompanied by concise descriptions 😉
 
-I try to optimize each solution as much as possible, so although they are written in Python, many of them run in less than a second!
+I try to optimize each solution as much as possible, so although they are written in Python, many run in less than a second!
 
-> Also check out [these cool annual AoC images](#gallery-of-amazing-annual-advent-of-code-images)!
+> Also check out [these cool **animated** annual AoC images](#gallery-of-amazing-annual-advent-of-code-images)!
 
 <!-- Main table start -->
 <table>
