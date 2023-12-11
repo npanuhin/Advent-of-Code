@@ -65,9 +65,9 @@
 		<td align="center"><a href="Day%2010/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 11</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 11: Cosmic Expansion</td>
+		<td align="center"><a href="Day%2011/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2011/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 12</td>
