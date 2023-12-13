@@ -1,4 +1,5 @@
 from copy import deepcopy
+import json
 
 SnailfishNumber = list[int]
 
@@ -103,7 +104,7 @@ def magnitude(number: SnailfishNumber) -> int:
 
 
 with open("input.txt") as file:
-    numbers = list(map(eval, filter(None, map(str.strip, file))))
+    numbers = list(map(json.loads, filter(None, map(str.strip, file))))
 
 print(max(
     magnitude(save_add(a, b))
