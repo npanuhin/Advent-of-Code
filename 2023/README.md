@@ -80,9 +80,9 @@
 		<td align="center"><a href="Day%2013/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 14</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 14: Parabolic Reflector Dish</td>
+		<td align="center"><a href="Day%2014/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2014/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 15</td>
