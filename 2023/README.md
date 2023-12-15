@@ -85,9 +85,9 @@
 		<td align="center"><a href="Day%2014/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 15</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td>Day 15: Lens Library</td>
+		<td align="center"><a href="Day%2015/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2015/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 16</td>
