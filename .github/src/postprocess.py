@@ -9,9 +9,9 @@ from year import Year
 from day import Day
 
 
-ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../../'
+ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../../'  # TODO replace this logic with __file__
 
-CHANGED_FILES_LIST = 'outputs/all_changed_files.json'
+CHANGED_FILES_LIST = '../outputs/all_changed_files.json'
 
 
 def main():
@@ -26,6 +26,8 @@ def main():
                 while changed_path:
                     changed.add(changed_path)
                     changed_path = os.path.dirname(changed_path)
+
+    print('Changed files:', changed)
 
     # ------------------------------------------------------------------------------------------------------------------
 
