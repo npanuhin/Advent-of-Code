@@ -6,10 +6,7 @@ from website_generator import gen_global_page, gen_year_page
 from code_exec import exec_file
 from utils import mkpath
 from year import Year
-from day import Day
 
-
-ROOT_PATH = Day.ROOT_PATH = Year.ROOT_PATH = '../../'  # TODO replace this logic with __file__
 
 CHANGED_FILES_LIST = '../outputs/all_changed_files.json'
 
@@ -22,7 +19,7 @@ def main():
     if os.path.isfile(CHANGED_FILES_LIST):
         with open(CHANGED_FILES_LIST) as file:
             for changed_path in json.load(file):
-                changed_path = mkpath(ROOT_PATH, changed_path)
+                changed_path = mkpath('../../', changed_path)
                 while changed_path:
                     changed.add(changed_path)
                     changed_path = os.path.dirname(changed_path)
@@ -97,11 +94,11 @@ def main():
 
         # Handle year README and webpage
         gen_year_table(year)
-        gen_year_page(year, mkpath(ROOT_PATH, 'docs', year.year, 'index.html'))
+        gen_year_page(year, mkpath('../../docs/', year.year, 'index.html'))
 
     # Handle global README and webpage
-    gen_global_table(solved, mkpath(ROOT_PATH, 'README.md'))
-    gen_global_page(solved, mkpath(ROOT_PATH, 'docs', 'index.html'))
+    gen_global_table(solved, '../../README.md')
+    gen_global_page(solved, '../../docs/index.html')
 
 
 if __name__ == '__main__':

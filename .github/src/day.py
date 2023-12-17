@@ -4,8 +4,6 @@ from utils import mkpath
 
 
 class Day:
-    ROOT_PATH = '.'
-
     def __init__(self, year_num: int, day_num: int):
         self.year = year_num
         self.day = day_num
@@ -13,7 +11,7 @@ class Day:
         self.folder_name = f'Day {day_num:02d}'
         self.url_name = self.folder_name.replace(' ', '%20')
 
-        self.path = mkpath(Day.ROOT_PATH, year_num, self.folder_name)
+        self.path = mkpath(os.path.dirname(__file__), '../../', year_num, self.folder_name)
         self.solved = os.path.isdir(self.path)
 
         self.part1_path = mkpath(self.path, 'part1.py')

@@ -5,12 +5,10 @@ from day import Day
 
 
 class Year:
-    ROOT_PATH = '.'
-
     def __init__(self, year_num: int):
         self.year = year_num
 
-        self.path = mkpath(Year.ROOT_PATH, year_num)
+        self.path = mkpath(os.path.dirname(__file__), '../../', year_num)
         self.solved = os.path.isdir(self.path)
 
         self.readme_path = mkpath(self.path, 'README.md')
