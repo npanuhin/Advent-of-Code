@@ -95,22 +95,22 @@
 		<td align="center"><a href="Day%2016/part2.py">⭐</a></td>
 	</tr>
 	<tr>
-		<td>Day 17</td>
+		<td>Day 17: Clumsy Crucible</td>
+		<td align="center"><a href="Day%2017/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2017/part2.py">⭐</a></td>
+	</tr>
+	<tr>
+		<td>Day 18: Lavaduct Lagoon</td>
 		<td align="center"></td>
 		<td align="center"></td>
 	</tr>
 	<tr>
-		<td>Day 18</td>
+		<td>Day 19: Aplenty</td>
 		<td align="center"></td>
 		<td align="center"></td>
 	</tr>
 	<tr>
-		<td>Day 19</td>
-		<td align="center"></td>
-		<td align="center"></td>
-	</tr>
-	<tr>
-		<td>Day 20</td>
+		<td>Day 20: Pulse Propagation</td>
 		<td align="center"></td>
 		<td align="center"></td>
 	</tr>
