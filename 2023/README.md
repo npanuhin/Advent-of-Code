@@ -101,8 +101,8 @@
 	</tr>
 	<tr>
 		<td>Day 18: Lavaduct Lagoon</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2018/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2018/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 19: Aplenty</td>
