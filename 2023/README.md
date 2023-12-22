@@ -111,8 +111,8 @@
 	</tr>
 	<tr>
 		<td>Day 20: Pulse Propagation</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2020/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2020/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 21: Step Counter</td>
@@ -120,7 +120,7 @@
 		<td align="center"></td>
 	</tr>
 	<tr>
-		<td>Day 22</td>
+		<td>Day 22: Sand Slabs</td>
 		<td align="center"></td>
 		<td align="center"></td>
 	</tr>
