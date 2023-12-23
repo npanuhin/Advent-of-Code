@@ -21,7 +21,7 @@ def main():
             for changed_path in json.load(file):
                 changed_path = mkpath('../../', changed_path)
                 while changed_path:
-                    changed.add(changed_path)
+                    changed.add(os.path.abspath(changed_path))
                     changed_path = os.path.dirname(changed_path)
 
     print('Changed files:', changed)
@@ -41,7 +41,7 @@ def main():
             if not day.solved:
                 continue
 
-            if changed and day.path not in changed:
+            if changed and os.path.abspath(day.path) not in changed:
                 print(f"Skipping day {day.year}/{day.folder_name} as it wasn't changed")
                 continue
 
