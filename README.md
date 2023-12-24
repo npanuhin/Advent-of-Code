@@ -2,7 +2,7 @@
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
 <div align="center">
-	<img src="docs/AoC.gif" width="600px">
+	<img src=".github/website/AoC.gif" width="600px">
 </div>
 
 ---
@@ -201,8 +201,8 @@ I try to optimize each solution as much as possible, so although they are writte
 
 <table>
 	<tr>
-		<td align="center"><a href="2020"><img src="docs/2020/canvas.svg"><h3>2020</h3></a></td>
-		<td align="center"><a href="2021"><img src="docs/2021/canvas.svg"><h3>2021</h3></a></td>
+		<td align="center"><a href="2020"><img src=".github/website/2020/canvas.svg"><h3>2020</h3></a></td>
+		<td align="center"><a href="2021"><img src=".github/website/2021/canvas.svg"><h3>2021</h3></a></td>
 	</tr>
 </table>
 

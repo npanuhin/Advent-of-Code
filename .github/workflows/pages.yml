@@ -1,13 +1,14 @@
 name: Deploy static content to Pages
 
 on:
-  # push:
-  #   branches: ["master"]
-  workflow_run:
-    workflows: ["Postprocess"]
-    types:
-      - completed
-
+  push:
+    branches: ["master"]
+    paths:
+      - .github/website/**
+  # workflow_run:
+  #   workflows: ["Postprocess"]
+  #   types:
+  #     - completed
   workflow_dispatch:
 
 permissions:
@@ -35,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: 'docs'
+          path: '.github/website'
 
       - name: Deploy to GitHub Pages
         id: deployment

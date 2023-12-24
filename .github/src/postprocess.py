@@ -94,11 +94,11 @@ def main():
 
         # Handle year README and webpage
         gen_year_table(year)
-        gen_year_page(year, mkpath('../../docs/', year.year, 'index.html'))
+        gen_year_page(year, f'../website/{year.year}/index.html')
 
     # Handle global README and webpage
     gen_global_table(solved, '../../README.md')
-    gen_global_page(solved, '../../docs/index.html')
+    gen_global_page(solved, '../website/index.html')
 
 
 if __name__ == '__main__':
