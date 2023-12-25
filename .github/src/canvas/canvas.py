@@ -2,10 +2,13 @@ from bs4 import BeautifulSoup
 from bs4.element import Tag
 import requests
 import csscompressor
+import re
 
 
 WIDTH = 502.4
-HEIGHT = 532
+
+MARGIN = 16  # = 1em
+LINE_HEIGHT = 20  # For font-size = 16px
 
 
 def get_canvas() -> str:
@@ -28,18 +31,19 @@ def get_canvas() -> str:
         'span.calendar-mark-complete',
         'span.calendar-mark-verycomplete',
         'span#calendar-countdown',
-        # 'pre a'
     ))):
         tag.decompose()
 
-    for tag in main.select('pre a'):
-        tag.name = 'span'
+    for tag in main.select('pre a, pre span'):
+        # tag.name = 'span'
         del tag['aria-label']
         del tag['href']
 
+    for string in main.find('pre').find_all(string=True, recursive=False):
+        string.replace_with('\n')
+
     # Warning! Veru hacky solution, but I can not do otherwise
-    for tag in main.select('pre > span'):
-        # print(tag.contents, ''.join(map(str, tag.contents)))
+    for tag in main.select('pre > a, pre > span'):
         # lines = ''.join(map(str, tag.contents)).splitlines()
 
         # last_line_size = len(lines[-1]) - (3 if lines[-1].endswith(' ' * 3) else 0)
@@ -47,21 +51,13 @@ def get_canvas() -> str:
         #     # assert line.endswith(' ' * 3)
         #     lines[i] = line[:last_line_size]
 
-        # print(lines)
-        # print()
-
         # tag.clear()
-
-        # print(tag)
 
         # tag.append(BeautifulSoup('\n'.join(lines), 'lxml'))
 
         # last_text = tag.find_all(text=True)[-1]
-        # print()
 
-        # print(tag)
-        # print(type(tag.find_all(string=True)[-1]))
-
+        # Remove 3 spaces from the end of span
         for _ in range(3):
             string = str(tag.find_all(string=True)[-1])
             if string.endswith(' '):
@@ -71,13 +67,20 @@ def get_canvas() -> str:
                 else:
                     tag.find_all(string=True)[-1].extract()
 
+        # Remove 7 spaces before every \n in span
+        for _ in range(7):
+            for string in tag.find_all(string=re.compile(r'\n')):
+                parts = string.split('\n')
+                for i in range(len(parts) - 1):
+                    if parts[i].endswith(' '):
+                        parts[i] = parts[i][:-1]
+
+                string.replace_with('\n'.join(parts))
+
     for tag in main.descendants:
         if isinstance(tag, Tag):
             if 'aria-hidden' in tag.attrs:
                 del tag['aria-hidden']
-
-            # if tag.name == 'pre' and tag['class'] == ['calendar']:
-            #     del tag['class']
 
             tag.attrs = {
                 attr: value
@@ -97,15 +100,13 @@ def get_canvas() -> str:
         )
     styles += table_styles
 
-    # styles = csscompressor.compress(styles)
-
     with open('additional_styles.css') as file:
         styles += file.read()
 
     style_tag = Tag(name='style')
     main.append(style_tag)
     style_tag.string = csscompressor.compress(styles)
-    # style_tag.string = styles
+    # style_tag.string = styles  # For debugging
 
     with open('canvas.html', 'w', encoding='utf-8') as file:
         print(str(main), file=file)
@@ -115,14 +116,23 @@ def get_canvas() -> str:
 
     # ------------------------------------------------------ SVG -------------------------------------------------------
 
+    # Calculate SVG height based on the amount of rows in calendar
+    # row_count = len(main.select('pre > a, pre > span'))
+    row_count = sum(
+        1 + len(tag.find_all(string=re.compile(r'\n')))
+        for tag in main.select('pre > a, pre > span')
+    )
+    height = LINE_HEIGHT * row_count + 2 * MARGIN
+    print(f'Rows: {row_count} => Height: {height}')
+
     foreign_object = Tag(name='foreignObject', attrs={'x': '0', 'y': '0', 'width': '100%', 'height': '100%'})
     foreign_object.append(main)
 
     svg = Tag(name='svg', attrs={
         'xmlns': 'http://www.w3.org/2000/svg',
         'width': WIDTH,
-        'height': HEIGHT,
-        'viewBox': f'0 0 {WIDTH} {HEIGHT}',
+        'height': height,
+        'viewBox': f'0 0 {WIDTH} {height}',
     })
     svg.append(foreign_object)
 
