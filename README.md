@@ -201,8 +201,12 @@ I try to optimize each solution as much as possible, so although they are writte
 
 <table>
 	<tr>
-		<td align="center"><a href="2020"><img src=".github/website/2020/canvas.svg"><h3>2020</h3></a></td>
-		<td align="center"><a href="2021"><img src=".github/website/2021/canvas.svg"><h3>2021</h3></a></td>
+		<td align="center"><a href="2020"><img alt="" src=".github/website/2020/canvas.svg"></a><b>2020</b></td>
+		<td align="center"><a href="2021"><img alt="" src=".github/website/2021/canvas.svg"></a><b>2021</b></td>
+	</tr>
+	<tr>
+		<td align="center"><a href="2022"><img alt="" src=".github/website/2022/canvas.svg"></a><b>2022</b></td>
+		<td align="center"><a href="2023"><img alt="" src=".github/website/2023/canvas.svg"></a><b>2023</b></td>
 	</tr>
 </table>
 
