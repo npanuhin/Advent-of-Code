@@ -1,9 +1,9 @@
 <h1 align="center">🎄 Advent of Code 2023 🎄</h1>
 <h6 align="center">by <a href="https://github.com/npanuhin">@npanuhin</a></h6>
 
-<!-- <div align="center">
+<div align="center">
     <img src="../.github/website/2023/canvas.svg">
-</div> -->
+</div>
 
 ---
 
@@ -136,7 +136,7 @@
 	</tr>
 	<tr>
 		<td>Day 25: Snowverload</td>
-		<td align="center" colspan="2"></td>
+		<td align="center" colspan="2"><a href="Day%2025/part1.py">⭐⭐</a></td>
 	</tr>
 </table>
 <!-- Solved table end -->

@@ -170,7 +170,7 @@ I try to optimize each solution as much as possible, so although they are writte
 		<td>Day 25</td>
 		<td align="center"><a href="2020/Day%2025/part1.py">⭐⭐</a></td>
 		<td align="center"><a href="2021/Day%2025/part1.py">⭐⭐</a></td>
-		<td align="center"></td>
+		<td align="center"><a href="2023/Day%2025/part1.py">⭐⭐</a></td>
 	</tr>
 </table>
 <!-- Main table end -->
