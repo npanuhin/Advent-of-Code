@@ -131,8 +131,8 @@
 	</tr>
 	<tr>
 		<td>Day 24: Never Tell Me The Odds</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2024/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2024/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 25: Snowverload</td>

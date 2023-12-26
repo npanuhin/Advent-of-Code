@@ -35,11 +35,14 @@ jobs:
         with:
           python-version: 3.11
           cache: pip
-          cache-dependency-path: .github/requirements.txt
+          # cache-dependency-path: .github/requirements.txt
 
       - name: Install Python dependencies
         working-directory: .github
         run: pip install -r requirements.txt
+
+      - name: Install Python dependencies for solutions
+        run: find . -name "requirements.txt" -type f -not -path "./.github/*" -exec pip install -r '{}' ';'
 
       - name: Run postprocess
         working-directory: .github/src
