@@ -126,8 +126,8 @@
 	</tr>
 	<tr>
 		<td>Day 23: A Long Walk</td>
-		<td align="center"></td>
-		<td align="center"></td>
+		<td align="center"><a href="Day%2023/part1.py">⭐</a></td>
+		<td align="center"><a href="Day%2023/part2.py">⭐</a></td>
 	</tr>
 	<tr>
 		<td>Day 24: Never Tell Me The Odds</td>
@@ -135,7 +135,7 @@
 		<td align="center"></td>
 	</tr>
 	<tr>
-		<td>Day 25</td>
+		<td>Day 25: Snowverload</td>
 		<td align="center" colspan="2"></td>
 	</tr>
 </table>
