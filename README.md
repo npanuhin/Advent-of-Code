@@ -199,6 +199,8 @@ I try to optimize each solution as much as possible, so although they are writte
 
 <h3 align="center">Gallery of amazing annual Advent of Code images</h3>
 
+> If you computer scruggles to render smooth animations, [buy a new one](https://youtu.be/Q-yYmq35E3I?t=2)[^1] :)
+
 <table>
 	<tr>
 		<td align="center"><a href="2020"><img alt="" src=".github/website/2020/canvas.svg"></a><b>2020</b></td>
@@ -213,3 +215,6 @@ I try to optimize each solution as much as possible, so although they are writte
 
 Wanna know how I automatically created ***animated vector images*** with transparent gradient borders **within GitHub Markdown**?
 Check out [this folder](.github/src/canvas)
+
+[^1]: Joking of course! It's just that almost all annual AoC images contain a ton of HTML objects, each with its own animation. Rendering one image on a modern hardware is easy, but when there are many of them, it becomes a mess)  
+	In all seriousness, I'm not sure if I want to hold on to these animations or drop some of them

@@ -14,3 +14,5 @@ Execute `pip install -r requirements.txt` in this folder
 ### Known issues
 
 - The HTML debug-preview page does not properly set the `span` height for 2023, causing the lava falls and other effects to move down one `line_height`. However, the resulting SVG image does not have this problem.
+
+- For 2020 if you want to have Storm, you'll need in add manually it to `page.html`, because it is calculated randomly in runtime using JavaScript (and my script does support that). Don't forget that there should not be a line break between the last `<a>` and the storm's `<div>`, otherwise there will be an empty line at the bottom.
